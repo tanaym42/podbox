@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
@@ -40,8 +40,9 @@
 }
 
 .grid {
+  padding: 5rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(2, minmax(50%, auto));
   max-width: 100%;
   width: var(--max-width);
 }
@@ -54,13 +55,17 @@
   transition: background 200ms, border 200ms;
 }
 
+.button {
+  display:inline;
+}
+
 .card span {
-  display: inline-block;
+  display: inline-flex;
   transition: transform 200ms;
 }
 
 .card h2 {
-  font-weight: 600;
+  font-weight: 300;
   margin-bottom: 0.7rem;
 }
 
@@ -69,8 +74,7 @@
   opacity: 0.6;
   font-size: 0.9rem;
   line-height: 1.5;
-  max-width: 30ch;
-  text-wrap: balance;
+  max-width: 50ch;
 }
 
 .center {
