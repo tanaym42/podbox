@@ -6,9 +6,7 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * **The Getting Started section should start you off for installation and running.**
 
-* I've been trying to use the React SDK tools that Inrupt maintains. I think this should be the easiest way to implement stuff and it seems like it does away with a lot of complexity for authentication and data fetching -- though I am willing to try other stuff too. The link to the docs is here: 
-
-https://docs.inrupt.com/developer-tools/javascript/react-sdk/
+* I've been trying to use the React SDK tools that Inrupt maintains. I think this should be the easiest way to implement stuff and it seems like it does away with a lot of complexity for authentication and data fetching -- though I am willing to try other stuff too. The link to the docs is here: https://docs.inrupt.com/developer-tools/javascript/react-sdk/
 
 ## Getting Started
 
@@ -31,6 +29,13 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+
+## Some next steps
+
+* Figure out how to come back to another page, which lists profile information that is currently available in the POD. So, fetch new data whle loading the page that comes from the landing page. 
+
+* Figure out navigation bar and the main options that will be available to the user - profile, data, apps, access management, settings -- and make the navigation bar. 
 
 
 ## Older notes
