@@ -1,9 +1,30 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { SessionProvider, LoginButton } from "@inrupt/solid-ui-react";
+import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
+// import { SessionProvider, LoginButton } from "@inrupt/solid-ui-react";
+import Link from 'next/link';
+import homePage from './homePage';
 
 export default function Home() {
+
+  const startLogin = async () => {
+    // Start the Login Process if not already logged in.
+    if (!getDefaultSession().info.isLoggedIn) {
+      await login({
+        oidcIssuer: "https://login.inrupt.com",
+        redirectUrl: new URL("/homePage", window.location.href).toString(),
+        clientName: "My application"
+      });
+    }
+  };
+
+    // Event handler for the button click
+  const handleLoginClick = () => {
+    startLogin(); // Call the startLogin function when the button is clicked
+  };
+  
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -16,17 +37,14 @@ export default function Home() {
       <div className={styles.grid}>
         <div className={styles.card}>
           <h2>
-          <SessionProvider sessionId="some-id">
+
           <span>
-            <LoginButton
-              oidcIssuer="https://inrupt.net"
-              redirectUrl="https://localhost:3000/"
-            >
+
               Inrupt Login
-            </LoginButton>
+
 
             -&gt;</span>
-        </SessionProvider>
+
           </h2>
           <p>Link POD provided by Inrupt.net</p>
         </div>
@@ -34,17 +52,14 @@ export default function Home() {
         <div className={styles.card}>
           <h2>
           <span>
-          <SessionProvider sessionId="some-id-2">
-            <LoginButton
-              oidcIssuer="https://solidcommunity.net"
-              redirectUrl="https://localhost:3000/"
-            >
+
               SC Login
-            </LoginButton>
-          </SessionProvider>-&gt;</span>
+            -&gt;</span>
           </h2>
           <p>Link POD provided by Solidcommunity.net</p>
         </div>
+
+          <button onClick={handleLoginClick}>Go to Second Page</button>
 
   
       </div>
