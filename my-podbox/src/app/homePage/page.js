@@ -1,7 +1,7 @@
 // src/SecondPage.js
 "use client";
 import React, { useEffect, useState } from 'react';
-import { handleIncomingRedirect } from '@inrupt/solid-client-authn-browser'
+import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-authn-browser'
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
 import { fetch } from '@inrupt/solid-client-authn-browser'
 import { getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
@@ -11,11 +11,20 @@ const homePage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [webId, setWebId] = useState(null);
 
+
+
   useEffect(() => {
+
   let random = null;  
   const completeLogin = async () => {
     await handleIncomingRedirect();
     console.log("Check complete");
+
+    handleIncomingRedirect({
+      restorePreviousSession: true
+    }).then((info) => {
+      console.log(`Logged in with WebID [${info.webId}]`)
+    })
 
     const session = getDefaultSession();
     random = session;

@@ -10,7 +10,9 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * The React SDK tools was quite annoying and I believe support is very poor. Was not able to implement the login function correctly since I was getting an undefined response from the website. I suggest that we switch to just using the basic libraries. I'm trying to use this link now (https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/). It is able to redirect to the Inrupt login page and seems to be able to login as well, but I am not able to fetch data (ERR 401). ~~Needs to be addressed. Currently trying to resolve, as of February 4th~~ Resolved on February 6th. 
 
-* Okay, the session now logs-in and is able to get the webId now. There is a problem with persistence that needs to be resolved. It only logs-in right after I go through the redirect login process. If I referesh, it logs out again. Apart from this, need to now try to fetch data again and see if issue of non-authorization is resolved. 
+* Okay, the session now logs-in and is able to get the webId now. ~~There is a problem with persistence that needs to be resolved. It only logs-in right after I go through the redirect login process.~~ If I referesh, it logs out again. Apart from this, need to now try to fetch data again and see if issue of non-authorization is resolved. **The login persistence issue is resolved on 7th February. It basically needs an additional parameter in handleRedirect to be set to true.**
+
+* **Will focus now on fetching and writing additional data into the pod.**
 
 ## Getting Started
 
