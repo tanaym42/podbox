@@ -4,7 +4,6 @@ import styles from "./page.module.css";
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
 // import { SessionProvider, LoginButton } from "@inrupt/solid-ui-react";
 import Link from 'next/link';
-import homePage from './homePage';
 
 export default function Home() {
 
