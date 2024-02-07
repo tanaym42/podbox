@@ -1,1 +1,0 @@
-This is an attempt at a basic react application to interact with a solid pod. 
