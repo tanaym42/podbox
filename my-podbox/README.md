@@ -8,7 +8,9 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * ~~I've been trying to use the React SDK tools that Inrupt maintains. I think this should be the easiest way to implement stuff and it seems like it does away with a lot of complexity for authentication and data fetching -- though I am willing to try other stuff too. The link to the docs is here: https://docs.inrupt.com/developer-tools/javascript/react-sdk/~~ **Gave this up on February 4th due to login issues**
 
-* The React SDK tools was quite annoying and I believe support is very poor. Was not able to implement the login function correctly since I was getting an undefined response from the website. I suggest that we switch to just using the basic libraries. I'm trying to use this link now (https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/). It is able to redirect to the Inrupt login page and seems to be able to login as well, but I am not able to fetch data (ERR 401). Needs to be addressed. **Currently trying to resolve, as of February 4th**. 
+* The React SDK tools was quite annoying and I believe support is very poor. Was not able to implement the login function correctly since I was getting an undefined response from the website. I suggest that we switch to just using the basic libraries. I'm trying to use this link now (https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-browser/). It is able to redirect to the Inrupt login page and seems to be able to login as well, but I am not able to fetch data (ERR 401). ~~Needs to be addressed. Currently trying to resolve, as of February 4th~~ Resolved on February 6th. 
+
+* Okay, the session now logs-in and is able to get the webId now. There is a problem with persistence that needs to be resolved. It only logs-in right after I go through the redirect login process. If I referesh, it logs out again. Apart from this, need to now try to fetch data again and see if issue of non-authorization is resolved. 
 
 ## Getting Started
 
