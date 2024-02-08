@@ -12,7 +12,9 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * Okay, the session now logs-in and is able to get the webId now. ~~There is a problem with persistence that needs to be resolved. It only logs-in right after I go through the redirect login process.If I referesh, it logs out again.~~ Apart from this, need to now try to fetch data again and see if issue of non-authorization is resolved. **The login persistence issue is resolved on 7th February. It basically needs an additional parameter in handleRedirect to be set to true.** Solved using this link: https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/restore-session-browser-refresh/
 
-* Spent some time in trying to figure out the getpodurls function, but now it works in the latest push on February 8th. **Will focus now on fetching and writing additional data into the pod.**
+* Spent some time in trying to figure out the getpodurls function, but now it works in the latest push on February 8th. 
+
+* **Will focus now on fetching and writing additional data into the pod.** The reading is done, to a certain extent. This link has been useful: https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/read-write-data/#, though I've sort of freestyled the code for now. I am able to read the movie list from a list I made in Media Kraken, though I am unable to render this into HTML. Cannot tell whether this is an issue of React states or for SOLID. **Now trying to figure out how to render information read from pod. To look into writing data next, as of Feb 8th.**
 
 ## Getting Started
 

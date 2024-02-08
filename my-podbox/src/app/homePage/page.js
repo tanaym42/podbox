@@ -5,12 +5,25 @@ import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-a
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll } from "@inrupt/solid-client";
 import { fetch } from '@inrupt/solid-client-authn-browser'
-import { getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
+
+// These are all for the read and write service
+import {
+  getSolidDataset,
+  getThing,
+  getThingAll,
+  getStringNoLocale,
+  getUrlAll
+} from "@inrupt/solid-client";
+
+// import { SCHEMA_INRUPT } from "@inrupt/vocab-common-rdf";
+//
 
 const homePage = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [webId, setWebId] = useState(null);
+  const [movieDataUrl, setMovieDataUrl] = useState('https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/movies/');
+  const [movieList, setMovieList] = useState();
 
 
 
@@ -31,6 +44,24 @@ const homePage = () => {
         const pods = await getPodUrlAll(webId, { fetch: fetch });
         // console.log("I reach here as well.");
         console.log(pods);
+
+        const myDataset = await getSolidDataset(
+          movieDataUrl,
+          { fetch: fetch } 
+            // fetch from authenticated session
+        );
+      
+        console.log(myDataset);
+        
+        const movieList = getThingAll(
+          myDataset,
+          `${movieDataUrl}#title`
+        );
+
+        console.log(typeof movieList)
+        console.log(movieList[0].url)
+        console.log(typeof movieList[0].url)
+
       }
       
     })
@@ -45,6 +76,7 @@ const homePage = () => {
 
       setIsLoggedIn(true);
       setWebId(session.info.webId);
+      setMovieList(movieList);
     }
 
   };
@@ -63,6 +95,20 @@ const homePage = () => {
 
       <p>Is the session logged in? {isLoggedIn.toString()}</p>
       {isLoggedIn && <p>If yes, this is the session webID {webId}</p>}
+
+      <p> This is the list of movies you made in MovieKraken:</p>
+
+      <ul>
+        {movieList && movieList.map((item, index) => (
+          <li key={index}>
+            {typeof item[index] === object ? (
+              <p>Name: {item[index].url}</p>
+            ) : (
+              <p>Invalid URL</p>
+            )}
+          </li>
+        ))}
+      </ul>
 
     </div>
   );
