@@ -1,8 +1,9 @@
 // src/SecondPage.js
 "use client";
 import React, { useEffect, useState } from 'react';
-import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-authn-browser'
-import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
+import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-authn-browser';
+import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
+import { getPodUrlAll } from "@inrupt/solid-client";
 import { fetch } from '@inrupt/solid-client-authn-browser'
 import { getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
 
@@ -22,32 +23,36 @@ const homePage = () => {
 
     handleIncomingRedirect({
       restorePreviousSession: true
-    }).then((info) => {
-      console.log(`Logged in with WebID [${info.webId}]`)
+    }).then(async (info) => {
+      // console.log(`Logged in with WebID [${info.webId}]`)
+      // console.log("I reach here.")
+      
+      if (webId !== null) {
+        const pods = await getPodUrlAll(webId, { fetch: fetch });
+        // console.log("I reach here as well.");
+        console.log(pods);
+      }
+      
     })
 
     const session = getDefaultSession();
-    random = session;
-    console.log(session)
-    console.log(session.info)
+
+    // console.log(session)
+    // console.log(session.info)
     
     if (session.info.isLoggedIn) {
-      console.log(session.info.webId)
+      // console.log(session.info.webId)
 
       setIsLoggedIn(true);
       setWebId(session.info.webId);
-
-      // Enable Read button to read Pod URL
-      // buttonRead.removeAttribute("disabled");
     }
 
   };
-  
 
   // useEffect hook to run completeLogin on component mount
   
     completeLogin();
-  }, []); // The empty dependency array ensures it runs once on mount
+  }, [webId]); // The empty dependency array ensures it runs once on mount
 
   
 
