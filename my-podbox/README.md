@@ -20,6 +20,8 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * The ability to read information will be useful on multiple levels, but I am concerned that each data type from each source will  need its own code for the reading. At this stage, all I want to be able to do is to create some representation of all the files in each container, in which case I think name is actually a great place to start. 
 
+* (Feb 25 update) Introduced styles and routes on the basis of the basic wireframes on figma, which took more doing than I thought. I've currently given each page.js its own 'page.module.css' for styles. There is some duplication here which I am sure should be resolvable. In home page, the page now also waits for the user to input the link of the movies folder to render out the movies that have been seen. **The natural next step would be to try to figure out how to render the different folders and subfolder names in some graphical format, perhaps as in the current wireframes. Should also be able to spin up a 'profile page' fairly quickly. The write stuff is on hold for now, I might skip ahead to figuring out the access management page since I expect some issues there.**
+
 
 ## Getting Started
 
