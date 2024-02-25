@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll } from "@inrupt/solid-client";
-import { fetch } from '@inrupt/solid-client-authn-browser'
+import { fetch } from '@inrupt/solid-client-authn-browser';
+import styles from "./page.module.css";
 
 // These are all for the read and write service
 import {
@@ -25,9 +26,66 @@ const homePage = () => {
   const [movieDataUrl, setMovieDataUrl] = useState('https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/movies/inception-2010');
   const [movieList, setMovieList] = useState();
   const [movieNameList, setMovieNameList] = useState();
+  const [inputUrl, setInputUrl] = useState('');
 
 
   const session = getDefaultSession();
+
+  const fetchUrlData = async (inputUrl) => {
+    
+    if (!isLoggedIn) {
+
+      console.log('Not logged in yet.');
+ 
+    } else {
+
+      const movieList = await getSolidDataset (
+        inputUrl, 
+        {fetch : fetch}
+      );
+
+      console.log('This is the Soliddataset representing all movies in the container.')
+      const urlList = Object.keys(movieList.graphs.default);
+      console.log(urlList);
+
+      // Then, I want to fetch the url for every solid dataset inside my container ('movieList') and for each, 
+      // add the name to a new list which I will be added to some state movieNames and parsed in HTML
+      
+      const tempMovieNameList = [];
+
+      for (const url of urlList) {
+        console.log('This is the current url being iterated over.')
+        console.log(url)
+
+        if (url === inputUrl) {
+          continue;
+        } else {
+          const myDataset = await getSolidDataset(
+            url,
+            { fetch: fetch } 
+          );
+        
+          console.log('This is where I am trying to return the dataset.')
+          console.log(myDataset);
+        
+          const movieInformation = await getThing (
+            myDataset, 
+            `${url}#it`
+          )
+  
+          console.log(movieInformation);
+        
+          const movieName = getStringNoLocale(movieInformation, "https://schema.org/name")
+          console.log(movieName);
+          tempMovieNameList.push(movieName);
+        }   
+      }
+      console.log('Printing a list of only the names of every movie.')
+      console.log(tempMovieNameList);
+      setMovieNameList(tempMovieNameList);
+    }
+      
+  }
 
   // Inside the useEffect hook, placed the login completion and data fetching since they are required for re-rendering. 
   useEffect(() => {
@@ -59,102 +117,67 @@ const homePage = () => {
       }
   };
   
-  const fetchSomeData = async () => {
-    
-    if (!isLoggedIn) {
-
-      console.log('Not logged in yet.');
- 
-    } else {
-
-      const movieList = await getSolidDataset (
-        'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/movies/', 
-        {fetch : fetch}
-      );
-
-      console.log('This is the Soliddataset representing all movies in the container.')
-      const urlList = Object.keys(movieList.graphs.default);
-      console.log(urlList);
-
-      // Then, I want to fetch the url for every solid dataset inside my container ('movieList') and for each, 
-      // add the name to a new list which I will be added to some state movieNames and parsed in HTML
-      
-      const tempMovieNameList = [];
-
-      for (const url of urlList) {
-        console.log('This is the current url being iterated over.')
-        console.log(url)
-
-        if (url === 'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/movies/') {
-          continue;
-        } else {
-          const myDataset = await getSolidDataset(
-            url,
-            { fetch: fetch } 
-          );
-        
-          console.log('This is where I am trying to return the dataset.')
-          console.log(myDataset);
-        
-          const movieInformation = await getThing (
-            myDataset, 
-            `${url}#it`
-          )
-  
-          console.log(movieInformation);
-        
-          const movieName = getStringNoLocale(movieInformation, "https://schema.org/name")
-          console.log(movieName);
-          tempMovieNameList.push(movieName);
-        }   
-      }
-      console.log('Printing a list of only the names of every movie.')
-      console.log(tempMovieNameList);
-      setMovieNameList(tempMovieNameList);
-    }
-      
-  }
-
   // useEffect hook to run completeLogin on component mount
   
   completeLogin()
-  fetchSomeData();
+  //fetchSomeData();
 
   }, [webId]); // The empty dependency array ensures it runs once on mount
 
-  
+  const handleButtonClick = async () => {
+    try {
+      const response = await fetchUrlData(inputUrl);
+      // Do something with the response if needed
+    } catch (error) {
+      // Handle errors
+      console.error('Error:', error);
+    }
+  };
 
   return (
-    <div>
-      <h1>Welcome to your Pod!</h1>
+    <div className={styles.main}>
+      <div className={styles.leftpain}>
+        <h1>Welcome to your Pod!</h1>
   
-      {/* Check if webId is null */}
-      {!webId ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <p>Is the session logged in? {isLoggedIn.toString()}</p>
-          {isLoggedIn && <p>If yes, this is the session webID {webId}</p>}
+        {/* Check if webId is null */}
+        {!webId ? (
+          <p>Loading...</p>
+        ) : (
+          <div className=''>
+            <p>Is the session logged in? {isLoggedIn.toString()}</p>
+            {isLoggedIn && <p>If yes, this is the session webID {webId}</p>}
   
-          <p>This is the list of movies you made in MovieKraken:</p>
+            <p>This is the list of movies you made in MovieKraken:</p>
   
-          <ul>
-            {movieNameList ? (
-              movieNameList.map((item, index) => (
-                <li key={index}>
-                  {item ? (
-                    <p>{item}</p>
-                  ) : (
-                    <p>Invalid URL</p>
-                  )}
-                </li>
-              ))
-            ) : (
-              <p>No can do</p>
-            )}
-          </ul>
-        </div>
-      )}
+            <ul>
+              {movieNameList ? (
+                movieNameList.map((item, index) => (
+                  <li key={index}>
+                    {item ? (
+                      <p>{item}</p>
+                    ) : (
+                      <p>Invalid URL</p>
+                    )}
+                  </li>
+                ))
+              ) : (
+                <p>Enter a Url in the right pane to see the movies!</p>
+              )}
+            </ul>
+          </div>
+          
+        )}
+      </div>
+      <div className={styles.rightpain}>
+        <p>Input the link of your movies folder created in Media Kraken here.</p>
+        <input 
+        type="text" 
+        value={inputUrl} 
+        onChange={(e) => setInputUrl(e.target.value)} 
+        placeholder="Enter URL" 
+        />
+        <button onClick={handleButtonClick}>Submit</button>
+      </div>
     </div>
   );
 };
