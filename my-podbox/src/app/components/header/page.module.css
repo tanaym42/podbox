@@ -1,0 +1,51 @@
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    border-bottom: 4px solid grey;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  .headerlogo {
+    display: inline;
+    text-align: left;
+    padding-left: 2em;
+
+  }
+  
+  .headermenu {
+    display: inline-flex;
+    flex-direction: row;
+    width: auto;
+    gap: 2em;
+    padding-right: 2em;
+  }
+
+  .h2 {
+    display:inline;
+  }
+  
+  .navlink {
+    display: inline; /* Ensure elements stay inline */
+  }
+
+  .navbutton {
+    border: 2px solid #888; /* Nice grey border */
+    border-radius: 10px; /* Curved corners */
+    background-color: #fff; /* Button background color */
+    color: #333; /* Button text color */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer; /* Cursor style */
+    transition: all 0.3s ease; /* Smooth transition */
+    margin-top: 1.2em;
+    width: 5em;
+    height: 2em;
+  }
+  
+  .navbutton:hover {
+    background-color: #f0f0f0; /* Button background color on hover */
+  }
+  

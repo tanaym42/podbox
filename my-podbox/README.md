@@ -18,6 +18,8 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * (Feb 18 update) We have now achieved the reading and RENDERING of data that was inputted from Media Kraken on our Pod manager! That was a task and a half. I had to learn about how each folder in the pod is essentially a 'container', which also functions as a solid dataset. From the container 'movies', which is where Media Kraken creates the data, we retrieve all the urls of the movies (or 'Things') in the container by accessing the keys of the dictionary returned by the 'graph.default' of the container solid dataset. From each url, which represents a 'thing', I retrieved the 'name' property as a string using the 'StringNoLocale' function and telling the code which schema type I would like to use. In this case, it is 'scheme.org/name', which is a common vocabulary used to define the 'name' of a specific thing. In this case, it is the name of the movie. Note that I had to look at the dataset to realise that its url would be '{url}#it'. I am not sure if this is a common manner of storage or just what Neil decided to go with. **As of 18th February, have successfully implemented the rendering of a specific property of a thing stored in the pod. Need to do write next. Currently hopeful.**
 
+* The ability to read information will be useful on multiple levels, but I am concerned that each data type from each source will  need its own code for the reading. At this stage, all I want to be able to do is to create some representation of all the files in each container, in which case I think name is actually a great place to start. 
+
 
 ## Getting Started
 
