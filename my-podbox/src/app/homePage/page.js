@@ -1,4 +1,6 @@
 // src/SecondPage.js
+
+
 "use client";
 import React, { useEffect, useState } from 'react';
 import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-authn-browser';
