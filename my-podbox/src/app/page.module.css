@@ -33,7 +33,7 @@
   
 }
 
-.leftpain {
+.leftpane {
   height: 50vh;
   width: 30vw;
   margin-right: 1em;
@@ -44,7 +44,7 @@
 
 
 
-.rightpain {
+.rightpane {
   background: linear-gradient(to top, #590B97, #4166E7);
   height: 50vh;
   width: 30vw;

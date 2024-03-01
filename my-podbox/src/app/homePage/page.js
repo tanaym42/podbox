@@ -3,6 +3,7 @@
 
 "use client";
 import React, { useEffect, useState } from 'react';
+// this handles the redirect from the third party oidc provider
 import { handleIncomingRedirect, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll } from "@inrupt/solid-client";
@@ -90,11 +91,15 @@ const homePage = () => {
   }
 
   // Inside the useEffect hook, placed the login completion and data fetching since they are required for re-rendering. 
+
+  // useEffect is a react thing that tells the browser what to re-do in certain conditions
   useEffect(() => {
 
     // The function will handle the login authentication, set the WebID and isLoggedIn states for further use. 
     const completeLogin = async () => {
     
+      // IMPORTANT
+      // This takes in the information about my session 
       await handleIncomingRedirect();
       console.log("Check complete, you are being redirected.");
 
@@ -104,16 +109,18 @@ const homePage = () => {
       // The 'restorePreviousSession' option is set to true to attempt to restore the previous session.
 
       handleIncomingRedirect({
+        // this is how the system knows to use the same session that was already logged in when you hit refresh
         restorePreviousSession: true
+          // basically a "try" in python, we haven't written rejection case yet
           }).then(async (info) => {
             console.log(`Logged in with WebID [${info.webId}]`)
-            console.log("I reach here.")      
+            console.log("I reach here.")  
+            // console.log(info)    
           })
-    
+        // check if the user is logged in
         if (session.info.isLoggedIn) {
         
         // Sets the state of webId and setIsLoggedIn for further use. 
-
         setIsLoggedIn(true);
         setWebId(session.info.webId);
       }
@@ -124,6 +131,7 @@ const homePage = () => {
   completeLogin()
   //fetchSomeData();
 
+  // "when my webId changes, that's when I want you to rerun everything in useEffect"
   }, [webId]); // The empty dependency array ensures it runs once on mount
 
   const handleButtonClick = async () => {
@@ -136,6 +144,7 @@ const homePage = () => {
     }
   };
 
+// html content to show on the page after we've run everything above this 
   return (
     <div className={styles.main}>
       <div className={styles.leftpain}>
