@@ -9,6 +9,8 @@ import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll } from "@inrupt/solid-client";
 import { fetch } from '@inrupt/solid-client-authn-browser';
 import styles from "./page.module.css";
+import { universalAccess } from "@inrupt/solid-client";
+import { acp_ess_2, solidDatasetAsTurtle } from "@inrupt/solid-client";
 
 // These are all for the read and write service
 import {
@@ -33,6 +35,98 @@ const homePage = () => {
 
 
   const session = getDefaultSession();
+
+  async function viewResourceACR(inputURL) {
+
+    try {
+      // 1. Fetch the SolidDataset with its Access Control Resource (ACR).
+      const resourceWithAcr = await acp_ess_2.getSolidDatasetWithAcr(
+        'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/',
+        { fetch: fetch }            // fetch from the authenticated session
+      );
+
+      console.log(resourceWithAcr);
+
+      const linkedAcrUrl = acp_ess_2.getLinkedAcrUrl(resourceWithAcr);
+      console.log("Linked ACR URL:", linkedAcrUrl);
+  
+      // 2a. Get the Access Control Resource (ACR)
+      const myACR = await getSolidDataset(
+        linkedAcrUrl,
+        { fetch: fetch }
+        )
+      
+      // 2b. Output (formatted as Turtle) its policies and matchers details.
+      console.log(solidDatasetAsTurtle(myACR));
+
+      // // 3a. Get all policies from the ACR to process policies.
+      // const myResourcePolicies = acp_ess_2.getResourcePolicyAll(resourceWithAcr);
+
+      // // Loop through each policy for processing.
+      // myResourcePolicies.forEach(policy => {
+      //   //... 
+      // });
+
+      // // 3b. Get a specific policy from the ACR.
+      // const specificPolicy = acp_ess_2.getResourcePolicy(
+      //   resourceWithAcr,
+      //   "specify-the-name-of-policy-to-get"
+      // );
+
+      // // 4a. Get all matchers from the ACR to process matchers.
+      // const myResourceMatchers = acp_ess_2.getResourceMatcherAll(resourceWithAcr)
+
+      // // Loop through each matcher for processing.
+      // myResourceMatchers.forEach(matcher => {
+      //   // ... 
+      // });
+
+      // // 4b. Get a specific matcher from the ACR.
+      // const specificMatcher = acp_ess_2.getResourceMatcher(
+      //   resourceWithAcr,
+      //   "specify-the-name-of-matcher-to-get"
+      // );
+
+
+    } catch (error) {
+        console.error(error.message);
+    }
+  }
+
+  const fethAccessInfo = async (inputUrl) => {
+
+    // Fetch the access for all agents whose access has been explicitly/directly set
+    // (i.e., omits access inherited through public membership).
+    // The returned access can be an object { read: <boolean>, append: <boolean>, ... } 
+    // or null if the access data is inaccessible to the user.
+    console.log(inputUrl);
+    universalAccess.getAgentAccessAll(
+      'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/', // resource
+      { fetch: fetch }                // fetch function from authenticated session
+    ).then((accessByAgent) => {
+      // => accessByAgent is an object with Agent WebIDs as keys,
+      //    and their associated access object {read: <boolean>, ... } as values.
+      console.log("THE AGENT STUFF IS BEING ENTERED")
+      console.log(accessByAgent)
+
+
+      for (const [agent, agentAccess] of Object.entries(accessByAgent)) {
+        logAccessInfo(agent, agentAccess);
+        console.log("THE AGENT STUFF SHOULD BE UNDER")
+        console.log(agent)
+        console.log(agentAccess)
+      } 
+    });
+  }
+
+  function logAccessInfo(agent, agentAccess) {
+    console.log(`For resource::: 'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/'`);
+    if (agentAccess === null) {
+      console.log(`Could not load ${agent}'s access details.`);
+    } else {
+      console.log(`${agent}'s Access:: ${JSON.stringify(agentAccess)}`);
+    }
+  }
 
   const fetchUrlData = async (inputUrl) => {
     
@@ -137,6 +231,8 @@ const homePage = () => {
   const handleButtonClick = async () => {
     try {
       const response = await fetchUrlData(inputUrl);
+      const another_response = await fethAccessInfo(inputUrl);
+      await viewResourceACR(inputUrl);
       // Do something with the response if needed
     } catch (error) {
       // Handle errors

@@ -22,6 +22,9 @@ This is a MIMS I School Capstone project based on the SOLID protocol and [Next.j
 
 * (Feb 25 update) Introduced styles and routes on the basis of the basic wireframes on figma, which took more doing than I thought. I've currently given each page.js its own 'page.module.css' for styles. There is some duplication here which I am sure should be resolvable. In home page, the page now also waits for the user to input the link of the movies folder to render out the movies that have been seen. **The natural next step would be to try to figure out how to render the different folders and subfolder names in some graphical format, perhaps as in the current wireframes. Should also be able to spin up a 'profile page' fairly quickly. The write stuff is on hold for now, I might skip ahead to figuring out the access management page since I expect some issues there.**
 
+* (March 3rd update) I've tried to introduce access policy functions into the home page. While I am able to access the policies related to my agents, I am yet to figure out how to list all the agents that have access to a particular resources, let alone changing the accesses. I'm implementing most of it, and I believe the answer is in the ACR file that I am able to access, but the agents are stored as keys and the request to view these returns a pending promise. 
+I need to do some more debugging here and **will be working on it through the week**. 
+
 
 ## Getting Started
 
