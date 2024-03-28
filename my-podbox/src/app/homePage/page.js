@@ -9,7 +9,6 @@ import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll } from "@inrupt/solid-client";
 import { fetch } from '@inrupt/solid-client-authn-browser';
 import styles from "./page.module.css";
-import { universalAccess } from "@inrupt/solid-client";
 import { acp_ess_2, solidDatasetAsTurtle } from "@inrupt/solid-client";
 
 // These are all for the read and write service
@@ -20,6 +19,14 @@ import {
   getStringNoLocale,
   getUrlAll
 } from "@inrupt/solid-client";
+
+// This is for testing of ACL stuff, the above is for ACR
+import {
+  getSolidDatasetWithAcl,
+  getPublicAccess,
+  universalAccess
+} from "@inrupt/solid-client";
+
 import { urlToUrlWithoutFlightMarker } from 'next/dist/client/components/app-router';
 
 
@@ -41,7 +48,8 @@ const homePage = () => {
     try {
       // 1. Fetch the SolidDataset with its Access Control Resource (ACR).
       const resourceWithAcr = await acp_ess_2.getSolidDatasetWithAcr(
-        'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/',
+        inputURL,
+        // 'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/',
         { fetch: fetch }            // fetch from the authenticated session
       );
 
@@ -57,29 +65,32 @@ const homePage = () => {
         )
       
       // 2b. Output (formatted as Turtle) its policies and matchers details.
-      console.log(solidDatasetAsTurtle(myACR));
+      console.log('MyACR')
+      // console.log(solidDatasetAsTurtle(myACR));
 
       // // 3a. Get all policies from the ACR to process policies.
-      // const myResourcePolicies = acp_ess_2.getResourcePolicyAll(resourceWithAcr);
+      const myResourcePolicies = acp_ess_2.getResourcePolicyAll(resourceWithAcr);
 
       // // Loop through each policy for processing.
-      // myResourcePolicies.forEach(policy => {
-      //   //... 
-      // });
+      myResourcePolicies.forEach(policy => {
+        console.log('Policy:')
+        console.log(policy)
+      });
 
       // // 3b. Get a specific policy from the ACR.
-      // const specificPolicy = acp_ess_2.getResourcePolicy(
-      //   resourceWithAcr,
-      //   "specify-the-name-of-policy-to-get"
-      // );
+      const specificPolicy = acp_ess_2.getResourcePolicy(
+          resourceWithAcr,
+         "specify-the-name-of-policy-to-get"
+       );
 
       // // 4a. Get all matchers from the ACR to process matchers.
-      // const myResourceMatchers = acp_ess_2.getResourceMatcherAll(resourceWithAcr)
+       const myResourceMatchers = acp_ess_2.getResourceMatcherAll(resourceWithAcr)
 
       // // Loop through each matcher for processing.
-      // myResourceMatchers.forEach(matcher => {
-      //   // ... 
-      // });
+      myResourceMatchers.forEach(matcher => {
+         console.log('matcher');
+         console.log(matcher)
+      });
 
       // // 4b. Get a specific matcher from the ACR.
       // const specificMatcher = acp_ess_2.getResourceMatcher(
@@ -87,6 +98,40 @@ const homePage = () => {
       //   "specify-the-name-of-matcher-to-get"
       // );
 
+      // This will attempt to change my permissions
+
+      console.log("ACL setting begins...")
+      const set_acl_resource = "https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/"
+      const set_acl_agent = "https://id.inrupt.com/tanaym93" 
+      universalAccess.setAgentAccess(
+        set_acl_resource,         // Resource
+        set_acl_agent,     // Agent
+        { read: true, write: true, append: true, controlRead: true, controlWrite: true},          // Access object
+        { fetch: fetch }                         // fetch function from authenticated session
+      ).then((newAccess) => {
+        logAccessInfo(set_acl_agent, newAccess, set_acl_resource)
+      });
+      
+      function logAccessInfo(agent, agentAccess, resource) {
+        console.log(`For resource::: ${resource}`);
+        if (agentAccess === null) {
+          console.log(`Could not load ${agent}'s access details.`);
+        } else {
+          console.log(`${agent}'s Access:: ${JSON.stringify(agentAccess)}`);
+        }
+      }
+
+      // This will attempt to actually fetch the ACL associated with the repository
+
+      console.log("This is the ACL:::")
+      const myDatasetWithAcl = await getSolidDatasetWithAcl(
+        'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/', 
+        {fetch: fetch});
+      console.log("This is reaching public access:::")
+      const publicAccess = getPublicAccess(myDatasetWithAcl);
+      console.log("This is the ACL:::")
+      console.log(publicAccess);
+      
 
     } catch (error) {
         console.error(error.message);
@@ -101,7 +146,8 @@ const homePage = () => {
     // or null if the access data is inaccessible to the user.
     console.log(inputUrl);
     universalAccess.getAgentAccessAll(
-      'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/', // resource
+      inputUrl,
+      // 'https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/', // resource
       { fetch: fetch }                // fetch function from authenticated session
     ).then((accessByAgent) => {
       // => accessByAgent is an object with Agent WebIDs as keys,
