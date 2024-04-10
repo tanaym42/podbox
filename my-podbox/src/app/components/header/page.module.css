@@ -30,6 +30,8 @@
   
   .navlink {
     display: inline; /* Ensure elements stay inline */
+    font-size: 1.2em;
+    padding-top: 0.5em;
   }
 
   .navbutton {

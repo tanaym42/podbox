@@ -27,6 +27,8 @@ I need to do some more debugging here and **will be working on it through the we
 
 * (March 27 update) I have given myself controlread and controlwrite access, but am still seemingly unable to access the ACL file. I should not be receiving this error if it exists so I am confused. The fact that am receiving a null value means that it is an authorization issue. I will try moving it out of the code here, but am increasingly begining to feel like we will need to implement some work around in terms of functionality to be able to implement what has been designed. The next step would be to try to understand whether the ACL modification is persistent. This is complicated further by being unable to access my inrupt hosted POD through SOLID OS and adding it to a "trusted app". **Currently beyond fucking frustrated by the inability to write this functionality. We go again tomorrow.**
 
+* (April 9th update) Have reconfigured how the files are structured to make it easier for Drake and make the organization a little cleaner. I am currently just trying to implement the 'my data' page, but am running into some issues with authorization. Keeping the session maintained while switching pages was cumbersome, and there are still some issues with it reloading to the home page, but this should be quickly resolved. Currently also dealing with some authorization issues, which I shall try to get into by tomorrow. 
+
 ## Getting Started
 
 1. To run the file, clone the git repository locally and set to the directory. 

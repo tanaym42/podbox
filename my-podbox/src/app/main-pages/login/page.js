@@ -8,11 +8,12 @@ const loginPage = () => {
     // Function will check if session is logged in, if not - it will initiate the login process with the inputted pod provider
     const startLogin = async () => {
       if (!getDefaultSession().info.isLoggedIn) {
+
         await login({
-          // The provider for third party login
+          // The provider for third party login¸
           oidcIssuer: "https://login.inrupt.com",
           // where I want the third-party to redirect to on my website once it's finished logging in and hands the session back to us
-          redirectUrl: new URL("/homePage", window.location.href).toString(),
+          redirectUrl: new URL("/main-pages/home", window.location.href).toString(),
           // displays this on the third-party website login page, followed by "needs access to blah"
           clientName: "PodBox."
         });
