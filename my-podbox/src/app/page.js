@@ -24,7 +24,7 @@ export default function Home() {
         {/* left pane */}
         <div className={styles.leftpane}>
           <h1> Take control of your data, your way. </h1>
-          <p> Embrace data empowerment with PodBox. Organize, manage, and unleas the potential of your data, on your terms. </p>
+          <p> Embrace data empowerment with PodBox. Organize, manage, and unleash the potential of your data, on your terms. </p>
           
           {/* Anything you want to link locally in react.js will need to be given a folder name, in which there needs to be a file named page.js. React will automatically pull this page.js file when passed a folder name (like components/login dir below) */}
 
@@ -41,8 +41,29 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.cards}>
-        <p> let's put some text here. </p>
+      <div className={styles.bottommatter}>
+        <h2> Why use PodBox? </h2>
+
+        <div className ={styles.cardContainer}>
+          <div className = {styles.card}>
+            <div className = {styles.cardImg}></div>
+            <h3 className={styles.cardTitle}>Data Ownership</h3>
+            <p className={styles.cardText}>View and Manage access to all of your data across apps.</p>
+          </div>
+
+          <div className = {styles.card}>
+            <div className = {styles.cardImg}></div>
+            <h3 className={styles.cardTitle}>Interoperability</h3>
+            <p className={styles.cardText}>Carry your data as you switch from one app to another.</p>
+          </div>
+
+          <div className = {styles.card}>
+            <div className = {styles.cardImg}></div>
+            <h3 className={styles.cardTitle}>Secure Sharing</h3>
+            <p className={styles.cardText}>You decide who has access to your data at all times.</p>
+          </div>
+        </div>
+
       </div>
     </main>
 
