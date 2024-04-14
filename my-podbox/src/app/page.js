@@ -20,13 +20,11 @@ export default function Home() {
     // Everything but the navbar
     <main className={styles.wrapper}>
       {/* This is the first main wrapper, hosting the left pane and right pane */}
-      <div className={styles.main}>
+      <div className={styles.topmatter}>
         {/* left pane */}
         <div className={styles.leftpane}>
-          <h2>Welcome to PodBox!</h2>
-          <h2>Take back control of your data.</h2>
-          <h1> Main Value Proposition </h1>
-          <p>Try to login to get started. Use one of the login buttons below. This is just a bunch of filler text for no reason at all but to be here. It has no purpose. It just is.</p>
+          <h1> Take control of your data, your way. </h1>
+          <p> Embrace data empowerment with PodBox. Organize, manage, and unleas the potential of your data, on your terms. </p>
           
           {/* Anything you want to link locally in react.js will need to be given a folder name, in which there needs to be a file named page.js. React will automatically pull this page.js file when passed a folder name (like components/login dir below) */}
 
@@ -39,10 +37,16 @@ export default function Home() {
        {/* right pane */}
         <div className={styles.rightpane}>
           {/* to add more content */}
-          <p>Random graphic here</p>
+          <img src="podboxDiagram.svg" alt="A diagram showing the functionality of PodBox."></img>
         </div>
       </div>
+
+      <div className={styles.cards}>
+        <p> let's put some text here. </p>
+      </div>
     </main>
+
+
 
     // will need to add another main here to add more content below the panes 
   );

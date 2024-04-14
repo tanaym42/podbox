@@ -1,62 +1,65 @@
-
+/* Poppins for body text */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 0;
   min-height: 100vh;
+  max-height: 100vh;
 }
 
-.main {
+.topmatter {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0;
-  max-width: 100vw;
-  min-height: 100vh;
+  justify-content: space-around;
+  padding: 2em;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 2px solid #f4f4f4;
+  max-height: 100vh;
 }
 
-.main p {
+.topmatter p {
   color: black;
-  font-family: "Arial", Gadget, sans-serif;
+  text-align: left;
+  font-size: 22px;
+
 }
 
-.main h1 {
+.topmatter h1 {
+  color: black;
+  font-size: 44px;
+  text-align: left;
+  line-height: 110%;
+}
+
+/* .main h2 {
   color: black;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.main h2 {
-  color: black;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 0.1em;
+  margin-top: 1em;
   
-}
+} */
 
 .leftpane {
-  height: 50vh;
-  width: 30vw;
-  margin-right: 1em;
+  margin-right: .5em;
   padding: 2em;
-  text-align: center;
+  padding-left: 3em;
+  padding-right: 3em;
+  text-align: left;
   border-radius: 20px;
 }
 
 
 
 .rightpane {
-  background: linear-gradient(to top, #590B97, #4166E7);
-  height: 50vh;
-  width: 30vw;
-  margin-left: 1em;
-  padding: 2em;
+  margin-left: .5em;
+  padding: 3em;
   align-items: center;
   border-radius: 20px;
 }
 
-.main button {
+.topmatter button {
   position: relative; /* Required for absolute positioning of the pseudo-element */
   overflow: hidden; /* Hide overflowing background */
   border: 5px solid transparent; /* Start with a thick border */
@@ -70,7 +73,7 @@
   transition: color 0.5s, border-color 0.5s; /* Transition for smooth effect */
 }
 
-.main button:hover {
+.topmatter button:hover {
   color: white; /* Text becomes white on hover */
   background: linear-gradient(to right, #590B97, #4166E7);
 }
