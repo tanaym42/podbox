@@ -28,11 +28,17 @@ export default function Home() {
           
           {/* Anything you want to link locally in react.js will need to be given a folder name, in which there needs to be a file named page.js. React will automatically pull this page.js file when passed a folder name (like components/login dir below) */}
 
-          {/* So this is linking to the page.js inside of components/login */}
+          
+        {/* So this is linking to the page.js inside of components/login */}
           <Link href="/main-pages/login">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
             <button className={styles.loginButton}>Login with your POD</button>
           </Link>
+          <Link href="/main-pages/login">
+            {/* anything inside the Link tags will be clickable, in this case we made a button */}
+            <button className={styles.signUpButton}>Sign Up</button>
+          </Link>
+          
         </div>
        {/* right pane */}
         <div className={styles.rightpane}>
