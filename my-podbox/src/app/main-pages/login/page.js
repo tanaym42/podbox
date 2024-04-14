@@ -27,12 +27,41 @@ const loginPage = () => {
 
     return (
       <div className={styles.main}>
-        <div className={styles.leftpain}>
-          <h1>Login</h1>
+        <div className={styles.leftpane}>
+          <h1>Log In to your PodBox!</h1>
           {/* Add any other content specific to your header */}
-          <p>If you have a Pod provider, select it among the icons below!</p>
+          <h2>Select your POD provider:</h2>
 
-          <button className={styles.button} onClick={handleLoginClick}>Login Using Inrupt </button>          
+          <div className={styles.selectorContainer}>
+            <div className={styles.selector}>
+              <img src="inruptLogo.svg" alt="The Inrupt Logo" onClick={handleLoginClick}>
+              </img>
+              <p>Inrupt Podspaces</p>
+            </div>
+            <div className={styles.selector}>
+              <img src="solidLogo.svg" alt="The Solid Community Logo">
+              </img>
+              <p>Solid Web</p>
+            </div>
+            <div className={styles.selector}>
+              <img src="solidLogo.svg" alt="The Solid Community Logo">
+              </img>
+              <p>Solid Community</p>
+            </div>
+            <div className={styles.selector}>
+              <img src="trinPodLogo.svg" alt="The trinPod Logo">
+              </img>
+              <p>TrinPod</p>
+            </div>
+          </div>
+
+          <select name="other providers"  className={styles.dropdown}>
+            <option value=""disabled selected hidden> Other Provider? Choose here </option>
+            <option value="datapod"> DataPod </option>
+            <option value="redpencil"> RedPencil </option>
+
+          </select>
+
 
         </div>
       </div>
