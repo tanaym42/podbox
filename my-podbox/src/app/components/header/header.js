@@ -11,10 +11,10 @@ const TopNav = () => {
         <div className={styles.headerlogo}>
           {/* image needs to be in the public folder for this to work */}
             <div>
-              <img src="PodBoxLogo.svg" alt="PodBox Logo" height="50px"></img>
+              <img src="PodBoxLogo2.svg" alt="PodBox Logo" height="50px"></img>
             </div>
             <div>
-              <strong>PodBox.</strong>
+            <img src="PodBoxText.svg" alt="PodBox Logo" height="50px"></img>
             </div>
             
             

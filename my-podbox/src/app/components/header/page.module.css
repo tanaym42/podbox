@@ -19,7 +19,8 @@
     /* would be cool to get a litle spacing between the logo and the PodBox text but justify content isn't working for me  */
     display: flex;
     padding-left: .5em;
-    color: #5A3FE6;
+    background-image: linear-gradient(#495AFF, #5A3FE6);
+    background-clip: text;
     font-size: 40px;
 
   }

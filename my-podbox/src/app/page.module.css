@@ -58,23 +58,25 @@
   border-radius: 20px;
 }
 
-.topmatter button {
+.loginButton {
   position: relative; /* Required for absolute positioning of the pseudo-element */
   overflow: hidden; /* Hide overflowing background */
-  border: 5px solid transparent; /* Start with a thick border */
-  border-image: linear-gradient(to right, #590B97, #4166E7) 1; /* Gradient border */
-  background-color: white; /* Default background color */
-  color: #590B97; /* Default text color */
+  border: 5px solid; /* Start with a thick border */
+  background-color: #5A3FE6; /* Default background color */
+  border-radius: 5px;
+  border-color: #5A3FE6;
+  color: #FFFFFF; /* Default text color */
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   margin-top: 10px;
   cursor: pointer;
-  transition: color .7s, border-color .7s; /* Transition for smooth effect */
+  transition: color .5s, background-color .5s; /* Transition for smooth effect */
+  font-family: Poppins, sans-serif;
 }
 
-.topmatter button:hover {
-  color: white; /* Text becomes white on hover */
-  background: linear-gradient(to right, #590B97, #4166E7);
+.loginButton:hover {
+  color: black; /* Text becomes white on hover */
+  background-color: white;
 }
 
 .bottommatter h2 {
@@ -93,7 +95,7 @@
 /* Styles for each individual card */
 .card {
   border: 1px solid #ddd; /* Add a border for better visual separation */
-  border-radius: 5px; /* Add rounded corners for a nicer look */
+  border-radius: 10px; /* Add rounded corners for a nicer look */
   padding: 10px; /* Add some padding inside the card */
   margin: 10px;
 }
