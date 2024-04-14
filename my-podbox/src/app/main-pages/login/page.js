@@ -1,6 +1,7 @@
 // components/Login.js
 "use client";
 import styles from "./page.module.css";
+import Link from 'next/link';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
 
 const loginPage = () => {
@@ -61,6 +62,13 @@ const loginPage = () => {
             <option value="redpencil"> RedPencil </option>
 
           </select>
+
+          <h3> Don't have a POD? </h3>
+
+          <Link href="/main-pages/signup">
+            {/* anything inside the Link tags will be clickable, in this case we made a button */}
+            <button className={styles.signupButton}>Sign up!</button>
+          </Link>
 
 
         </div>

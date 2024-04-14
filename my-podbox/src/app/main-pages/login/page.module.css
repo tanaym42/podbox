@@ -49,3 +49,31 @@
   padding-right: 30px;
 
 }
+
+.main h3 {
+  font-weight: normal;
+  margin-top: 3em;
+}
+
+.signupButton {
+  margin-right: .5em;
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  overflow: hidden; /* Hide overflowing background */
+  border: 1px solid; /* Start with a thick border */
+  background-color: #495AFF;; /* Default background color */
+  border-radius: 5px;
+  border-color: #495AFF;
+  color: #FFFFFF; /* Default text color */
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color .5s, background-color .5s; /* Transition for smooth effect */
+  font-family: Poppins, sans-serif;
+}
+
+.signupButton:hover {
+  color: black; /* Text becomes white on hover */
+  background-color: white;
+  border-color: #ddd;
+}
