@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+.selector {
+  margin: 5px;
+}
+
 .dropdown {
   border-radius: 5px;
   font-family: Poppins, sans-serif;

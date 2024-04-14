@@ -56,7 +56,7 @@ const loginPage = () => {
           </div>
 
           <select name="other providers"  className={styles.dropdown}>
-            <option value=""disabled selected hidden> Other Provider? Choose here </option>
+            <option value=""disabled selected hidden> Other Provider? Choose here! </option>
             <option value="datapod"> DataPod </option>
             <option value="redpencil"> RedPencil </option>
 
