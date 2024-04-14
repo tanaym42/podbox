@@ -1,3 +1,7 @@
+/* adding Plus Jakarta Sans to Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .header {
     display: flex;
@@ -6,13 +10,15 @@
     justify-content: space-between;
     margin-bottom: 1em;
     border-bottom: 4px solid grey;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
   
   .headerlogo {
-    display: inline;
-    text-align: left;
-    padding-left: 2em;
+    /* would be cool to get a litle spacing between the logo and the PodBox text but justify content isn't working for me  */
+    display: flex;
+    padding-left: .5em;
+    color: #5A3FE6;
+    font-size: 40px;
 
   }
   
