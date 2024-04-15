@@ -4,13 +4,15 @@ import styles from "./page.module.css";
 import Link from 'next/link';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import Image from 'next/image';
-import PodBoxLogo from '../../../../public/PodBoxLogo2.svg'
+import inruptLogo from '../../../../public/inruptLogo.svg'
+import solidLogo from '../../../../public/solidLogo.svg'
+import trinPodLogo from '../../../../public/trinPodLogo.svg'
 
 
 const loginPage = () => {
 
     // Function will check if session is logged in, if not - it will initiate the login process with the inputted pod provider
-    const startLogin = async () => {
+    const startInruptLogin = async () => {
       if (!getDefaultSession().info.isLoggedIn) {
 
         await login({
@@ -25,32 +27,32 @@ const loginPage = () => {
     };
   
       // Event handler for the button click
-    const handleLoginClick = () => {
-      startLogin(); // Call the startLogin function when the button is clicked
+    const handleInruptClick = () => {
+      startInruptLogin(); // Call the startInruptLogin function when the button is clicked
     };
 
     return (
       <div className={styles.main}>
-        <div className={styles.leftpane}>
+        <div>
           <h1>Log In to your PodBox!</h1>
           {/* Add any other content specific to your header */}
           <h2>Select your POD provider:</h2>
 
           <div className={styles.selectorContainer}>
             <div className={styles.selector}>
-              <Image src={PodBoxLogo} alt="The Inrupt Logo" onClick={handleLoginClick} priority />
+              <Image src={inruptLogo} alt="The Inrupt Logo" onClick={handleInruptClick} height="50" />
               <p>Inrupt Podspaces</p>
             </div>
             <div className={styles.selector}>
-            <Image src="solidLogo.svg" alt="The Solid Logo" onClick={handleLoginClick} height='50' width ='50' priority />
+            <Image src={solidLogo} alt="The Solid Logo" onClick={handleLoginClick} height='50' />
               <p>Solid Web</p>
             </div>
             <div className={styles.selector}>
-            <Image src="solidLogo.svg" alt="The Solid Logo" onClick={handleLoginClick} height='50' width ='50' priority />
+            <Image src={solidLogo} alt="The Solid Logo" onClick={handleLoginClick} height='50' />
               <p>Solid Community</p>
             </div>
             <div className={styles.selector}>
-            <Image src="trinPodLogo.svg" alt="The trinPod Logo" onClick={handleLoginClick} height='50' width ='50' priority />
+            <Image src={trinPodLogo} alt="The Solid Logo" onClick={handleLoginClick} height='50' />
               <p>TrinPod</p>
             </div>
           </div>

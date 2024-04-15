@@ -8,38 +8,34 @@
     padding: 0;
     min-height: 100vh;
     font-family: Poppins, sans-serif;
+    text-align: center;
   }
   
 
-.leftpane {
-    height: 50vh;
-    width: 30vw;
-    margin-right: 1em;
-    padding: 2em;
-    text-align: center;
-    border-radius: 20px;
-  }
-
-.leftpane h1 {
+.main h1 {
   color: #495AFF;
   margin-bottom: 2em;
   font-size: 36px;
 }
 
-.leftpane h2 {
+.main h2 {
   margin-bottom: 2em;
 }
 
 .selectorContainer { 
   display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.selector {
+  flex: 1;
+  margin: 10px;
 }
 
 .selector img {
   cursor: pointer;
-}
-
-.selector {
-  margin: 5px;
 }
 
 .dropdown {
