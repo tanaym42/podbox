@@ -2,7 +2,10 @@
 "use client";
 import styles from "./page.module.css";
 import Link from 'next/link';
-import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
+import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
+import Image from 'next/image';
+import PodBoxLogo from '../../../../public/PodBoxLogo2.svg'
+
 
 const loginPage = () => {
 
@@ -35,23 +38,19 @@ const loginPage = () => {
 
           <div className={styles.selectorContainer}>
             <div className={styles.selector}>
-              <img src="inruptLogo.svg" alt="The Inrupt Logo" onClick={handleLoginClick}>
-              </img>
+              <Image src={PodBoxLogo} alt="The Inrupt Logo" onClick={handleLoginClick} priority />
               <p>Inrupt Podspaces</p>
             </div>
             <div className={styles.selector}>
-              <img src="solidLogo.svg" alt="The Solid Community Logo">
-              </img>
+            <Image src="solidLogo.svg" alt="The Solid Logo" onClick={handleLoginClick} height='50' width ='50' priority />
               <p>Solid Web</p>
             </div>
             <div className={styles.selector}>
-              <img src="solidLogo.svg" alt="The Solid Community Logo">
-              </img>
+            <Image src="solidLogo.svg" alt="The Solid Logo" onClick={handleLoginClick} height='50' width ='50' priority />
               <p>Solid Community</p>
             </div>
             <div className={styles.selector}>
-              <img src="trinPodLogo.svg" alt="The trinPod Logo">
-              </img>
+            <Image src="trinPodLogo.svg" alt="The trinPod Logo" onClick={handleLoginClick} height='50' width ='50' priority />
               <p>TrinPod</p>
             </div>
           </div>
