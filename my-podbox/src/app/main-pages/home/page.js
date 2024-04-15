@@ -11,6 +11,9 @@ import { fetch } from '@inrupt/solid-client-authn-browser';
 import styles from "./page.module.css";
 import { acp_ess_2, solidDatasetAsTurtle } from "@inrupt/solid-client";
 
+import Image from 'next/image';
+import placeHolderImage from '../../../../public/placeHolderImage.png'
+
 // These are all for the read and write service
 import {
   getSolidDataset,
@@ -29,6 +32,10 @@ import {
 
 import { urlToUrlWithoutFlightMarker } from 'next/dist/client/components/app-router';
 
+
+// things I need from pod input; app name, app image, last modified, date created, link to app, link to app controls, link to view related data 
+
+// I'll need to load the page and return all the data (with a delay), then add each piece of data into an json array, and then add elements to the document for each json item 
 
 const homePage = () => {
 
@@ -84,26 +91,25 @@ const homePage = () => {
 // html content to show on the page after we've run everything above this 
   return (
     <div className={styles.main}>
-      <div className={styles.main}>
         {/* Check if webId is null */}
         {!webId ? (
           <p>Loading...</p>
         ) : (
           
           <div className={styles.main}>
-            <div className={styles.main}>
-              <h1>Welcome to your PodBox, Name!</h1>
-              <p>Whole bunch of random text underneath.</p>
-            </div>
+              {/* Will need to add placeholder and pull in user's name */}
+              <h1>Name's PodBox</h1>
+              <h2>Recent Apps</h2>
+            
           
-            <div className={styles.main}>
-              <h1>Suggested apps</h1>
+            
+              <h2>Recent Data</h2>
               <p>Cards of hardcoded apps can go here.</p>
-            </div>
+            
           </div>
           
         )}
-      </div>
+      
     </div>
   );
 };

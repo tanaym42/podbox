@@ -1,3 +1,5 @@
+/* Poppins for body text */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .wrapper {
     display: flex;
@@ -14,64 +16,13 @@
     justify-content: space-between;
     padding: 0;
     min-height: auto;
-  }
-  
-  .main p {
-    color: black;
-    font-family: "Arial", Gadget, sans-serif;
+    font-family: "Poppins", sans-serif;
   }
   
   .main h1 {
-    color: black;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #495AFF;
   }
-  
+
   .main h2 {
-    color: black;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-top: 0.1em;
-    
-  }
-  
-  .leftpain {
-    height: 50vh;
-    width: 30vw;
-    margin-right: 1em;
-    padding: 2em;
     text-align: center;
-    border-radius: 20px;
   }
-  
-  .rightpain {
-    background: linear-gradient(to top, #590B97, #4166E7);
-    height: 50vh;
-    width: 30vw;
-    margin-left: 1em;
-    margin-right: 2em;
-    padding: 2em;
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: 20px;
-    display:flex;
-    justify-content: left;
-  }
-  
-  .main button {
-    position: relative; /* Required for absolute positioning of the pseudo-element */
-    overflow: hidden; /* Hide overflowing background */
-    border: 5px solid transparent; /* Start with a thick border */
-    border-image: linear-gradient(to right, #590B97, #4166E7) 1; /* Gradient border */
-    background-color: white; /* Default background color */
-    color: #590B97; /* Default text color */
-    font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: color 0.5s, border-color 0.5s; /* Transition for smooth effect */
-  }
-  
-  .main button:hover {
-    color: white; /* Text becomes white on hover */
-    background: linear-gradient(to right, #590B97, #4166E7);
-  }
-  
