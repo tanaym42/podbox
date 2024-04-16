@@ -44,6 +44,17 @@ const homePage = () => {
   const [webId, setWebId] = useState(null);
 
   const session = getDefaultSession();
+
+  async function fetchThingList(webId) {
+    
+    const podUrl = await getPodUrlAll(webId, { fetch: fetch });
+    console.log(podUrl[0])
+    const myThingList = await getSolidDataset(
+        podUrl[0],                     // Here, replace it with my podurl information. 
+        { fetch: fetch }          // fetch from authenticated session
+      );
+    console.log(myThingList);
+}
   
   // Inside the useEffect hook, placed the login completion and data fetching since they are required for re-rendering. 
   // useEffect is a react thing that tells the browser what to re-do in certain conditions
@@ -77,6 +88,7 @@ const homePage = () => {
         // Sets the state of webId and setIsLoggedIn for further use. 
         setIsLoggedIn(true);
         setWebId(session.info.webId);
+        webId && fetchThingList(webId);
       }
   };
   
