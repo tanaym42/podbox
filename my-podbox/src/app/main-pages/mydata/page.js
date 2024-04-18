@@ -14,6 +14,7 @@ const myData = () => {
     const [isLoggedIn, setIsLoggedIn] = useState();
     const [webId, setWebId] = useState(null);
     const [fileList, setFileList] = useState([]);
+    const [rootUrl, setRootUrl] = useState('');
     const session = getDefaultSession();
     //console.log(session);
     // pathname = usePathname()
@@ -117,6 +118,32 @@ const myData = () => {
         }
     };
 
+    async function handleItemClick (url) {
+        const myThing = await getSolidDataset(
+            url,                     // Here, replace it with my podurl information. 
+            { fetch: session.fetch }          // fetch from authenticated session
+          );
+
+        const myThingList = await getThingAll (
+            myThing, 
+            { fetch: session.fetch }
+        );
+        
+        // Create a list of all the containers in a directory
+        const thingList = []
+        for (const thing of myThingList) {
+            // Perform your operation on each thing and store the result in the new list
+            const operationResult = thing.url;
+            thingList.push(operationResult);
+        }
+        
+        // Extract the names, return as a dictionary of name and url or the link
+        const nameUrlDict = generateNameUrlMap(thingList, url);
+        setFileList(nameUrlDict);
+        setRootUrl(url);
+        return null
+    };
+
     return (
         <div>
         <h2>Your data</h2>
@@ -125,8 +152,8 @@ const myData = () => {
         {Object.keys(fileList).length > 0 ? (
                 <ul>
                     {Object.entries(fileList).map(([key, value]) => (
-                        <li key={key}>
-                            <strong>{key}</strong>: {value}
+                        <li key={key} onClick={() => handleItemClick(value)}>
+                            <strong>{key}</strong>:
                         </li>
                     ))}
                 </ul>
