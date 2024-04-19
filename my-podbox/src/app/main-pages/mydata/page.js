@@ -15,6 +15,7 @@ const myData = () => {
     const [webId, setWebId] = useState(null);
     const [fileList, setFileList] = useState([]);
     const [rootUrl, setRootUrl] = useState('');
+    const [prevUrl, setPrevUrl] = useState('BLANK');
     const session = getDefaultSession();
     //console.log(session);
     // pathname = usePathname()
@@ -62,36 +63,13 @@ const myData = () => {
     };
     
     async function fetchThingList(webId) {
-        // console.log('Below should be true')
-        // console.log(session.info.isLoggedIn)
-        // console.log('Below is the session ID')
-        // console.log(session.info.sessionId)
-        
+        // Function to fetch the url and containers associated with the logged in WebId. 
+
         const podUrls = await getPodUrlAll(webId, { fetch: session.fetch });
         const podUrl = podUrls[0]
 
-        const myThing = await getSolidDataset(
-            podUrl,                     // Here, replace it with my podurl information. 
-            { fetch: session.fetch }          // fetch from authenticated session
-          );
-
-        const myThingList = await getThingAll (
-            myThing, 
-            { fetch: session.fetch }
-        );
-        
-        // Create a list of all the containers in a directory
-        const thingList = []
-        for (const thing of myThingList) {
-            // Perform your operation on each thing and store the result in the new list
-            const operationResult = thing.url;
-            thingList.push(operationResult);
-        }
-        
-        // Extract the names, return as a dictionary of name and url or the link
-        const nameUrlDict = generateNameUrlMap(thingList, podUrl);
-        return nameUrlDict;
-    
+        const containerList = fetchContainers(podUrl)
+        return containerList;
     };
     
     useEffect(() => {
@@ -112,13 +90,17 @@ const myData = () => {
       }, [webId]);
 
     const fetchFileList = async () => {
+        // To run automatically on load, inside the UseEffect
+
         if (session.info.isLoggedIn) {
             const files = await fetchThingList(webId);
             setFileList(files);
         }
     };
 
-    async function handleItemClick (url) {
+    async function fetchContainers (url) {
+        // Fetches the containers associated with a particular url
+
         const myThing = await getSolidDataset(
             url,                     // Here, replace it with my podurl information. 
             { fetch: session.fetch }          // fetch from authenticated session
@@ -139,18 +121,33 @@ const myData = () => {
         
         // Extract the names, return as a dictionary of name and url or the link
         const nameUrlDict = generateNameUrlMap(thingList, url);
+        return nameUrlDict;
+    }
+
+    async function handleItemClick (url) {
+        // Extract the names, return as a dictionary of name and url or the link
+
+        console.log(url)
+        const nameUrlDict = await fetchContainers(url);
+        
+        const temp = rootUrl;
+        setPrevUrl(temp);
+        console.log(nameUrlDict);
         setFileList(nameUrlDict);
         setRootUrl(url);
-        return null
+        return null;
     };
 
     return (
         <div>
         <h2>Your data</h2>
         <p>{webId}</p>
+        <p onClick ={() => handleItemClick(prevUrl)}>BACK BUTTON</p>
 
         {Object.keys(fileList).length > 0 ? (
+                
                 <ul>
+                    
                     {Object.entries(fileList).map(([key, value]) => (
                         <li key={key} onClick={() => handleItemClick(value)}>
                             <strong>{key}</strong>:
@@ -158,7 +155,7 @@ const myData = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No files available</p>
+                <p>Loading...</p>
             )}
         </div>
     );
