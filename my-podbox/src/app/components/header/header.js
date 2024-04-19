@@ -24,7 +24,7 @@ const TopNav = () => {
         </div>
 
         <div className={styles.headermenu}>
-            <Link href="/main-pages/home"><h2 className={styles.navlink}>Dashboard</h2></Link>
+            <Link href="/main-pages/dashboard"><h2 className={styles.navlink}>Dashboard</h2></Link>
             <Link href="/main-pages/mydata"><h2 className={styles.navlink}>My Data</h2></Link>
             <Link href="/main-pages/myapps"><h2 className={styles.navlink}>My Apps</h2></Link>
             <Link href="/main-pages/playstore"><h2 className={styles.navlink}>App Directory</h2></Link>
