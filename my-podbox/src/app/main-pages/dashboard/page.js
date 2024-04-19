@@ -100,6 +100,47 @@ const homePage = () => {
   // "when my webId changes, that's when I want you to rerun everything in useEffect"
   }, [webId]); // The empty dependency array ensures it runs once on mount
 
+const recentApps = [
+  {"app_name": "Media Kraken" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+
+  {"app_name": "Liqid Chat" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+
+  {"app_name": "Solid Weather" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+
+  {"app_name": "Solid Calendar" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+  
+  {"app_name": "Golf Companion Assistant" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"}
+];
+
+
+const recentData = [
+  {"item_name": "Cheesecake Recipe" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+
+  {"item_name": "My Recipes" ,"type":"dir", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+
+  {"item_name": "Catan Rules" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+
+  {"item_name": "Favorite Games" ,"type":"dir", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
+  
+  {"item_name": "Why Tanay is so Cool" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"}
+];
+
+
+
+function readJSONApps() {
+  const recentAppsString = JSON.stringify(recentApps); // Converting JavaScript object to JSON string
+  console.log(recentAppsString);
+}
+
+function readJSONData() {
+  const recentDataString = JSON.stringify(recentData); // Converting JavaScript object to JSON string
+  console.log(recentDataString);
+}
+
+readJSONApps();
+readJSONData();
+
+
 // html content to show on the page after we've run everything above this 
   return (
     <div className={styles.main}>
