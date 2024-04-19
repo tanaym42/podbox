@@ -32,7 +32,7 @@ const loginPage = () => {
 
     return (
       <div className={styles.main}>
-        <div>
+        <div className={styles.mainPane}>
           <h1>Login to your PodBox!</h1>
           {/* Add any other content specific to your header */}
           <h2>Select your POD provider:</h2>
@@ -65,18 +65,25 @@ const loginPage = () => {
 
           <br />
 
-        </div>
+        
 
+        
+        
           <div className={styles.divider}> </div>
           <h3> Don't have a POD? </h3>
           <div className={styles.divider}> </div>
 
           <br />
+        
 
           <Link href="/main-pages/signup">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
             <button className={styles.signupButton}>Sign up!</button>
           </Link>
+
+          </div>
+
+        
 
 
         
