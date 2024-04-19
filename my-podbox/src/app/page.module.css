@@ -20,7 +20,7 @@
 }
 
 .topmatter p {
-  color: black;
+  color: #676789;
   text-align: left;
   font-size: 22px;
 
@@ -58,7 +58,7 @@
   border-radius: 20px;
 }
 
-.loginButton {
+.signUpButton {
   margin-right: .5em;
   position: relative; /* Required for absolute positioning of the pseudo-element */
   overflow: hidden; /* Hide overflowing background */
@@ -75,13 +75,12 @@
   font-family: Poppins, sans-serif;
 }
 
-.loginButton:hover {
-  color: black; /* Text becomes white on hover */
-  background-color: white;
+.signUpButton:hover {
+  background-color: #0060B9;
   border-color: #ddd;
 }
 
-.signUpButton {
+.loginButton {
   margin-left: .5em;
   position: relative; /* Required for absolute positioning of the pseudo-element */
   overflow: hidden; /* Hide overflowing background */
@@ -98,10 +97,10 @@
   font-family: Poppins, sans-serif;
 }
 
-.signUpButton:hover {
+.loginButton:hover {
   color: white; /* Text becomes white on hover */
-  background-color:#495AFF;
-  border-color: #495AFF;
+  background-color:#0060B9;
+  border-color: #0060B9;
 }
 
 .bottommatter h2 {

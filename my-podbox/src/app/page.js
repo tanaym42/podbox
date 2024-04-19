@@ -32,11 +32,11 @@ export default function Home() {
         {/* So this is linking to the page.js inside of components/login */}
           <Link href="/main-pages/login">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
-            <button className={styles.loginButton}>Login with your POD</button>
+            <button className={styles.signUpButton}>Sign Up</button>
           </Link>
           <Link href="/main-pages/login">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
-            <button className={styles.signUpButton}>Sign Up</button>
+            <button className={styles.loginButton}>Login with your POD</button>
           </Link>
           
         </div>
