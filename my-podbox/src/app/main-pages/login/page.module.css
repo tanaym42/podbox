@@ -9,6 +9,7 @@
     min-height: 100vh;
     font-family: Poppins, sans-serif;
     text-align: center;
+    min-width: 100vw;
   }
 
 .mainPane {
@@ -30,13 +31,16 @@
 
 .selectorContainer { 
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1em;
+  justify-content: flex-start;
+  margin-bottom: 3em;
+  max-width: 50vw;
+  min-width: 50vw;
+  /* This is kinda funky, but it worked */
+  margin-left: 25%;
 }
 
 .selector {
   flex: 1;
-  margin: 1em;
   white-space: nowrap;
   font-weight: 200;
 }
@@ -83,11 +87,12 @@
   border-color: #495AFF;
   color: #FFFFFF; /* Default text color */
   font-size: 16px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
   transition: color .5s, background-color .5s; /* Transition for smooth effect */
   font-family: Poppins, sans-serif;
+  font-weight: 200;
 }
 
 .signupButton:hover {
