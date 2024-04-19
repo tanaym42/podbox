@@ -113,8 +113,10 @@
 /* Styles for the container holding the cards */
 .cardContainer {
   display: flex; /* Use flexbox to arrange the cards */
-  justify-content: space-evenly; /* Space the cards evenly across the container */
+  justify-content: space-between; /* Space the cards evenly across the container */
   flex: 1;
+  margin-left: 4em;
+  margin-right: 4em;
 }
 
 /* Styles for each individual card */
