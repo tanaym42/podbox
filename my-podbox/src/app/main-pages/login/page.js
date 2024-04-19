@@ -8,7 +8,6 @@ import inruptLogo from '../../../../public/inruptLogo.svg'
 import solidLogo from '../../../../public/solidLogo.svg'
 import trinPodLogo from '../../../../public/trinPodLogo.svg'
 
-
 const loginPage = () => {
 
     // Function will check if session is logged in, if not - it will initiate the login process with the inputted pod provider
@@ -34,25 +33,25 @@ const loginPage = () => {
     return (
       <div className={styles.main}>
         <div>
-          <h1>Log In to your PodBox!</h1>
+          <h1>Login to your PodBox!</h1>
           {/* Add any other content specific to your header */}
           <h2>Select your POD provider:</h2>
 
           <div className={styles.selectorContainer}>
             <div className={styles.selector}>
-              <Image src={inruptLogo} alt="The Inrupt Logo" onClick={handleInruptClick} height="50" />
+              <Image src={inruptLogo} alt="The Inrupt Logo" onClick={handleInruptClick} height="80" />
               <p>Inrupt Podspaces</p>
             </div>
             <div className={styles.selector}>
-            <Image src={solidLogo} alt="The Solid Logo" onClick={handleInruptClick} height='50' />
+            <Image src={solidLogo} alt="The Solid Logo" onClick={handleInruptClick} height='80' />
               <p>Solid Web</p>
             </div>
             <div className={styles.selector}>
-            <Image src={solidLogo} alt="The Solid Logo" onClick={handleInruptClick} height='50' />
+            <Image src={solidLogo} alt="The Solid Logo" onClick={handleInruptClick} height='80' />
               <p>Solid Community</p>
             </div>
             <div className={styles.selector}>
-            <Image src={trinPodLogo} alt="The Solid Logo" onClick={handleInruptClick} height='50' />
+            <Image src={trinPodLogo} alt="The Solid Logo" onClick={handleInruptClick} height='80' />
               <p>TrinPod</p>
             </div>
           </div>
@@ -64,7 +63,15 @@ const loginPage = () => {
 
           </select>
 
+          <br />
+
+        </div>
+
+          <div className={styles.divider}> </div>
           <h3> Don't have a POD? </h3>
+          <div className={styles.divider}> </div>
+
+          <br />
 
           <Link href="/main-pages/signup">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
@@ -72,7 +79,7 @@ const loginPage = () => {
           </Link>
 
 
-        </div>
+        
       </div>
 
     );
