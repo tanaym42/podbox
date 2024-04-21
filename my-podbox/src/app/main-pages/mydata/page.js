@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { handleIncomingRedirect, EVENTS, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll, getSolidDataset, getStringNoLocale, getThingAll, getUrl } from "@inrupt/solid-client";
-import { useRouter, navigate } from 'next/navigation';
+
 
 
 
