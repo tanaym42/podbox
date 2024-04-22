@@ -9,6 +9,12 @@
 import styles from "./page.module.css";
 // react.js routing, importing the link functionality from the next library 
 import Link from 'next/link';
+// need to import Image in order to embed images linked in the public folder
+import Image from 'next/image';
+// and image imports for bottom card thumbnails
+import dataImg from '../../public/home_data.svg'
+import interopImg from '../../public/home_interop.svg'
+import secureShareImg from '../../public/home_securesharing.svg'
 
 // don't need this yet, but may be useful later 
 // import Image from "next/image";
@@ -52,19 +58,25 @@ export default function Home() {
 
         <div className ={styles.cardContainer}>
           <div className = {styles.card}>
-            <div className = {styles.cardImg}></div>
+            <div className = {styles.cardImg}>
+              <Image src={dataImg} alt="A hand holding a key" />
+            </div>
             <h3 className={styles.cardTitle}>Data Ownership</h3>
             <p className={styles.cardText}>View and Manage access to all of your data across apps.</p>
           </div>
 
           <div className = {styles.card}>
-            <div className = {styles.cardImg}></div>
+            <div className = {styles.cardImg}>
+              <Image src={interopImg} alt="Gear interlocking in a graph with multiple objects" />
+            </div>
             <h3 className={styles.cardTitle}>Interoperability</h3>
             <p className={styles.cardText}>Carry your data as you switch from one app to another.</p>
           </div>
 
           <div className = {styles.card}>
-            <div className = {styles.cardImg}></div>
+            <div className = {styles.cardImg}>
+              <Image src={secureShareImg} alt="Two pages of paper with arrows drawn between them, with a lock" />
+            </div>
             <h3 className={styles.cardTitle}>Secure Sharing</h3>
             <p className={styles.cardText}>You decide who has access to your data at all times.</p>
           </div>
