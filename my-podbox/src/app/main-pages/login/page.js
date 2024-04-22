@@ -42,16 +42,16 @@ const loginPage = () => {
               <Image src={inruptLogo} alt="The Inrupt Logo"  height="80" />
               <p>Inrupt Podspaces</p>
             </div>
-            <div className={styles.selector}>
-            <Image src={solidLogo} alt="The Solid Logo" onClick={handleInruptClick} height='80' />
+            <div className={styles.selector} onClick={handleInruptClick}>
+            <Image src={solidLogo} alt="The Solid Logo" height='80' />
               <p>Solid Web</p>
             </div>
-            <div className={styles.selector}>
-            <Image src={solidLogo} alt="The Solid Logo" onClick={handleInruptClick} height='80' />
+            <div className={styles.selector} onClick={handleInruptClick}>
+            <Image src={solidLogo} alt="The Solid Logo" height='80' />
               <p>Solid Community</p>
             </div>
-            <div className={styles.selector}>
-            <Image src={trinPodLogo} alt="The Solid Logo" onClick={handleInruptClick} height='80' />
+            <div className={styles.selector} onClick={handleInruptClick}>
+            <Image src={trinPodLogo} alt="The TrinPod Logo" onClick={handleInruptClick} height='80' />
               <p>TrinPod</p>
             </div>
           </div>
