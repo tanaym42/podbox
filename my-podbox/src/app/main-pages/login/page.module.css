@@ -43,10 +43,20 @@
   flex: 1;
   white-space: nowrap;
   font-weight: 200;
+  padding-top: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.selector:hover {
+  background: #CCE5FF;
+  
 }
 
 .selector img {
-  cursor: pointer;
+  background: transparent;
+  /* background: white; */
 }
 
 .dropdown {

@@ -38,8 +38,8 @@ const loginPage = () => {
           <h2>Select your POD provider:</h2>
 
           <div className={styles.selectorContainer}>
-            <div className={styles.selector}>
-              <Image src={inruptLogo} alt="The Inrupt Logo" onClick={handleInruptClick} height="80" />
+            <div className={styles.selector} onClick={handleInruptClick}>
+              <Image src={inruptLogo} alt="The Inrupt Logo"  height="80" />
               <p>Inrupt Podspaces</p>
             </div>
             <div className={styles.selector}>
