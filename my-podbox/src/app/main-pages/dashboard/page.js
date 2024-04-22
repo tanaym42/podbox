@@ -125,20 +125,35 @@ const recentData = [
   {"item_name": "Why Tanay is so Cool" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"}
 ];
 
-
-
-function readJSONApps() {
-  const recentAppsString = JSON.stringify(recentApps); // Converting JavaScript object to JSON string
-  console.log(recentAppsString);
+const userInfo = {
+  "name": "Jade Smithjonesenson",
+  "email": "jadeluvspuppies88@aol.com",
+  "webID": "id.inrupt.com/jadesPOD"
 }
 
-function readJSONData() {
-  const recentDataString = JSON.stringify(recentData); // Converting JavaScript object to JSON string
-  console.log(recentDataString);
+const userStorage = {
+  // might need to do some sort of conversion between KB/MB/GB here? 
+  "space": "5 GB",
+  "totalApps": "23",
+  "containers": "8"
 }
 
-readJSONApps();
-readJSONData();
+// make sure to remove this when Tanay adds functionality 
+const recentAppsString = JSON.stringify(recentApps); 
+
+const recentDataString = JSON.stringify(recentData); 
+
+const userInfoString = JSON.stringify(userInfo);
+
+const userStorageString = JSON.stringify(userStorage)
+
+
+// writing to local storage
+localStorage.setItem('userApps', recentAppsString);
+localStorage.setItem('userData', recentDataString);
+localStorage.setItem('userInfo', userInfoString);
+localStorage.setItem('userStorage', userStorageString);
+
 
 
 // html content to show on the page after we've run everything above this 
