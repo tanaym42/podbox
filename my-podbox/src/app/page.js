@@ -61,7 +61,7 @@ export default function Home() {
             <div className = {styles.cardImg}>
               <Image src={dataImg} alt="A hand holding a key" />
             </div>
-            <h3 className={styles.cardTitle}>Data Ownership</h3>
+            <p className={styles.cardTitle}>Data Ownership</p>
             <p className={styles.cardText}>View and Manage access to all of your data across apps.</p>
           </div>
 
@@ -69,7 +69,7 @@ export default function Home() {
             <div className = {styles.cardImg}>
               <Image src={interopImg} alt="Gear interlocking in a graph with multiple objects" />
             </div>
-            <h3 className={styles.cardTitle}>Interoperability</h3>
+            <p className={styles.cardTitle}>Interoperability</p>
             <p className={styles.cardText}>Carry your data as you switch from one app to another.</p>
           </div>
 
@@ -77,7 +77,7 @@ export default function Home() {
             <div className = {styles.cardImg}>
               <Image src={secureShareImg} alt="Two pages of paper with arrows drawn between them, with a lock" />
             </div>
-            <h3 className={styles.cardTitle}>Secure Sharing</h3>
+            <p className={styles.cardTitle}>Secure Sharing</p>
             <p className={styles.cardText}>You decide who has access to your data at all times.</p>
           </div>
         </div>
