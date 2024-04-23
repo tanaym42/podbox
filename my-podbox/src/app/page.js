@@ -36,7 +36,7 @@ export default function Home() {
 
           
         {/* So this is linking to the page.js inside of components/login */}
-          <Link href="/main-pages/login">
+          <Link href="/main-pages/signup">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
             <button className={styles.signUpButton}>Sign Up</button>
           </Link>
