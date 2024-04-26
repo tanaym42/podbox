@@ -63,7 +63,7 @@
   position: relative; /* Required for absolute positioning of the pseudo-element */
   overflow: hidden; /* Hide overflowing background */
   border: 1px solid; /* Start with a thick border */
-  background-color: #495AFF;; /* Default background color */
+  background-color: #495AFF; /* Default background color */
   border-radius: 5px;
   border-color: #495AFF;
   color: #FFFFFF; /* Default text color */
@@ -76,8 +76,10 @@
 }
 
 .signUpButton:hover {
-  background-color: #0060B9;
-  border-color: #ddd;
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+  border-color: #495AFF;
 }
 
 .loginButton {
@@ -98,9 +100,10 @@
 }
 
 .loginButton:hover {
-  color: white; /* Text becomes white on hover */
-  background-color:#0060B9;
-  border-color: #0060B9;
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+  border-color: #495AFF;
 }
 
 .bottommatter h2 {
