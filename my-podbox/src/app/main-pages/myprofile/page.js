@@ -12,6 +12,18 @@ import {
     getSourceUrl,
     getProfileAll
   } from "@inrupt/solid-client";
+
+import {
+  addUrl,
+  addStringNoLocale,
+  buildThing,
+  createSolidDataset,
+  createThing,
+  setThing,
+  saveSolidDatasetAt,
+} from "@inrupt/solid-client";
+
+import { SCHEMA_INRUPT, RDF } from "@inrupt/vocab-common-rdf";
   
 // import { solid } from "@inrupt/vocab-solid";
 
@@ -89,10 +101,11 @@ const myProfile = () => {
             const extendedProfilesSolidDatasets = profiles.altProfileAll;
       
             extendedProfilesSolidDatasets.forEach((extendedProfileSolidDataset) => {
+                console.log('It is trying to fetch the extended profile...')
                 console.log(getSourceUrl(extendedProfileSolidDataset));
                 const thingsInExtendedProfile = getThingAll(extendedProfileSolidDataset);
                 thingsInExtendedProfile.forEach((thing) => {
-               // .. do something
+                    console.log(thing);
                 });
             })
       
@@ -100,7 +113,29 @@ const myProfile = () => {
           console.log('There is some error.')
           console.log(error);
         }
-      }
+    }
+    
+    const createSomething = async () => {
+        console.log('Entering create something.')
+        let courseSolidDataset = createSolidDataset();
+
+        
+        const newBookThing1 = buildThing(createThing({ name: "book1" }))
+            .addStringNoLocale("https://schema.org/name", "The Stars of Wagabong")
+            .addUrl(RDF.type, "https://schema.org/Book")
+            .build();
+        
+        courseSolidDataset = setThing(courseSolidDataset, newBookThing1);
+        // courseSolidDataset = setThing(courseSolidDataset, newBookThing2);
+        
+        const savedSolidDataset = await saveSolidDatasetAt(
+            "https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/random_test",
+            courseSolidDataset,
+            { fetch: session.fetch }             // fetch from authenticated Session
+        );
+    }
+
+    createSomething();
     
     return (
         <div>
