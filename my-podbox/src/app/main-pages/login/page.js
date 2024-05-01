@@ -33,7 +33,7 @@ const loginPage = () => {
     return (
       <div className={styles.main}>
         <div className={styles.mainPane}>
-          <h1>Login to your PodBox!</h1>
+          <h1>Log in to your PodBox!</h1>
           {/* Add any other content specific to your header */}
           <h2>Select your POD provider:</h2>
 

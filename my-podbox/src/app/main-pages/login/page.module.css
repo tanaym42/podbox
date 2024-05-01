@@ -46,7 +46,7 @@
   padding-top: 5px;
   cursor: pointer;
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px;
 }
 
 .selector:hover {
@@ -54,18 +54,23 @@
   
 }
 
+
 .selector img {
   background: transparent;
-  /* background: white; */
 }
+
+/* .selector:nth-child(1) img {
+  background: white;
+} */
+
 
 .dropdown {
   border-radius: 5px;
   font-family: Poppins, sans-serif;
-  padding: 5px;
+  padding: 10px;
   padding-right: 70px;
   font-weight: 200;
-  font-size: 12px;
+  font-size: 16xspx;
 
 }
 
