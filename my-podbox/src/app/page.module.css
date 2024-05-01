@@ -22,13 +22,13 @@
 .topmatter p {
   color: #676789;
   text-align: left;
-  font-size: 22px;
+  font-size: 24px;
 
 }
 
 .topmatter h1 {
   color: black;
-  font-size: 44px;
+  font-size: 45px;
   text-align: left;
   line-height: 110%;
 }
@@ -119,6 +119,7 @@
   flex: 1;
   margin-left: 4em;
   margin-right: 4em;
+  
 }
 
 /* Styles for each individual card */
@@ -128,12 +129,15 @@
   padding: 1px; /* Add some padding inside the card */
   margin: 10px;
   width: calc(33.33% - 20px);
+  background-color: white;
+  filter: drop-shadow(1px 3px 2px #bbb);
+  
 }
 
 /* Placeholder styles for the card content */
 .card img {
   width: 100%;
-  height: 100%;
+  height: 98%;
   object-fit: fill;
 }
 

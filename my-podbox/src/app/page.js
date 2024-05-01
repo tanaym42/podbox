@@ -62,7 +62,7 @@ export default function Home() {
               <Image src={dataImg} alt="A hand holding a key" />
             </div>
             <p className={styles.cardTitle}>Data Ownership</p>
-            <p className={styles.cardText}>View and Manage access to all of your data across apps.</p>
+            <p className={styles.cardText}>View and manage access to all of your data across apps.</p>
           </div>
 
           <div className = {styles.card}>
