@@ -12,7 +12,10 @@ import styles from "./page.module.css";
 import { acp_ess_2, solidDatasetAsTurtle } from "@inrupt/solid-client";
 
 import Image from 'next/image';
-import placeHolderImage from '../../../../public/placeHolderImage.png'
+import mediaImage from '../../../../public/dashboard_mediaApp.svg';
+import docImage from '../../../../public/dashboard_docApp.svg';
+import mgmtImage from '../../../../public/dashboard_mgmtApp.svg';
+import socialImage from '../../../../public/dashboard_socialApp.svg';
 
 // These are all for the read and write service
 import {
@@ -178,12 +181,30 @@ localStorage.setItem('userStorage', userStorageString);
                 
               </div>
 
-              <h2>Recent Apps</h2>
+              <h1>Suggested Apps</h1>
+
+              <div className={styles.appContainer}>
+                <div className={styles.app}>
+                  <Image src={mediaImage} alt="" />
+                </div>
+
+                <div className={styles.app}>
+                  <Image src={docImage} alt="" />
+                </div>
+
+
+                <div className={styles.app}>
+                  <Image src={mgmtImage} alt=""  />
+                </div>
+
+                <div className={styles.app}>
+                  <Image src={socialImage} alt=""  />
+                </div>
+              </div>
             
           
             
               <h2>Recent Data</h2>
-              <p>Cards of hardcoded apps can go here.</p>
             
           </div>
           
