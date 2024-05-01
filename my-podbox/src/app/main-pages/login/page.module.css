@@ -74,6 +74,13 @@
 
 }
 
+.dropdown:hover {
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+  border-color: #495AFF;
+}
+
 .main h3 {
   display: inline-block;
   font-weight: normal;
@@ -111,7 +118,8 @@
 }
 
 .signupButton:hover {
-  color: black; /* Text becomes white on hover */
-  background-color: white;
-  border-color: #ddd;
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+  border-color: #495AFF;
 }
