@@ -27,7 +27,7 @@ const TopNav = () => {
             <Link href="/main-pages/dashboard"><h2 className={styles.navlink}>Dashboard</h2></Link>
             <Link href="/main-pages/mydata"><h2 className={styles.navlink}>My Data</h2></Link>
             <Link href="/main-pages/myapps"><h2 className={styles.navlink}>My Apps</h2></Link>
-            <Link href="/main-pages/playstore"><h2 className={styles.navlink}>App Directory</h2></Link>
+            <Link href="/main-pages/appstore"><h2 className={styles.navlink}>App Directory</h2></Link>
             <Link href="/main-pages/faqs"><h2 className={styles.navlink}>FAQs</h2></Link>
             <Link href="/main-pages/myprofile"><button className={styles.navbutton}> Profile </button></Link>
             <Link href="/main-pages/home"><button className={styles.navbutton}> Copy WebID </button></Link>
