@@ -32,6 +32,12 @@ import styles from "./page.module.css";
 const myProfile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState();
     const [webId, setWebId] = useState(null);
+    const [profileName, setProfileName] = useState('Not assigned yet. Click to edit.')
+    const [profileEmail, setProfileEmail] = useState('Not assigned, yet. Click to edit.')
+    const [podSpace, setpodSpace] = useState('Not assigned, yet. Click to edit.')
+    const [podAppsNum, setPodAppsNum] = useState('Not assigned, yet. Click to edit.')
+    const [podContsNum, setContsNum] = useState('Not assigned, yet. Click to edit.')
+    const [profileLink, setProfileLink] = useState(null)
 
     const session = getDefaultSession();
 
@@ -49,18 +55,13 @@ const myProfile = () => {
 
       }, [webId]);
 
-    getMyProfiles(webId);
+      if (webId !== null) {
+        getMyProfiles(webId);
+      }
 
     async function getMyProfiles(webId) {
-        console.log('I am entering the getprofile function.')
+        
         try {
-      
-          // 1. Get WebID of the logged in user.
-          // The example assumes the user is logged in.
-          // As such, getDefaultSession().info.webId is NOT null and
-          // fetch (associated with the default Session) is an authenticated fetch.
-      
-          //  const webId = getDefaultSession().info.webId;
       
           // 2. Get the WebID Profile and the extended profiles listed in the WebID Profile.
           //
@@ -75,25 +76,6 @@ const myProfile = () => {
                 { fetch : session.fetch}
             );
       
-          // Step 3. Read from the WebID profile.
-          // - Get the WebID profile from the returned profiles.
-          // - Read the WebID Profile as a Thing.
-          // - Read the OpenID Provider(s) listed in the WebID Profile.
-            const webIDProfileSolidDataset = profiles.webIdProfile;
-            const webIdThing = getThing(webIDProfileSolidDataset, webId);
-            //const issuers = getUrlAll(webIdThing, solid.oidcIssuer);
-            
-            console.log('This is the webID profile dataset:')
-            console.log(webIDProfileSolidDataset);
-
-            console.log('These are the things inside the dataset:')
-            console.log(webIdThing);
-
-            //console.log('This returns the issuers of information:')
-            //console.log(issuers);
-      
-          // ...
-      
           // Step 4. Read from the extended profiles.
           // - Get the array of extended profiles from the returned profiles.
           // - Loop through the extended profiles.
@@ -101,11 +83,23 @@ const myProfile = () => {
             const extendedProfilesSolidDatasets = profiles.altProfileAll;
       
             extendedProfilesSolidDatasets.forEach((extendedProfileSolidDataset) => {
-                console.log('It is trying to fetch the extended profile...')
-                console.log(getSourceUrl(extendedProfileSolidDataset));
+                // console.log('It is trying to fetch the extended profile...')
+                // console.log(getSourceUrl(extendedProfileSolidDataset));
                 const thingsInExtendedProfile = getThingAll(extendedProfileSolidDataset);
+                // console.log('This is where it will print the things in the extended profile.')
+                // console.log(thingsInExtendedProfile)
                 thingsInExtendedProfile.forEach((thing) => {
-                    console.log(thing);
+
+                    
+                if (thing.url.toString() == webId.toString()) {
+                    // console.log('This is the open profile link.');
+                } else {
+                    console.log('This is the actual extended profile.');
+                    console.log(thing.url);
+                    // console.log(webId);
+                    setProfileLink(thing.url);
+                }
+                    
                 });
             })
       
@@ -135,7 +129,7 @@ const myProfile = () => {
         );
     }
 
-    createSomething();
+    // createSomething();
     
     return (
         <div>
@@ -145,7 +139,20 @@ const myProfile = () => {
           
             <div className={styles.main}>
                 {/* Will need to add placeholder and pull in user's name */}
-                <h1>{webId}</h1>            
+                <h1>Hi Drake! </h1>
+                <div>
+                    <h1>Account information</h1>
+                        <h2>Name: {profileName}</h2> 
+                        <h2>WebID: {webId}</h2>
+                        <h2>Email: {profileEmail}</h2> 
+                </div>
+
+                <div>
+                    <h1>Data information</h1>
+                        <h2>Space used: {podSpace}</h2> 
+                        <h2>Total apps: {podAppsNum}</h2>
+                        <h2>Containers: {podContsNum}</h2> 
+                </div>                  
           </div>
           
             )}
