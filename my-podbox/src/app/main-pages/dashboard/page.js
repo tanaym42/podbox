@@ -160,13 +160,24 @@ localStorage.setItem('userStorage', userStorageString);
   return (
     <div className={styles.main}>
         {/* Check if webId is null */}
-        {!webId ? (
+        {/* {!webId ? (
           <p>Loading...</p>
-        ) : (
+        ) : ( */}
           
           <div className={styles.main}>
               {/* Will need to add placeholder and pull in user's name */}
-              <h1>Name's PodBox</h1>
+              <h1>Welcome to your PodBox, Jade!</h1>
+              <div className={styles.intro}>
+                <p>
+                  Effortlessly access all your data and applications from your dashboard. Whether you’d like to find a new app to try, download your data, or manage app access controls, your dashboard is the go-to place for POD management. 
+                
+                  <br />
+                  <br />
+                  First, try out an app to create your first piece of data in your POD! 
+                </p>
+                
+              </div>
+
               <h2>Recent Apps</h2>
             
           
@@ -176,7 +187,7 @@ localStorage.setItem('userStorage', userStorageString);
             
           </div>
           
-        )}
+        {/* )} */}
       
     </div>
   );

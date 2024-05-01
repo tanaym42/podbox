@@ -21,8 +21,19 @@
   
   .main h1 {
     color: #495AFF;
+    text-align: center;
   }
 
   .main h2 {
+    text-align: center;
+  }
+
+  .intro {
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro p {
+    max-width: 50%;
     text-align: center;
   }
