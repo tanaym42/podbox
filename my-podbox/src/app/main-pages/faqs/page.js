@@ -19,6 +19,47 @@ const faq = () => {
               {/* Will need to add placeholder and pull in user's name */}
               <h1>Frequently Asked Questions</h1>
           </div>
+
+      <div className={styles.questionContainer}>
+        <div className={styles.question}>
+          <h2> Where the hell am I?</h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+            How did I get here?
+          </h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+            How are babies made?
+          </h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+            What is the answer to life, the universe, and everything? 
+          </h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+            Can I have your phone number?
+          </h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+            Why do we call it oven when we of in the cold food out hot eat the food? 
+          </h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+
+          </h2>
+        </div>
+        <div className={styles.question}>
+          <h2>
+
+          </h2>
+        </div>
+      </div>
     </div>
   );
 };
