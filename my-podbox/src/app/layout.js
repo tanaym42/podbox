@@ -6,6 +6,7 @@
 import styles from "./globals.css";
 // the topnav component from this file, which was made manually 
 import TopNav from './components/header/header.js';
+import Footer from './components/footer/footer.js';
 
 // This is browser metadata, like tab title
 
@@ -20,12 +21,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        
+      
         <body className={styles.wrapper}>
           <TopNav />
+          
           {children}
+          
+          <Footer /> 
         </body>
       
     </html>
+  
   );
 }
