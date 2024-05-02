@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 2em;
+  padding: 1em;
   border-bottom: 2px solid #f4f4f4;
   max-height: 100vh;
 }
@@ -22,15 +22,20 @@
 .topmatter p {
   color: #676789;
   text-align: left;
-  font-size: 24px;
-
+  font-size: 1.2em;
+  max-width: 100%;
 }
 
 .topmatter h1 {
   color: black;
-  font-size: 45px;
+  font-size: 2em;
   text-align: left;
-  line-height: 110%;
+  white-space: nowrap;
+}
+
+.topmatter img {
+  max-width: 100%;
+  /* object-fit: cover; */
 }
 
 /* .main h2 {
@@ -44,18 +49,20 @@
   margin-right: .5em;
   padding: 2em;
   padding-left: 3em;
-  padding-right: 3em;
+  /* padding-right: 1em; */
   text-align: left;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  max-width: 50%;
 }
 
 
 
 .rightpane {
-  margin-left: .5em;
+  /* margin-left: .5em; */
   padding: 3em;
   align-items: center;
   border-radius: 20px;
+  margin-right: 20px;
 }
 
 .signUpButton {
@@ -115,19 +122,19 @@
 /* Styles for the container holding the cards */
 .cardContainer {
   display: flex; /* Use flexbox to arrange the cards */
-  justify-content: flex-end; /* Space the cards evenly across the container */
+  justify-content: space-between; /* Space the cards evenly across the container */
   flex: 1;
-  margin-left: 4em;
-  margin-right: 4em;
-  
+  padding-bottom: 4em;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 /* Styles for each individual card */
 .card {
   border: 1px solid #ddd; /* Add a border for better visual separation */
   border-radius: 18px; /* Add rounded corners for a nicer look */
-  padding: 1px; /* Add some padding inside the card */
-  margin: 10px;
+  /* padding: 0px; Add some padding inside the card */
+  /* margin: 20px; */
   width: calc(33.33% - 20px);
   background-color: white;
   filter: drop-shadow(1px 3px 2px #bbb);
@@ -142,13 +149,14 @@
 }
 
 .cardTitle {
-  padding-left: 10px; /* Add some space between the image and title */
+  padding-left: .8em; /* Add some space between the image and title */
   font-weight: bold; /* Make the title bold */
   font-size: 20px;
 }
 
 .cardText {
-  padding-left: 10px;
+  padding-left: .8em;
+  padding-right: .8em;
   font-size: 20px;
   font-weight: 250;
   color:#676789; 
