@@ -29,8 +29,10 @@ const TopNav = () => {
             <Link href="/main-pages/myapps"><h2 className={styles.navlink}>My Apps</h2></Link>
             <Link href="/main-pages/appstore"><h2 className={styles.navlink}>App Directory</h2></Link>
             <Link href="/main-pages/faqs"><h2 className={styles.navlink}>FAQs</h2></Link>
-            <Link href="/main-pages/myprofile"><button className={styles.navbutton}> Profile </button></Link>
-            <Link href="/main-pages/home"><button className={styles.navbutton}> Copy WebID </button></Link>
+            <div className={styles.rightButtons}>
+              <Link href="/main-pages/myprofile"><button className={styles.profileButton}> Account </button></Link>
+              <Link href="/main-pages/home"><button className={styles.webIdButton}> Copy WebID </button></Link>
+            </div>
         </div>
         {/* Add any other content specific to your header */}
       </div>

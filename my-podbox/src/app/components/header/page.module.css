@@ -13,50 +13,94 @@
     margin-bottom: 1em;
     border-bottom: 2px solid #f4f4f4;
     font-family: "Plus Jakarta Sans", sans-serif;
-  }
+}
   
-  .headerlogo {
-    /* would be cool to get a litle spacing between the logo and the PodBox text but justify content isn't working for me  */
-    display: flex;
-    padding-left: .5em;
-    background-image: linear-gradient(#495AFF, #5A3FE6);
-    background-clip: text;
-    font-size: 40px;
+.headerlogo {
+  /* would be cool to get a litle spacing between the logo and the PodBox text but justify content isn't working for me  */
+  display: flex;
+  padding-left: .5em;
+  background-image: linear-gradient(#495AFF, #5A3FE6);
+  background-clip: text;
+  font-size: 40px;
 
-  }
-  
-  .headermenu {
-    display: inline-flex;
-    flex-direction: row;
-    width: auto;
-    gap: 2em;
-    padding-right: 2em;
-  }
+}
 
-  .h2 {
-    display:inline;
-  }
-  
-  .navlink {
-    display: inline; /* Ensure elements stay inline */
-    font-size: 1.2em;
-    padding-top: 0.5em;
-  }
+.headermenu {
+  display: flex;
+  gap: 2.5em;
+  padding-right: 2em;
+  padding-bottom: 5px;
+  align-items: center;
+  font-size: 12px;
+  white-space: nowrap;
+  padding-top: 0px;
+  line-height: 0px;
+}
 
-  .navbutton {
-    border: 2px solid #888; /* Nice grey border */
-    border-radius: 10px; /* Curved corners */
-    background-color: #fff; /* Button background color */
-    color: #333; /* Button text color */
-    font-size: 16px; /* Adjust font size as needed */
-    cursor: pointer; /* Cursor style */
-    transition: all 0.3s ease; /* Smooth transition */
-    margin-top: 1.2em;
-    width: 5em;
-    height: 2em;
-  }
-  
-  .navbutton:hover {
-    background-color: #f0f0f0; /* Button background color on hover */
-  }
-  
+.h2 {
+  display:inline;
+}
+
+.navlink {
+  display: inline; /* Ensure elements stay inline */
+  font-size: 1.2em;
+  /* padding-top: 0.5em; */
+}
+
+
+.webIdButton {
+  /* margin-right: .5em; */
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  overflow: hidden; /* Hide overflowing background */
+  border: 1px solid; /* Start with a thick border */
+  background-color: #495AFF; /* Default background color */
+  border-radius: 3px;
+  border-color: #495AFF;
+  color: #FFFFFF; /* Default text color */
+  font-size: 10px;
+  padding: 7px 15px;
+  /* margin-top: 10px; */
+  cursor: pointer;
+  transition: color .5s, background-color .5s; /* Transition for smooth effect */
+  font-family: Poppins, sans-serif;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+
+.webIdButton:hover {
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+  border-color: #495AFF;
+}
+
+.profileButton {
+  margin-left: .5em;
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  overflow: hidden; /* Hide overflowing background */
+  border: 1px solid; /* Start with a thick border */
+  background-color: white; /* Default background color */
+  border-radius: 3px;
+  border-color: #dddddd;
+  color: black; /* Default text color */
+  font-size: 10px;
+  padding: 7px 15px;
+  /* margin-top: 10px; */
+  cursor: pointer;
+  transition: color .5s, background-color .5s; /* Transition for smooth effect */
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+}
+
+.profileButton:hover {
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+  border-color: #495AFF;
+}
+
+.rightButtons {
+  display: flex;
+  gap: .5em;
+}
