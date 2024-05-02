@@ -39,7 +39,7 @@ const loginPage = () => {
 
           <div className={styles.selectorContainer}>
             <div className={styles.selector} onClick={handleInruptClick}>
-              <Image src={inruptLogo} alt="The Inrupt Logo"  height="80" />
+              <Image src={inruptLogo} alt="The Inrupt Logo"  height="80" href="" />
               <p>Inrupt Podspaces</p>
             </div>
             <div className={styles.selector} onClick={handleInruptClick}>
