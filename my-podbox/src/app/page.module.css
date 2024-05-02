@@ -17,12 +17,13 @@
   padding: 1em;
   border-bottom: 2px solid #f4f4f4;
   max-height: 100vh;
+  
 }
 
 .topmatter p {
   color: #676789;
   text-align: left;
-  font-size: 1.2em;
+  font-size: 1.5em;
   max-width: 100%;
 }
 
@@ -52,7 +53,8 @@
   /* padding-right: 1em; */
   text-align: left;
   /* border-radius: 20px; */
-  max-width: 50%;
+  /* max-width: 30%; */
+  flex: 1;
 }
 
 
@@ -63,6 +65,7 @@
   align-items: center;
   border-radius: 20px;
   margin-right: 20px;
+  flex: 1;
 }
 
 .signUpButton {
@@ -125,8 +128,8 @@
   justify-content: space-between; /* Space the cards evenly across the container */
   flex: 1;
   padding-bottom: 4em;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
 /* Styles for each individual card */
