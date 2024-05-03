@@ -215,8 +215,8 @@ useEffect(() => {
                       Media
                     </div>
                     <div className={styles.appText}> 
-                      <h3> Media Kraken </h3>
-                      <p> Manage your media at your fingertips.</p>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
                     </div>
                   </div>
                 </div>
@@ -230,8 +230,8 @@ useEffect(() => {
                       Media
                     </div>
                     <div className={styles.appText}> 
-                      <h3> Media Kraken </h3>
-                      <p> Manage your media at your fingertips.</p>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
                     </div>
                   </div>
                 </div>
@@ -245,8 +245,8 @@ useEffect(() => {
                       Media
                     </div>
                     <div className={styles.appText}> 
-                      <h3> Media Kraken </h3>
-                      <p> Manage your media at your fingertips.</p>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
                     </div>
                   </div>
                 </div>
@@ -260,8 +260,8 @@ useEffect(() => {
                       Media
                     </div>
                     <div className={styles.appText}> 
-                      <h3> Media Kraken </h3>
-                      <p> Manage your media at your fingertips.</p>
+                      <div> <h3> Media Kraken </h3> </div>
+                      <div> <p> Manage your media at your fingertips.</p> </div>
                     </div>
                   </div>
                 </div>
@@ -275,8 +275,8 @@ useEffect(() => {
                       Media
                     </div>
                     <div className={styles.appText}> 
-                      <h3> Media Kraken </h3>
-                      <p> Manage your media at your fingertips.</p>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
                     </div>
                   </div>
                 </div>
