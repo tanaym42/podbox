@@ -53,9 +53,9 @@
   flex-direction: row;
   max-height: 100px;
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px;
   flex: 1;
-  width: calc(33.33% - 10px);
+  width: calc(25% - 20px);
 }
 
 .appCard:hover {
@@ -73,20 +73,27 @@
   border: 1px solid #C5C7D0;
   border-radius: 5px;
   max-width: 30%;
+  height: auto;
 }
 
 .appThumbnail img {
-  max-height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .appCardBody {
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-left: 1em;
+  margin: 0;
+  /* padding-bottom: 0; */
+  /* gap: 0; */
 }
 
-.appCardBody {
-  padding-bottom: 0;
-  line-height: 1.5em;
+.appCardBody h3 {
+  font-size: 16px;
+}
+
+.appCardBody p {
+  font-size: 10px;
 }

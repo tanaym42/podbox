@@ -274,9 +274,11 @@ useEffect(() => {
                     <div className={styles.mediaBanner}>
                       Media
                     </div>
-                    <div className={styles.appText}> 
-                    <div> <h3> Media Kraken </h3> </div>
-                    <div> <p> Manage your media at your fingertips.</p> </div>
+                    <div> 
+                      <h3> Media Kraken </h3> 
+                    </div>
+                    <div>
+                       <p> Manage your media at your fingertips.</p>
                     </div>
                   </div>
                 </div>
