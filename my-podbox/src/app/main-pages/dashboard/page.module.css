@@ -11,12 +11,13 @@
   
   
 .main {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
   padding: 0;
   min-height: auto;
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
 }
 
 .main h1 {

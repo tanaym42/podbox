@@ -32,38 +32,19 @@
   white-space: nowrap;
 }
 
-.topmatter img {
-  max-width: 100%;
-  /* object-fit: cover; */
-}
-
-/* .main h2 {
-  color: black;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 1em;
-  
-} */
-
 .leftpane {
   margin-right: .5em;
   padding: 2em;
   padding-left: 3em;
-  /* padding-right: 1em; */
   text-align: left;
-  /* border-radius: 20px; */
-  /* max-width: 30%; */
   flex: 1;
 }
 
-
-
 .rightpane {
-  /* margin-left: .5em; */
   padding: 3em;
   align-items: center;
   border-radius: 20px;
   margin-right: 20px;
-  /* align-self: flex-end; */
 }
 
 .signUpButton {
@@ -85,7 +66,6 @@
 
 .signUpButton:hover {
   background-color: #CCE5FF;
-  /* font-weight: bold; */
   color: black;
   border-color: #495AFF;
 }
@@ -120,7 +100,6 @@
   font-size: 30px;
 }
 
-/* Styles for the container holding the cards */
 .cardContainer {
   display: flex; /* Use flexbox to arrange the cards */
   justify-content: space-around; /* Space the cards evenly across the container */
@@ -146,7 +125,7 @@
 .card img {
   width: 100%;
   height: 98%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .cardTitle {
