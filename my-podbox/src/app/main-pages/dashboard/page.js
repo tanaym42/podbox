@@ -214,10 +214,8 @@ useEffect(() => {
                     <div className={styles.mediaBanner}>
                       Media
                     </div>
-                    <div className={styles.appText}> 
                     <div> <h3> Media Kraken </h3> </div>
                     <div> <p> Manage your media at your fingertips.</p> </div>
-                    </div>
                   </div>
                 </div>
                 <div className={styles.appCard}>
@@ -229,10 +227,8 @@ useEffect(() => {
                     <div className={styles.mediaBanner}>
                       Media
                     </div>
-                    <div className={styles.appText}> 
                     <div> <h3> Media Kraken </h3> </div>
                     <div> <p> Manage your media at your fingertips.</p> </div>
-                    </div>
                   </div>
                 </div>
                 <div className={styles.appCard}>
@@ -244,10 +240,8 @@ useEffect(() => {
                     <div className={styles.mediaBanner}>
                       Media
                     </div>
-                    <div className={styles.appText}> 
                     <div> <h3> Media Kraken </h3> </div>
                     <div> <p> Manage your media at your fingertips.</p> </div>
-                    </div>
                   </div>
                 </div>
                 <div className={styles.appCard}>
@@ -259,9 +253,25 @@ useEffect(() => {
                     <div className={styles.mediaBanner}>
                       Media
                     </div>
-                    <div className={styles.appText}> 
                       <div> <h3> Media Kraken </h3> </div>
                       <div> <p> Manage your media at your fingertips.</p> </div>
+                    
+                  </div>
+                </div>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> 
+                      <h3> Media Kraken </h3> 
+                    </div>
+                    <div>
+                       <p> Manage your media at your fingertips.</p>
                     </div>
                   </div>
                 </div>

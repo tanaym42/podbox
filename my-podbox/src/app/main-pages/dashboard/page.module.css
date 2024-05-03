@@ -55,7 +55,7 @@
   border-radius: 5px;
   margin: 10px;
   flex: 1;
-  width: calc(25% - 20px);
+  width: calc(33.33% - 20px);
 }
 
 .appCard:hover {
@@ -77,13 +77,13 @@
 }
 
 .appThumbnail img {
-  width: 100%;
-  height: auto;
+  height: 100%;
+  width: auto;
 }
 
 .appCardBody {
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding-left: 1em;
   margin: 0;
   /* padding-bottom: 0; */
@@ -92,6 +92,7 @@
 
 .appCardBody h3 {
   font-size: 16px;
+  word-wrap: nowrap;
 }
 
 .appCardBody p {
