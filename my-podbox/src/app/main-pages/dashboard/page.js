@@ -97,11 +97,11 @@ const homePage = () => {
   
   // useEffect hook to run completeLogin on component mount
   
-  completeLogin()
+  completeLogin();
   //fetchSomeData();
 
   // "when my webId changes, that's when I want you to rerun everything in useEffect"
-  }, [webId]); // The empty dependency array ensures it runs once on mount
+}, [webId]); // The empty dependency array ensures it runs once on mount
 
 const recentApps = [
   {"app_name": "Media Kraken" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
@@ -152,10 +152,12 @@ const userStorageString = JSON.stringify(userStorage)
 
 
 // writing to local storage
-localStorage.setItem('userApps', recentAppsString);
-localStorage.setItem('userData', recentDataString);
-localStorage.setItem('userInfo', userInfoString);
-localStorage.setItem('userStorage', userStorageString);
+useEffect(() => {
+  localStorage.setItem('userApps', recentAppsString);
+  localStorage.setItem('userData', recentDataString);
+  localStorage.setItem('userInfo', userInfoString);
+  localStorage.setItem('userStorage', userStorageString);
+});
 
 
 
