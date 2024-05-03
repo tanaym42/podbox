@@ -12,7 +12,8 @@
 
 .topmatter {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: flex-end;
   padding: 1em;
   border-bottom: 2px solid #f4f4f4;
   
@@ -41,14 +42,19 @@
 }
 
 .rightpane {
-  padding: 3em;
-  align-items: center;
+  /* padding: 3em; */
+  /* align-items: center; */
+  justify-content: center;
   border-radius: 20px;
-  margin-right: 20px;
+  text-align: center;
+  /* margin-right: 20px; */
   flex: 1;
 }
 
-
+.rightpane img { 
+  align-self: center;
+  min-width: 80%;
+}
 
 .signUpButton {
   margin-right: .5em;
