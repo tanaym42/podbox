@@ -42,7 +42,7 @@ export default function Home() {
           </Link>
           <Link href="/main-pages/login">
             {/* anything inside the Link tags will be clickable, in this case we made a button */}
-            <button className={styles.loginButton}>Login with your POD</button>
+            <button className={styles.loginButton}>Log in with your POD</button>
           </Link>
           
         </div>
