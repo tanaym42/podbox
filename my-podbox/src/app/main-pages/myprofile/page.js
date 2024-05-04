@@ -10,7 +10,8 @@ import {
     getThingAll,
     getUrlAll,
     getSourceUrl,
-    getProfileAll
+    getProfileAll,
+    getStringNoLocale
   } from "@inrupt/solid-client";
 
 import {
@@ -19,11 +20,12 @@ import {
   buildThing,
   createSolidDataset,
   createThing,
+  setStringNoLocale,
   setThing,
   saveSolidDatasetAt,
 } from "@inrupt/solid-client";
 
-// import { SCHEMA_INRUPT, RDF } from "@inrupt/vocab-common-rdf";
+import { SCHEMA_INRUPT, RDF } from "@inrupt/vocab-common-rdf";
   
 // import { solid } from "@inrupt/vocab-solid";
 
@@ -86,22 +88,15 @@ const myProfile = () => {
                 // console.log('It is trying to fetch the extended profile...')
                 // console.log(getSourceUrl(extendedProfileSolidDataset));
                 const thingsInExtendedProfile = getThingAll(extendedProfileSolidDataset);
+                console.log('Is this finally working?')
+                console.log(thingsInExtendedProfile[0]);
                 // console.log('This is where it will print the things in the extended profile.')
-                // console.log(thingsInExtendedProfile)
-                thingsInExtendedProfile.forEach((thing) => {
-
-                    
-                if (thing.url.toString() == webId.toString()) {
-                    // console.log('This is the open profile link.');
-                } else {
-                    console.log('This is the actual extended profile.');
-                    console.log(thing.url);
-                    // console.log(webId);
-                    setProfileLink(thing.url);
-                }
-                    
-                });
-            })
+                // console.log(thingsInExtendedProfile[0].url)
+                let temp_test = getStringNoLocale(thingsInExtendedProfile[0], "https://schema.org/name")
+                console.log(temp_test);
+                setProfileName(temp_test);
+                setProfileLink(thingsInExtendedProfile[0].url)
+            });
       
         } catch (error) {
           console.log('There is some error.')
@@ -109,6 +104,125 @@ const myProfile = () => {
         }
     }
     
+    const updateName = async () => {
+        // Adds a name to the extended profile
+
+        console.log('Entering the update function')
+
+        try {
+
+            // 1. Get WebID of the logged in user.
+    // The example assumes the user is logged in.
+    // As such, getDefaultSession().info.webId is NOT null and
+    // fetch (associated with the default Session) is an authenticated fetch.
+
+    const webId = getDefaultSession().info.webId;
+
+    // 2. Get the WebID Profile and the extended profiles listed in the WebID Profile.
+    //
+    // - For WebID Profile, getProfileAll performs an unauthenticated fetch.
+    // - For extended profiles, getProfileAll performs either:
+    //   - an unauthenticated fetch of the extended profiles if
+    //     the passed in fetch is omitted or fetch is unauthenticated,
+    //   - authenticated fetch if the passed in fetch is authenticated.
+
+    const profiles = await getProfileAll(webId, { fetch });
+
+    // Step 3. Write to the extended profile.
+    // The example assumes only 1 extended profile.
+    // a. Get the extended profile.
+    // b. Get the user data Thing (identified by the user's WebID) contained in the extended profile.
+    // c. Set a Property to this user data.
+    // d. Update the myExtendedProfile with the new Property
+    // e. Save the updated extended profile
+
+    let myExtendedProfile = profiles.altProfileAll[0];
+    console.log('This is the id thingy?')
+    let extendedProfileLink = myExtendedProfile.internal_resourceInfo.sourceIri
+
+    let userDataThing = getThing(myExtendedProfile, extendedProfileLink);
+
+    console.log('This is the original user data thing')
+    console.log(userDataThing);
+
+    userDataThing = setStringNoLocale(
+      userDataThing,
+      "https://schema.org/name",
+      "TANAY MAHINDRU"
+    );
+
+    
+    console.log('Below should be after update.')
+    console.log(userDataThing);
+
+    myExtendedProfile = setThing(
+      myExtendedProfile,
+      userDataThing
+    );
+    
+    console.log('This is the thing that is being set.')
+    console.log(myExtendedProfile);
+
+    await saveSolidDatasetAt(
+      getSourceUrl(myExtendedProfile),
+      myExtendedProfile,
+      { fetch: session.fetch }             // fetch from authenticated Session
+    );
+
+
+            
+
+
+
+
+
+            // const profiles = await getProfileAll(
+            //     webId,
+            //     { fetch : session.fetch}
+            // );
+      
+            // const extendedProfilesSolidDatasets = profiles.altProfileAll;
+            // let temp_url = 'null'
+            // extendedProfilesSolidDatasets.forEach((extendedProfileSolidDataset) => {
+            //     const thingsInExtendedProfile = getThingAll(extendedProfileSolidDataset);
+            //     // console.log('This is where it will print the things in the extended profile.')
+            //     // console.log(thingsInExtendedProfile[0].url)
+            //     temp_url = thingsInExtendedProfile[0]
+            // });
+
+            // let myExtendedProfile = temp_url;
+            // console.log('Web ID below::')
+            // console.log(webId)
+            // console.log(myExtendedProfile);
+            // let userDataThing = getThing(myExtendedProfile, webId);
+            // console.log(myExtendedProfile);
+            // console.log(userDataThing);
+
+            // userDataThing = setStringNoLocale(
+            //   userDataThing,
+            //   "https://schema.org/name",
+            //   "TANAY MAHINDRU"
+            // );
+        
+            // myExtendedProfile = setThing(
+            //   myExtendedProfile,
+            //   userDataThing
+            // );
+        
+            // await saveSolidDatasetAt(
+            //   getSourceUrl(myExtendedProfile),
+            //   myExtendedProfile,
+            //   { fetch: session.fetch } 
+            // ); 
+
+            // let temp = getThingAll(myExtendedProfile);
+            // console.log(temp);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const createSomething = async () => {
         console.log('Entering create something.')
         let courseSolidDataset = createSolidDataset();
@@ -142,7 +256,7 @@ const myProfile = () => {
                 <h1>Hi Drake! </h1>
                 <div>
                     <h1>Account information</h1>
-                        <h2>Name: {profileName}</h2> 
+                        <h2 onClick={() => updateName()} >Name: {profileName}</h2> 
                         <h2>WebID: {webId}</h2>
                         <h2>Email: {profileEmail}</h2> 
                 </div>
