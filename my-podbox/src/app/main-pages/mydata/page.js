@@ -5,17 +5,14 @@ import { handleIncomingRedirect, EVENTS, onSessionRestore } from '@inrupt/solid-
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll, getSolidDataset, getStringNoLocale, getThingAll, getUrl } from "@inrupt/solid-client";
 
-
-
-
 import styles from "./page.module.css";
 
-const myData = () => {
+const MyData = () => {
     const [isLoggedIn, setIsLoggedIn] = useState();
     const [webId, setWebId] = useState(null);
     const [fileList, setFileList] = useState([]);
     const [rootUrl, setRootUrl] = useState('');
-    const [prevUrl, setPrevUrl] = useState('BLANK');
+    const [prevUrl, setPrevUrl] = useState([]);
     const session = getDefaultSession();
     //console.log(session);
     // pathname = usePathname()
@@ -131,7 +128,11 @@ const myData = () => {
         const nameUrlDict = await fetchContainers(url);
         
         const temp = rootUrl;
-        setPrevUrl(temp);
+        let temp_list = prevUrl;
+        temp_list = [...prevUrl, temp]
+        setPrevUrl(temp_list);
+        console.log('This is the previous URL list.')
+        console.log(prevUrl);
         console.log(nameUrlDict);
         setFileList(nameUrlDict);
         setRootUrl(url);
@@ -142,7 +143,7 @@ const myData = () => {
         <div>
         <h2>Your data</h2>
         <p>{webId}</p>
-        <p onClick ={() => handleItemClick(prevUrl)}>BACK BUTTON</p>
+        <p onClick ={() => handleItemClick(prevUrl[-1])}>BACK BUTTON</p>
 
         {Object.keys(fileList).length > 0 ? (
                 
@@ -161,4 +162,4 @@ const myData = () => {
     );
 }
 
-export default myData;
+export default MyData;
