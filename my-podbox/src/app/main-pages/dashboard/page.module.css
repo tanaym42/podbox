@@ -59,6 +59,7 @@
   color: #676879;
   object-fit: fill;
   width: fit-content;
+  border: 1px solid #C5C7D0;
 }
 
 .docBanner {
@@ -68,6 +69,7 @@
   color: #676879;
   object-fit: fill;
   width: fit-content;
+  border: 1px solid #C5C7D0;
 }
 
 .podBanner {
@@ -76,6 +78,7 @@
   border-radius: 5px;
   color: #676879;
   object-fit: fill;
+  border: 1px solid #C5C7D0;
   width: fit-content;
 }
 
@@ -86,6 +89,7 @@
   color: #676879;
   object-fit: fill;
   width: fit-content;
+  border: 1px solid #C5C7D0;
 }
 
 .appThumbnail {
