@@ -12,6 +12,7 @@ const MyData = () => {
     const [webId, setWebId] = useState(null);
     const [fileList, setFileList] = useState([]);
     const [rootUrl, setRootUrl] = useState('');
+    const [currentUrl, setCurrentUrl] = useState('');
     const [prevUrl, setPrevUrl] = useState([]);
     const session = getDefaultSession();
     //console.log(session);
@@ -58,6 +59,25 @@ const MyData = () => {
         
         return nameUrlMap;
     };
+
+    function handlePrevList() {
+        // On the click of something, changes the prev url list, so that the back button can work. 
+
+
+        console.log('This is the root url: ')
+        console.log(currentUrl);
+    
+        // Create a copy of prevUrl array and push currentUrl to it
+        const temp_list = prevUrl;
+        temp_list.push(currentUrl);
+    
+        // Update the state with the new array
+        setPrevUrl(temp_list);
+    
+        console.log('This is the previous URL list.')
+        console.log(prevUrl);
+
+    }
     
     async function fetchThingList(webId) {
         // Function to fetch the url and containers associated with the logged in WebId. 
@@ -82,24 +102,28 @@ const MyData = () => {
             setWebId(info.webId);
         });
 
+        
         fetchFileList();
 
       }, [webId]);
 
-    const fetchFileList = async () => {
+    const fetchFileList = async (  ) => {
         // To run automatically on load, inside the UseEffect
 
+        console.log('If this shows Im basically just resetting every time');    
         if (session.info.isLoggedIn) {
             const files = await fetchThingList(webId);
             setFileList(files);
+            setCurrentUrl(null);
         }
     };
 
     async function fetchContainers (url) {
         // Fetches the containers associated with a particular url
 
+
         const myThing = await getSolidDataset(
-            url,                     // Here, replace it with my podurl information. 
+            url,                              // Here, replace it with my podurl information. 
             { fetch: session.fetch }          // fetch from authenticated session
           );
 
@@ -123,27 +147,38 @@ const MyData = () => {
 
     async function handleItemClick (url) {
         // Extract the names, return as a dictionary of name and url or the link
-
+        console.log('This is the URL being entered.')
         console.log(url)
         const nameUrlDict = await fetchContainers(url);
-        
-        const temp = rootUrl;
-        let temp_list = prevUrl;
-        temp_list = [...prevUrl, temp]
-        setPrevUrl(temp_list);
-        console.log('This is the previous URL list.')
-        console.log(prevUrl);
-        console.log(nameUrlDict);
         setFileList(nameUrlDict);
-        setRootUrl(url);
+        setCurrentUrl(url);
+
+        
+        return null;
+    };
+
+    async function handleBackClick () {
+        // Extract the names, return as a dictionary of name and url or the link
+        console.log('This is the current state of ')
+        console.log('This is the URL being entered.')
+        console.log(prevUrl[-1])
+        const nameUrlDict = await fetchContainers(prevUrl[-1]);
+        setFileList(nameUrlDict);
+        setCurrentUrl(url);
+        
         return null;
     };
 
     return (
         <div>
-        <h2>Your data</h2>
-        <p>{webId}</p>
-        <p onClick ={() => handleItemClick(prevUrl[-1])}>BACK BUTTON</p>
+        <h2 onClick ={() => fetchFileList()}>Your data</h2>
+
+        {currentUrl && (
+                <p>&gt; {extractName(currentUrl)}</p>
+            )}
+
+        {/* <p onClick ={() => handleBackClick()}>BACK BUTTON</p>
+        <p>Current </p> */}
 
         {Object.keys(fileList).length > 0 ? (
                 
