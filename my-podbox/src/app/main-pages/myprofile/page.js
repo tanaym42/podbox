@@ -25,7 +25,7 @@ import {
   saveSolidDatasetAt,
 } from "@inrupt/solid-client";
 
-import { SCHEMA_INRUPT, RDF } from "@inrupt/vocab-common-rdf";
+// import { SCHEMA_INRUPT, RDF } from "@inrupt/vocab-common-rdf";
   
 // import { solid } from "@inrupt/vocab-solid";
 

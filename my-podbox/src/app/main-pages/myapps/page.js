@@ -34,7 +34,6 @@ const myApps = () => {
   return (
     <div className={styles.main}>
         {/* Check if webId is null */}
-          <div>
               {/* Will need to add placeholder and pull in user's name */}
               <h1>My Apps</h1>
 
@@ -43,7 +42,6 @@ const myApps = () => {
                   <Card key={index} item={item} />
                 ))}
                 </div>
-          </div>
     </div>
   );
 };

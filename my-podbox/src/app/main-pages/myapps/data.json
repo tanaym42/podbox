@@ -1,25 +1,25 @@
 [
     {
       "title": "Item 1",
-      "image": "image1.jpg",
+      "image": "https://images.squarespace-cdn.com/content/v1/57ec07bb46c3c4749838974b/1600332556098-VIE9484FHPZPPPT1NDCK/Picture_TM.jpg",
       "lastModified": "2024-05-01",
       "website": "example.com/item1"
     },
     {
       "title": "Item 2",
-      "image": "image2.jpg",
+      "image": "https://images.squarespace-cdn.com/content/v1/57ec07bb46c3c4749838974b/1600332556098-VIE9484FHPZPPPT1NDCK/Picture_TM.jpg",
       "lastModified": "2024-05-02",
       "website": "example.com/item2"
     },
     {
         "title": "Item 1",
-        "image": "image1.jpg",
+        "image": "https://images.squarespace-cdn.com/content/v1/57ec07bb46c3c4749838974b/1600332556098-VIE9484FHPZPPPT1NDCK/Picture_TM.jpg",
         "lastModified": "2024-05-01",
         "website": "example.com/item1"
       },
       {
         "title": "Item 2",
-        "image": "image2.jpg",
+        "image": "https://images.squarespace-cdn.com/content/v1/57ec07bb46c3c4749838974b/1600332556098-VIE9484FHPZPPPT1NDCK/Picture_TM.jpg",
         "lastModified": "2024-05-02",
         "website": "example.com/item2"
       }

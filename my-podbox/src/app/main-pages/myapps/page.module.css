@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 0;
   min-height: auto;
   font-family: "Poppins", sans-serif;
@@ -15,11 +12,13 @@
 }
 
 .grid-container {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
-  width: 100%;
-  justify-content: space-evenly; /* Added to evenly space the columns */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card {
