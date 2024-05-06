@@ -10,7 +10,6 @@ const bottomFooter = () => {
       <div className={styles.footerMain}>
 
         <div className={styles.copyright}>
-          {/* image needs to be in the public folder for this to work */}
             <p> Copyright 2024 PodBox</p>
              
         </div>
@@ -20,7 +19,6 @@ const bottomFooter = () => {
           <Link href="/main-pages/faqs" className={styles.aboutLink}> FAQs </Link>
           <Link href="https://youtu.be/dQw4w9WgXcQ?si=k0Z1iLcj2QeF_caH" className={styles.aboutLink}> Contact </Link>
         </div>
-        {/* Add any other content specific to your header */}
       </div>
 
     );

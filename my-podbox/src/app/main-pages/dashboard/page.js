@@ -169,7 +169,7 @@ useEffect(() => {
           <p>Loading...</p>
         ) : ( */}
           
-          <div className={styles.main}>
+          <div>
               {/* Will need to add placeholder and pull in user's name */}
               <h1>Welcome to your PodBox, Jade!</h1>
               <div className={styles.intro}>
@@ -185,7 +185,7 @@ useEffect(() => {
 
               <h1>Suggested Apps</h1>
 
-              <div className={styles.appContainer}>
+              {/* <div className={styles.appContainer}>
                 <div className={styles.app}>
                   <Image src={mediaImage} alt="" />
                 </div>
@@ -201,6 +201,96 @@ useEffect(() => {
 
                 <div className={styles.app}>
                   <Image src={socialImage} alt=""  />
+                </div>
+              </div> */}
+
+              <div className={styles.appContainer}>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
+                  </div>
+                </div>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
+                  </div>
+                </div>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> <h3> Media Kraken </h3> </div>
+                    <div> <p> Manage your media at your fingertips.</p> </div>
+                  </div>
+                </div>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                      <div> <h3> Media Kraken </h3> </div>
+                      <div> <p> Manage your media at your fingertips.</p> </div>
+                    
+                  </div>
+                </div>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> 
+                      <h3> Media Kraken </h3> 
+                    </div>
+                    <div>
+                       <p> Manage your media at your fingertips.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> 
+                      <h3> Media Kraken </h3> 
+                    </div>
+                    <div>
+                       <p> Manage your media at your fingertips.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             
