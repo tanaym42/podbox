@@ -9,7 +9,7 @@ function Card({ item }) {
   return (
       <div className={styles.card}>
           <div className={styles.imagecontainer}>
-              <img src={item.image} alt="Item Image" className="image" />
+              <img className={styles.imageThumbnail} src={item.image} alt="Item Image"  />
           </div>
           <div className={styles.content}>
               <h2 className={styles.title}>{item.title}</h2>

@@ -159,6 +159,10 @@ useEffect(() => {
   localStorage.setItem('userStorage', userStorageString);
 });
 
+const goMediaKraken = () => {
+  window.location.replace("/main-pages/mediakraken");
+}
+
 
 
 // html content to show on the page after we've run everything above this 
@@ -205,7 +209,7 @@ useEffect(() => {
               </div> */}
 
               <div className={styles.appContainer}>
-                <div className={styles.appCard}>
+                <div className={styles.appCard} onClick={goMediaKraken}>
                   <div className={styles.appThumbnail}>
                     {/* img here */}
                     <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>

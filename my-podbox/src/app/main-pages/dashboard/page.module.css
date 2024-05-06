@@ -49,6 +49,7 @@
 
 .appCard:hover {
   background-color: #CCE5FF;
+  cursor: pointer;
 }
 
 .mediaBanner {
