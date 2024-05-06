@@ -36,8 +36,7 @@ const myApps = () => {
         {/* Check if webId is null */}
               {/* Will need to add placeholder and pull in user's name */}
               <h1>My Apps</h1>
-
-                <div className="grid-container">
+                <div className={styles.gridContainer}>
                 {jsonData.map((item, index) => (
                   <Card key={index} item={item} />
                 ))}
