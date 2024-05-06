@@ -10,39 +10,91 @@ const singleapp = () => {
         {/* Check if webId is null */}
       <div className={styles.leftPane}>
         <div className={styles.appTitle}>
-          Media Kraken
+          <h2>Media Kraken</h2>
         </div>
         <div className={styles.appBody}>
-          <h2> By Noel De Martin </h2>
-          
-          <br />
+          <h3> By Noel De Martin </h3>
 
-          <p>Keep track of your movies and make your own collection. </p>
+          <p>Keep track of your movies and make your own collection. This app accesses movie databases to allow you to track, mark as watched, and create collections of your choice with movies from all over the world.</p>
+          <br />
 
         </div>
         <div className={styles.accessControl}>
+          <h2>Access Controls</h2>
           <div className={styles.mainToggle}>
+            <p></p>
+
+            <label class="switch">
+              Allow Media Kraken to access my Pod.
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+
+            
+
 
           </div>
+          <br />
           <div className={styles.controlOptions}>
+            <h4>Control Options</h4>
+            <label class="switch">
+              Read
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
 
+            <br />
+
+            <label class="switch">
+              Write
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+
+            <br />
+
+            <label class="switch">
+              Append
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+
+            <br />
+
+            <label class="switch">
+              Control
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+
+            <br />
+            
           </div>
         </div>
-
-
       </div>
+
+
       <div className={styles.rightPane}>
         <div className={styles.thumbnailContainer}>
+        <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
 
         </div>
         <div className={styles.accessInfo}>
+          <p>Last modified: 05/06/24</p>
+          <p>First access: 02/14/24</p>
 
         </div>
         <div className={styles.dataButtons}>
 
+          <button className={styles.downloadButton}>Download</button>
+          <button className={styles.relatedButton}>View Related Data</button>
+
         </div>
         <div className={styles.infoPane}>
-          
+          <p><a href="main-pages/faqs"> What can I do with my data?</a></p>
+
+          <p><a href="main-pages/faqs"> How do I revoke access to my pod?</a></p>
+
         </div>
       </div>
     </div>
