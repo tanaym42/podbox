@@ -2,7 +2,7 @@
 
 
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, {useRef} from 'react';
 import styles from "./page.module.css";
 
 
@@ -10,58 +10,46 @@ import styles from "./page.module.css";
 
 // I'll need to load the page and return all the data (with a delay), then add each piece of data into an json array, and then add elements to the document for each json item 
 
-const faq = () => {
-// html content to show on the page after we've run everything above this 
+function FAQItem({ question, answer }) {
+  const answerRef = useRef(null);
+
+  const toggleAnswer = () => {
+    if (answerRef.current.style.display === 'block') {
+      answerRef.current.style.display = 'none';
+    } else {
+      answerRef.current.style.display = 'block';
+    }
+  };
+
   return (
-    <div className={styles.main}>
-        {/* Check if webId is null */}
-          <div>
-              {/* Will need to add placeholder and pull in user's name */}
-              <h1>Frequently Asked Questions</h1>
-          </div>
-
-      <div className={styles.questionContainer}>
-        <div className={styles.question}>
-          <h2> Where the hell am I?</h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-            How did I get here?
-          </h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-            How are babies made?
-          </h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-            What is the answer to life, the universe, and everything? 
-          </h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-            Can I have your phone number?
-          </h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-            Why do we call it oven when we of in the cold food out hot eat the food? 
-          </h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-
-          </h2>
-        </div>
-        <div className={styles.question}>
-          <h2>
-
-          </h2>
-        </div>
+    <div className="faqItem">
+      <div className="faqQuestion" onClick={toggleAnswer}>
+        {question}
+      </div>
+      <div className="faqAnswer" ref={answerRef}>
+        {answer}
       </div>
     </div>
   );
-};
+}
+
+
+
+const faq = () => {
+// html content to show on the page after we've run everything above this 
+  return (
+    <div className="faqContainer">
+      <FAQItem
+        question="Question 1: What is Lorem Ipsum?"
+        answer="Answer 1: Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      />
+      <FAQItem
+        question="Question 2: Why do we use it?"
+        answer="Answer 2: It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+      />
+      {/* Add more FAQ items here */}
+    </div>
+  );
+}
 
 export default faq;

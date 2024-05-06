@@ -10,6 +10,18 @@
   font-family: "Poppins", sans-serif;
 }
   
-.main h1 {
-  color: #495AFF;
+.faqItem {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.faqQuestion {
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.faqAnswer {
+  padding: 10px;
+  display: none;
 }
