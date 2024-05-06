@@ -64,9 +64,11 @@
 
 .mediaBanner {
   background-color: #fceba1;
+  padding: 2px 5px;
   border-radius: 5px;
   color: #676879;
   object-fit: fill;
+  width: fit-content;
 }
 
 .appThumbnail {
