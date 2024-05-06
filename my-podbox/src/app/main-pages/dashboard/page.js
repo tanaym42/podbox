@@ -168,7 +168,7 @@ useEffect(() => {
         {/* {!webId ? (
           <p>Loading...</p>
         ) : ( */}
-          
+          <br />
           <div>
               {/* Will need to add placeholder and pull in user's name */}
               <h1>Welcome to your PodBox, Jade!</h1>
@@ -215,89 +215,88 @@ useEffect(() => {
                       Media
                     </div>
                     <div> <h3> Media Kraken </h3> </div>
-                    <div> <p> Manage your media at your fingertips.</p> </div>
+                    <div> <p> Track your media and never miss a beat. </p> </div>
                   </div>
                 </div>
+
                 <div className={styles.appCard}>
                   <div className={styles.appThumbnail}>
                     {/* img here */}
-                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                    <img src="https://avatars.githubusercontent.com/u/4251?s=48&v=4" alt="The Notepod Logo"></img>
                   </div>
                   <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
+                    <div className={styles.docBanner}>
+                      Documents
                     </div>
-                    <div> <h3> Media Kraken </h3> </div>
-                    <div> <p> Manage your media at your fingertips.</p> </div>
+                    <div> <h3> Notepod </h3> </div>
+                    <div> <p> A simple notetaking app that stores notes in your Solid Pod. </p> </div>
                   </div>
                 </div>
+
                 <div className={styles.appCard}>
                   <div className={styles.appThumbnail}>
                     {/* img here */}
-                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                    <img src="https://play-lh.googleusercontent.com/knebRq3bh2CyUFnYX9MVgVyJIVsRyLuophmaLITSP8-wyT3Jl8RngiOL8gGIhYM3wvrS=w240-h480-rw" alt="The Solid Logo"></img>
                   </div>
                   <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
+                    <div className={styles.socialBanner}>
+                      Social
                     </div>
-                    <div> <h3> Media Kraken </h3> </div>
-                    <div> <p> Manage your media at your fingertips.</p> </div>
+                    <div> <h3> LiqidChat </h3> </div>
+                    <div> <p> A chat client for Solid Pods. </p> </div>
                   </div>
                 </div>
+
                 <div className={styles.appCard}>
                   <div className={styles.appThumbnail}>
                     {/* img here */}
-                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzozYZXFs4im__dEqdxq_fyXTyEkA0TzLVf0FxkpwgsQ&s" alt="The Umai Logo"></img>
                   </div>
                   <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
+                    <div className={styles.docBanner}>
+                      Documents
                     </div>
-                      <div> <h3> Media Kraken </h3> </div>
-                      <div> <p> Manage your media at your fingertips.</p> </div>
-                    
+                      <div> <h3> Umai </h3> </div>
+                      <div> <p> Your favorite recipes manager. </p> </div>
                   </div>
                 </div>
+
                 <div className={styles.appCard}>
                   <div className={styles.appThumbnail}>
                     {/* img here */}
-                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                    <img src="https://avatars.githubusercontent.com/u/50267329?s=48&v=4" alt=""></img>
                   </div>
                   <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
+                    <div className={styles.podBanner}>
+                      POD Management
                     </div>
                     <div> 
-                      <h3> Media Kraken </h3> 
+                      <h3> OhMyPod! </h3> 
                     </div>
                     <div>
-                       <p> Manage your media at your fingertips.</p>
+                       <p> An app to manage your Pod.</p>
                     </div>
                   </div>
                 </div>
+
                 <div className={styles.appCard}>
                   <div className={styles.appThumbnail}>
                     {/* img here */}
-                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
+                    <img src="https://avatars.githubusercontent.com/u/1715217?s=48&v=4" alt="A person wearing glasses with a small device attached to them. Taisukef's profile picture. "></img>
                   </div>
                   <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
+                    <div className={styles.socialBanner}>
+                      Social
                     </div>
                     <div> 
-                      <h3> Media Kraken </h3> 
+                      <h3> Taisukef </h3> 
                     </div>
                     <div>
-                       <p> Manage your media at your fingertips.</p>
+                       <p> Add friends. </p>
                     </div>
                   </div>
                 </div>
               </div>
-            
-          
-            
-              <h2>Recent Data</h2>
-            
           </div>
           
         {/* )} */}

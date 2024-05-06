@@ -33,8 +33,9 @@
   flex-direction: row;
   /* margin: 20px; */
   justify-content: flex-start;
-  max-width: 100%;
+  width: 100vw;
   flex-wrap: wrap;
+  flex: 1 1 1;
 }
 
 .appCard {
@@ -43,7 +44,6 @@
   max-height: 100px;
   border-radius: 5px;
   margin: 10px;
-  flex: 1;
   width: calc(33.33% - 20px);
 }
 
@@ -60,16 +60,45 @@
   width: fit-content;
 }
 
+.docBanner {
+  background-color: #CCE5FF;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #676879;
+  object-fit: fill;
+  width: fit-content;
+}
+
+.podBanner {
+  background-color: #F4C3CB;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #676879;
+  object-fit: fill;
+  width: fit-content;
+}
+
+.socialBanner {
+  background-color: #BBDBC9;
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #676879;
+  object-fit: fill;
+  width: fit-content;
+}
+
 .appThumbnail {
   border: 1px solid #C5C7D0;
   border-radius: 5px;
-  max-width: 30%;
-  height: auto;
+  width: 30%;
+  height: 100%;
+  flex: 1;
 }
 
 .appThumbnail img {
+  width: 100%;
   height: 100%;
-  width: auto;
+  object-fit: initial;
 }
 
 .appCardBody {
@@ -77,6 +106,7 @@
   justify-content: center;
   padding-left: 1em;
   margin: 0;
+  flex: 3;
   /* padding-bottom: 0; */
   /* gap: 0; */
 }
@@ -84,8 +114,11 @@
 .appCardBody h3 {
   font-size: 16px;
   word-wrap: nowrap;
+  padding: 0px;
+  line-height: 0;
 }
 
 .appCardBody p {
-  font-size: 10px;
+  font-size: 12px;
+  word-wrap: normal;
 }
