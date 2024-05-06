@@ -42,7 +42,9 @@ const signup = () => {
           <button>
             Register
           </button>
+          
         </div>
+        <p>Already have an account? <a href="/main-pages/login">Log in!</a></p>
       </div>
       <div className={styles.bottommatter}>
         <div>
