@@ -1,3 +1,3 @@
-This is an attempt at a basic react application to interact with a solid pod. 
+PodBox | Personal Data Management Tool for a Decentralized Web
 
-See the code and an additional usage inside the podbox page. 
+See the code, README and an additional usage under my-podbox. 
