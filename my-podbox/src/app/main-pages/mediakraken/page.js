@@ -24,10 +24,10 @@ const singleapp = () => {
           <div className={styles.mainToggle}>
             <p></p>
 
-            <label class="switch">
+            <label className={styles.switch}>
               Allow Media Kraken to access my Pod.
               <input type="checkbox" />
-              <span class="slider"></span>
+              <span class={styles.slider}></span>
             </label>
 
             
@@ -37,34 +37,34 @@ const singleapp = () => {
           <br />
           <div className={styles.controlOptions}>
             <h4>Control Options</h4>
-            <label class="switch">
+            <label className={styles.switch}>
               Read
               <input type="checkbox" />
-              <span class="slider"></span>
+              <span class={styles.slider}></span>
             </label>
 
             <br />
 
-            <label class="switch">
+            <label className={styles.switch}>
               Write
               <input type="checkbox" />
-              <span class="slider"></span>
+              <span class={styles.slider}></span>
             </label>
 
             <br />
 
-            <label class="switch">
+            <label className={styles.switch}>
               Append
               <input type="checkbox" />
-              <span class="slider"></span>
+              <span class={styles.slider}></span>
             </label>
 
             <br />
 
-            <label class="switch">
+            <label className={styles.switch}>
               Control
               <input type="checkbox" />
-              <span class="slider"></span>
+              <span class={styles.slider}></span>
             </label>
 
             <br />
