@@ -13,6 +13,9 @@ import learnMoreImage from "../../../../public/signUp_learnMore.svg"
 
 // I'll need to load the page and return all the data (with a delay), then add each piece of data into an json array, and then add elements to the document for each json item 
 
+const goLearnMore = () => {
+  window.location.replace("https://solidproject.org/users/get-a-pod");
+}
 const signup = () => {
 // html content to show on the page after we've run everything above this 
   return (
@@ -57,7 +60,7 @@ const signup = () => {
             Each POD is assigned a unique WebID upon creation, a crucial identifier for future access. To obtain a WebID, register on the provider's site, note your WebID, and come back to PodBox and log in with your new POD!
           </p>
             <div className={styles.learnMore}>
-              <Image src={learnMoreImage} alt="" />
+              <Image src={learnMoreImage} alt="" onClick={goLearnMore}/>
             </div>
         </div>
         <div className={styles.diagram}>
