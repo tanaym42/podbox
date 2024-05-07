@@ -272,7 +272,7 @@ const goMediaKraken = () => {
                   </div>
                   <div className={styles.appCardBody}>
                     <div className={styles.podBanner}>
-                      POD Management
+                      Pod Management
                     </div>
                     <div> 
                       <h3> OhMyPod! </h3> 
@@ -300,6 +300,45 @@ const goMediaKraken = () => {
                     </div>
                   </div>
                 </div>
+
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://thewebalyst.solidcommunity.net/plume/img/logo.svg" alt="The Plume logo, a feather quill."></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.mediaBanner}>
+                      Media
+                    </div>
+                    <div> 
+                      <h3> Plume </h3> 
+                    </div>
+                    <div>
+                       <p> A Blogging Platform </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.appCard}>
+                  <div className={styles.appThumbnail}>
+                    {/* img here */}
+                    <img src="https://play-lh.googleusercontent.com/knebRq3bh2CyUFnYX9MVgVyJIVsRyLuophmaLITSP8-wyT3Jl8RngiOL8gGIhYM3wvrS=w240-h480-rw" alt="The SOLID Logo"></img>
+                  </div>
+                  <div className={styles.appCardBody}>
+                    <div className={styles.podBanner}>
+                      Pod Management
+                    </div>
+                    <div> 
+                      <h3> Solid IDE </h3> 
+                    </div>
+                    <div>
+                       <p> File manager and IDE for Solid Pods. </p>
+                    </div>
+                  </div>
+                </div>
+
+
+                
               </div>
           </div>
           
