@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Image from 'next/image';
 
 import launchOutsideImg from '../../../../public/launchOutside.svg'
+import toolTipIcon from '../../../../public/infoTooltip.svg'
 
 const goMediaKraken = () => {
   window.open(
@@ -32,9 +33,13 @@ const singleapp = () => {
           <div className={styles.mainToggle}>
             <p>Allow Media Kraken to access my Pod.</p>
             <label className={styles.switch}>
-              <input type="checkbox" />
+              <input type="checkbox"  />
               <span class={styles.slider}></span>
             </label>
+            <div className={styles.tooltip}>
+              <Image src={toolTipIcon} alt="" height="15" />
+              <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to access or control any data on your Pod. </span>
+            </div>
           </div>
 
           <br />
@@ -48,6 +53,10 @@ const singleapp = () => {
                 <input type="checkbox" />
                 <span class={styles.slider}></span>
               </label>
+              <div className={styles.tooltip}>
+                <Image src={toolTipIcon} alt="" height="15" />
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to read any data on your Pod.</span>
+              </div>
             </div>
             
             <div className={styles.controlToggle}>
@@ -56,6 +65,10 @@ const singleapp = () => {
                 <input type="checkbox" />
                 <span class={styles.slider}></span>
               </label>
+              <div className={styles.tooltip}>
+                <Image src={toolTipIcon} alt="" height="15" />
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to write any data on your Pod.</span>
+              </div>
             </div>
 
             <div className={styles.controlToggle}>
@@ -64,6 +77,10 @@ const singleapp = () => {
                 <input type="checkbox" />
                 <span class={styles.slider}></span>
               </label>
+              <div className={styles.tooltip}>
+                <Image src={toolTipIcon} alt="" height="15" />
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to append any data to your Pod.</span>
+              </div>
             </div>
 
             <div className={styles.controlToggle}>
@@ -72,6 +89,10 @@ const singleapp = () => {
                 <input type="checkbox" />
                 <span class={styles.slider}></span>
               </label>
+              <div className={styles.tooltip}>
+                <Image src={toolTipIcon} alt="" height="15" />
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to control any data on your Pod.</span>
+              </div>
             </div>
             
           </div>
