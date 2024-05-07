@@ -38,40 +38,41 @@ const singleapp = () => {
           </div>
 
           <br />
+
           
           <div className={styles.controlOptions}>
             <h4>Control Options</h4>
-            <label className={styles.switch}>
-              Read
-              <input type="checkbox" />
-              <span class={styles.slider}></span>
-            </label>
+            <div className={styles.controlToggle}>
+              <p> Read </p>
+              <label className={styles.switch}>
+                <input type="checkbox" />
+                <span class={styles.slider}></span>
+              </label>
+            </div>
+            
+            <div className={styles.controlToggle}>
+              <p> Write </p>
+              <label className={styles.switch}>
+                <input type="checkbox" />
+                <span class={styles.slider}></span>
+              </label>
+            </div>
 
-            <br />
+            <div className={styles.controlToggle}>
+              <p> Append </p>
+              <label className={styles.switch}>
+                <input type="checkbox" />
+                <span class={styles.slider}></span>
+              </label>
+            </div>
 
-            <label className={styles.switch}>
-              Write
-              <input type="checkbox" />
-              <span class={styles.slider}></span>
-            </label>
-
-            <br />
-
-            <label className={styles.switch}>
-              Append
-              <input type="checkbox" />
-              <span class={styles.slider}></span>
-            </label>
-
-            <br />
-
-            <label className={styles.switch}>
-              Control
-              <input type="checkbox" />
-              <span class={styles.slider}></span>
-            </label>
-
-            <br />
+            <div className={styles.controlToggle}>
+              <p>Control</p>
+              <label className={styles.switch}>
+                <input type="checkbox" />
+                <span class={styles.slider}></span>
+              </label>
+            </div>
             
           </div>
         </div>

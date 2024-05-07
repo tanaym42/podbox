@@ -45,7 +45,7 @@
   text-align: right;
 }
 
-.controlOptions h4 {
+.main h4 {
   text-align: left;
   font-size: 18px;
   font-weight: 200;
@@ -120,4 +120,12 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(11px);
+}
+
+.controlToggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-right: 50px;
 }
