@@ -1,6 +1,13 @@
 "use client";
-import React, { useEffect, useState } from 'react';
 import styles from "./page.module.css";
+import Image from 'next/image';
+
+import launchOutsideImg from '../../../../public/launchOutside.svg'
+
+const goMediaKraken = () => {
+  window.open(
+    "https://noeldemartin.github.io/media-kraken/login", "_blank");
+}
 
 
 const singleapp = () => {
@@ -11,6 +18,7 @@ const singleapp = () => {
       <div className={styles.leftPane}>
         <div className={styles.appTitle}>
           <h2>Media Kraken</h2>
+          <Image src={launchOutsideImg} alt="" height="30" onClick={goMediaKraken} />
         </div>
         <div className={styles.appBody}>
           <h3> By Noel De Martin </h3>
@@ -22,19 +30,15 @@ const singleapp = () => {
         <div className={styles.accessControl}>
           <h2>Access Controls</h2>
           <div className={styles.mainToggle}>
-            <p></p>
-
+            <p>Allow Media Kraken to access my Pod.</p>
             <label className={styles.switch}>
-              Allow Media Kraken to access my Pod.
               <input type="checkbox" />
               <span class={styles.slider}></span>
             </label>
-
-            
-
-
           </div>
+
           <br />
+          
           <div className={styles.controlOptions}>
             <h4>Control Options</h4>
             <label className={styles.switch}>
