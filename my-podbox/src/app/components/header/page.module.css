@@ -27,12 +27,13 @@
   display: flex;
   gap: 2.5em;
   padding-right: 2em;
-  padding-bottom: 5px;
+  padding-bottom: 1em;
   align-items: center;
   font-size: 12px;
   white-space: nowrap;
   padding-top: 0px;
   line-height: 0px;
+  text-decoration: none;
 }
 
 .h2 {
@@ -40,14 +41,42 @@
 }
 
 .navlink {
+  text-decoration: none;
   display: inline; /* Ensure elements stay inline */
   font-size: 1.2em;
-  /* padding-top: 0.5em; */
-  color: black;
+  color: grey;
 }
 
 .navlink:hover {
-  color: #495AFF;
+  font-weight: bold;
+  transition: font-weight 0.3s ease; /* Add transition for font weight */
+  text-decoration: none;
+}
+
+/* Define styles for the active link */
+/* Define styles for the active link */
+.active {
+  position: relative; /* Required for absolute positioning */
+  text-decoration: none; /* Remove default underline */
+  margin-top: 1.2em;
+  color: black;
+}
+
+/* Create a custom underline */
+.active::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute; /* Position the underline relative to the text */
+  bottom: 0; /* Align the underline with the bottom of the text */
+  left: 0; /* Align the underline with the left of the text */
+  width: 100%; /* Make the underline span the entire width of the text */
+  height: 2px; /* Set the height of the underline */
+  background-color: #495AFF; /* Color of the underline */
+}
+
+/* Increase the distance between the text and the underline */
+.active {
+  padding-bottom: 15px; /* Adjust as needed */
+  font-weight: bold;
 }
 
 .navlink:link {
@@ -55,10 +84,6 @@
 }
 
 .navlink:visited {
-  text-decoration: none;
-}
-
-.navlink:hover {
   text-decoration: none;
 }
 
@@ -121,4 +146,8 @@
 .rightButtons {
   display: flex;
   gap: .5em;
+}
+
+.p {
+  text-decoration: none;
 }

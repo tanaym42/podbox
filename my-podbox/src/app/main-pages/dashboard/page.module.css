@@ -59,6 +59,7 @@
   object-fit: fill;
   width: fit-content;
   border: 1px solid #C5C7D0;
+  font-size: 0.75em;
 }
 
 .docBanner {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // this handles the redirect from the third party oidc provider
 import { handleIncomingRedirect, EVENTS, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
-import { getPodUrlAll, getSolidDataset, getStringNoLocale, getThingAll, getUrl } from "@inrupt/solid-client";
+import { getPodUrlAll, getSolidDataset, getStringNoLocale, createSolidDataset, saveSolidDatasetAt, getThingAll, getUrl } from "@inrupt/solid-client";
 
 import styles from "./page.module.css";
 
@@ -110,7 +110,7 @@ const MyData = () => {
     const fetchFileList = async (  ) => {
         // To run automatically on load, inside the UseEffect
 
-        console.log('If this shows Im basically just resetting every time');    
+        // console.log('If this shows Im basically just resetting every time');    
         if (session.info.isLoggedIn) {
             const files = await fetchThingList(webId);
             setFileList(files);

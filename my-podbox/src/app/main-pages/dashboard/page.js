@@ -23,22 +23,35 @@ import {
   getThing,
   getThingAll,
   getStringNoLocale,
-  getUrlAll
+  getUrlAll, 
+  getContainedResourceUrlAll
 } from "@inrupt/solid-client";
-
-// This is for testing of ACL stuff, the above is for ACR
-import {
-  getSolidDatasetWithAcl,
-  getPublicAccess,
-  universalAccess
-} from "@inrupt/solid-client";
-
-import { urlToUrlWithoutFlightMarker } from 'next/dist/client/components/app-router';
-
 
 // things I need from pod input; app name, app image, last modified, date created, link to app, link to app controls, link to view related data 
 
-// I'll need to load the page and return all the data (with a delay), then add each piece of data into an json array, and then add elements to the document for each json item 
+// Below is the card for the display of app information, that can be re-used. 
+
+function Card({ item }) {
+  return (
+      <div className={styles.card}>
+          <div className={styles.imagecontainer}>
+              <img className={styles.imageThumbnail} src={item.thumbnailUrl} alt="Item Image"  />
+          </div>
+          <div className={styles.content}>
+              <h2 className={styles.title}>{item.Name}</h2>
+              <div className={styles.info}>
+                  <p>Last modified: {item.lastModified}</p>
+                  <p>Visit website: {item.website}</p>
+              </div>
+              <div className={styles.buttons}>
+                  <button className={styles.button}>Access controls</button>
+                  <button className={styles.button}>View related data</button>
+              </div>
+          </div>
+      </div>
+  );
+}
+
 
 const homePage = () => {
 
@@ -56,8 +69,16 @@ const homePage = () => {
         podUrl[0],                     // Here, replace it with my podurl information. 
         { fetch: fetch }          // fetch from authenticated session
       );
+
+    
     console.log(myThingList);
-}
+
+    let temp = getContainedResourceUrlAll(myThingList);
+    console.log('These are the contained reosurces in the main url')
+    console.log(temp);
+  }
+
+
   
   // Inside the useEffect hook, placed the login completion and data fetching since they are required for re-rendering. 
   // useEffect is a react thing that tells the browser what to re-do in certain conditions
@@ -82,8 +103,6 @@ const homePage = () => {
           // basically a "try" in python, we haven't written rejection case yet
           }).then(async (info) => {
             // console.log(`Logged in with WebID [${info.webId}]`)
-            // console.log("I reach here.")  
-            // console.log(info)    
           })
         // check if the user is logged in
         if (session.info.isLoggedIn) {
@@ -188,6 +207,8 @@ const goMediaKraken = () => {
               </div>
 
               <h1>Suggested Apps</h1>
+
+              
 
               {/* <div className={styles.appContainer}>
                 <div className={styles.app}>
