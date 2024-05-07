@@ -4,7 +4,7 @@
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 50px 150px;
   min-height: 100vw;
   font-family: "Poppins", sans-serif;
@@ -31,8 +31,8 @@
   height: 300px;
   overflow: hidden;
   border: 1px solid #ddd;
-  padding: 10px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .thumbnailContainer img {
@@ -158,4 +158,79 @@ input:checked + .slider:before {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.modifiedText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 200;
+  margin: 0;
+  word-wrap: nowrap;
+  line-height: 0;
+  padding: 5px;
+}
+
+.dataButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.downloadButton {
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #C5C7D0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color .5s, background-color .5s;
+}
+
+.downloadButton:hover {
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+}
+
+.relatedButton {
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #C5C7D0;
+  border-radius: 5px;
+  white-space: nowrap;
+  width: auto;
+  cursor: pointer;
+  transition: color .5s, background-color .5s;
+}
+
+.relatedButton:hover {
+  background-color: #CCE5FF;
+  /* font-weight: bold; */
+  color: black;
+}
+
+.infoPane {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  line-height: .5;
+}
+
+.infoPane a {
+  text-decoration: none;
+  color: #1F76C2;
+  font-weight: 300;
+}
+
+.infoPane a:hover {
+  text-decoration: underline;
 }

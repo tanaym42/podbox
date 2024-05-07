@@ -4,6 +4,11 @@ import Image from 'next/image';
 
 import launchOutsideImg from '../../../../public/launchOutside.svg'
 import toolTipIcon from '../../../../public/infoTooltip.svg'
+import clockIcon from '../../../../public/icon-clock.svg'
+import calendarIcon from '../../../../public/icon-calendar.svg'
+import downloadIcon from '../../../../public/download-icon.svg'
+import expandIcon from '../../../../public/icon-expand.svg'
+import questionIcon from '../../../../public/icon-questionMark.svg'
 
 const goMediaKraken = () => {
   window.open(
@@ -106,20 +111,37 @@ const singleapp = () => {
 
         </div>
         <div className={styles.accessInfo}>
-          <p>Last modified: 05/06/24</p>
-          <p>First access: 02/14/24</p>
+          <div className={styles.modifiedText}>
+            <Image src={clockIcon} alt="" height="15" />
+            <p>Last modified: 05/06/24</p>
+          </div>
+          <div className={styles.modifiedText}>
+            <Image src={calendarIcon} alt="" height="15" />
+            <p>First access: 02/14/24</p>
+          </div>
+          
 
         </div>
         <div className={styles.dataButtons}>
 
-          <button className={styles.downloadButton}>Download</button>
-          <button className={styles.relatedButton}>View Related Data</button>
+          <div className={styles.downloadButton}>
+            <Image src={downloadIcon} alt="" height="20" />
+            Download
+          </div>
+          
+          <div className={styles.relatedButton}>
+            <Image src={expandIcon} alt="" height="20" />
+            View Related Data
+          </div>
 
         </div>
         <div className={styles.infoPane}>
-          <p><a href="main-pages/faqs"> What can I do with my data?</a></p>
+          <Image src={questionIcon} alt="" height="50" />
+          <div className={styles.linkPane}>
+            <p><a href="main-pages/faqs">What can I do with my data?</a></p>
 
-          <p><a href="main-pages/faqs"> How do I revoke access to my pod?</a></p>
+            <p><a href="main-pages/faqs">How do I revoke access to my pod?</a></p>
+          </div>
 
         </div>
       </div>
