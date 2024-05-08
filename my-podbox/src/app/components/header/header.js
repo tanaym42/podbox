@@ -92,7 +92,7 @@ const TopNav = () => {
 
             <div className={styles.rightButtons}>
               <Link href="/main-pages/myprofile"><button className={styles.profileButton}> Account </button></Link>
-              <button onClick={() => handleCopy()} disabled={copySuccess} className={styles.webIdButton}> {copySuccess ? 'Copied !' : 'Copy Text'} </button>
+              <button onClick={() => handleCopy()} disabled={copySuccess} className={styles.webIdButton}> {copySuccess ? 'Copied !' : 'Copy WebID'} </button>
             </div>
           </div>
 

@@ -42,8 +42,6 @@ function AppCard({ item }) {
   let app_card_genre = getStringNoLocale(item, 'https://schema.org/applicationCategory')
   let app_card_logourl = getUrl(item, 'https://schema.org/thumbnailUrl')
 
-  console.log(app_card_name);
-
   return (
     <div className={styles.appCard}>
       <div className={styles.appThumbnail}>
@@ -71,7 +69,7 @@ const homePage = () => {
   const [suggestedAppUrls, setSuggestedAppUrls] = useState(null);
   const [prevSuggestedAppUrls, setPrevSuggestedAppUrls] = useState(null);
   const [appContainerName, setAppContainerName] = useState('MyApps_Test_No_2');
-  const [appContainerUrl, setAppContainerUrl] = useState(null);
+  const [appContainerUrl, setAppContainerUrl] = useState('https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/App_Catalogue');
   const { loginCheck, updateLoginCheck } = useAuth();
   
 
@@ -100,7 +98,7 @@ const homePage = () => {
         restorePreviousSession: true
           // basically a "try" in python, we haven't written rejection case yet
           }).then(async (info) => {
-            console.log(`Logged in with WebID [${info.webId}]`)
+            // console.log(`Logged in with WebID [${info.webId}]`)
             if (session.info.isLoggedIn) {
         
               // Sets the state of webId and setIsLoggedIn for further use. 
@@ -138,8 +136,8 @@ const homePage = () => {
   }
 
   async function fetchAppInfo () {
-    console.log('This is the WebID it is trying to parse.')
-    console.log(webId)
+    // console.log('This is the WebID it is trying to parse.')
+    // console.log(webId)
     if (webId !== undefined && webId !== null) {
       await fetchMyAppsUrl(webId);
     } else {
@@ -158,32 +156,45 @@ const homePage = () => {
         { fetch: fetch }          // fetch from authenticated session
       );
 
-    console.log('This is the thing list in the App container:')
-    console.log(myThingList);
+    // console.log('This is the thing list in the App container:')
+    // console.log(myThingList);
 
     const myAllThing = await getThingAll(
       myThingList,                     // Here, replace it with my podurl information. 
       { fetch: fetch }          // fetch from authenticated session
     );
 
-    console.log('This is the stuff inside it?')
-    console.log(myAllThing);
+    // console.log('This is the stuff inside it?')
+    // console.log(myAllThing);
 
 
     // let temp = myThingList.graphs.default
     // let appUrlList = Object.keys(temp)
 
     // let temp = getContainedResourceUrlAll(myThingList);
-    console.log('These are the contained resources in the App container: ')
-    console.log(myAllThing);
+    // console.log('These are the contained resources in the App container: ')
+    // console.log(myAllThing);
 
     await setSuggestedAppUrls(myAllThing);
 
   }
 
   async function createSuggestedList () {
-    console.log('Entering createlist with the following App Url:')
-    console.log(appContainerUrl);
+    // console.log('Entering createlist with the following App Url:')
+    // console.log(appContainerUrl);
+    if (appContainerUrl !== undefined && appContainerUrl !== null) {
+      await fetchAppThingList(appContainerUrl);
+      
+      
+    } else {
+      console.log('The fetchAppUrl function is not running because App URL is undefined stil. ')
+    }
+
+  }
+
+  async function fetchPublicApps () {
+    // console.log('Entering createlist with the following App Url:')
+    // console.log(appContainerUrl);
     if (appContainerUrl !== undefined && appContainerUrl !== null) {
       await fetchAppThingList(appContainerUrl);
       
@@ -198,9 +209,8 @@ const homePage = () => {
   // useEffect hook to run completeLogin on component mount
   
 
-  completeLogin().then(fetchAppInfo).then(createSuggestedList).then(() => {
-    console.log('This should be the updated state after createSuggestedList state update.');
-    console.log(suggestedAppUrls);
+  completeLogin().then(fetchPublicApps).then(() => {
+    console.log('App list state updated.');
   });
   
 

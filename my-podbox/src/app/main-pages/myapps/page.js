@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { handleIncomingRedirect, EVENTS, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll, getSolidDataset, createThing, createSolidDataset, saveSolidDatasetAt, addInteger, addStringNoLocale, addUrl, getStringNoLocale, setThing, getThingAll, getUrl } from "@inrupt/solid-client";
+import { universalAccess } from "@inrupt/solid-client";
 
 import styles from "./page.module.css";
 import jsonData from './data.json';
@@ -152,12 +153,8 @@ const myApps = () => {
     let rootFileDict = await fetchFileList(webId);
     const rootFileList = Object.keys(rootFileDict);
 
-    console.log('This is the list of file names which is to be checked.')
-    console.log(rootFileList);
-
     // Check if rootFileList contains the 'MyAppList' SolidDataSet. If not, it will create the SD and start populating with things that are in the Json. 
-    if (rootFileList.includes('MyApps_Test_No_2')) {
-      console.log('BOOYAH');
+    if (rootFileList.includes('App_Catalogue')) {
 
     } else {
       // Creates the soliddataset
@@ -192,8 +189,6 @@ const myApps = () => {
                     newAppThing = addStringNoLocale(newAppThing, 'https://schema.org/description', jsonObject[key]);
                     break;
                 case "URL":
-                    console.log('The item youv been waiting for');
-                    console.log(jsonObject[key]);
                     if (Array.isArray(jsonObject[key]) && jsonObject[key].length === 0) {
                       // Handle empty array for URL, for example:
                       console.log("URL is an empty array");
@@ -220,10 +215,6 @@ const myApps = () => {
                     break;
             }
           }
-
-          // Output the new thing for each entry
-          console.log(newAppThing);
-
           // Insert the new thing into the dataset that we had previously created
           appSolidDataset = setThing(appSolidDataset, newAppThing);
 
@@ -232,12 +223,9 @@ const myApps = () => {
       // Save the SolidDataset at the specified URL.
       // The function returns a SolidDataset that reflects your sent data
       const podUrls = await getPodUrlAll(webId, { fetch: session.fetch });
-      console.log('WTF IS WRONG WITH THE VALUE OF PODURL');
-      console.log(podUrls);
       let resourceUrl = podUrls[0]
 
-      resourceUrl += 'MyApps_Test_No_2';
-
+      resourceUrl += 'App_Catalogue';
 
       const savedSolidDataset = await saveSolidDatasetAt(
         resourceUrl,
@@ -246,6 +234,19 @@ const myApps = () => {
       );
 
       console.log(savedSolidDataset);
+
+      universalAccess.setPublicAccess(
+        resourceUrl,  // Resource
+        { read: true },    // Access object
+        { fetch: session.fetch }                 // fetch function from authenticated session
+      ).then((newAccess) => {
+        if (newAccess === null) {
+          console.log("Could not load access details for this Resource.");
+        } else {
+          console.log("Returned Public Access:: ", JSON.stringify(newAccess));
+      
+        }
+      });
 
     }
 
