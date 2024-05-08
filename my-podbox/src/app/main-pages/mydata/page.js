@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { handleIncomingRedirect, EVENTS, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll, getSolidDataset, getStringNoLocale, createSolidDataset, saveSolidDatasetAt, getThingAll, getUrl } from "@inrupt/solid-client";
+import fileIcon from '../../../../public/icons8-file-64.png'
 
 import styles from "./page.module.css";
 
@@ -15,6 +16,7 @@ const MyData = () => {
     const [currentUrl, setCurrentUrl] = useState('');
     const [prevUrl, setPrevUrl] = useState([]);
     const session = getDefaultSession();
+    const [isGrid, setIsGrid] = useState(true);
     //console.log(session);
     // pathname = usePathname()
 
@@ -23,6 +25,10 @@ const MyData = () => {
     // session.events.on(EVENTS.SESSION_RESTORED, (url) => {
     //     navigate(url);
     // });
+
+    const toggleView = () => {
+        setIsGrid(prevState => !prevState);
+      };
 
     // Extracts the name of a directory from a given url
     function extractName(url) {
@@ -170,29 +176,38 @@ const MyData = () => {
     };
 
     return (
-        <div>
-        <h2 onClick ={() => fetchFileList()}>Your data</h2>
+        <div className={styles.main}>
+            <div className={styles.navigationBar}>
+                <div className={styles.navigationControl}>
+                <h2 className={styles.lefttracker} onClick ={() => fetchFileList()}>Your data</h2>
 
-        {currentUrl && (
-                <p>&gt; {extractName(currentUrl)}</p>
-            )}
+                {currentUrl && (
+                    <h2 className={styles.lefttracker}onClick={() => handleItemClick(currentUrl)}>&gt; {extractName(currentUrl)}</h2>
+                )}
+                </div>
+                <div className={styles.navigationToggle}>
+                    <button onClick={toggleView}>{isGrid ? 'List View' : 'Grid View'}</button>
+                </div>
 
-        {/* <p onClick ={() => handleBackClick()}>BACK BUTTON</p>
-        <p>Current </p> */}
+            </div>
 
-        {Object.keys(fileList).length > 0 ? (
-                
-                <ul>
-                    
-                    {Object.entries(fileList).map(([key, value]) => (
-                        <li key={key} onClick={() => handleItemClick(value)}>
-                            <strong>{key}</strong>:
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>Loading...</p>
-            )}
+            {/* <p onClick ={() => handleBackClick()}>BACK BUTTON</p>
+            <p>Current </p> */}
+
+            {Object.keys(fileList).length > 0 ? (
+                    <><div>
+                            <div className={isGrid ? styles.gridContainer : styles.listContainer}>
+                                {Object.entries(fileList).map(([key, value]) => (
+                                    <div onClick={() => handleItemClick(value)} className={isGrid ? styles.cardGrid : styles.cardList}>
+                                        <img src="/document-icon.png" alt="Document" />
+                                        <div className={styles.title}>{key}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div></>
+                ) : (
+                    <p>Loading...</p>
+                )}
         </div>
     );
 }

@@ -58,13 +58,14 @@
 .appCard:hover {
   background-color: #CCE5FF;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.mediaBanner {
-  background-color: #fceba1;
+.banner {
+  background-color: #495AFF;
   padding: 2px 5px;
   border-radius: 5px;
-  color: #676879;
+  color: white;
   object-fit: fill;
   width: fit-content;
   border: 1px solid #C5C7D0;

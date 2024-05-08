@@ -47,14 +47,19 @@
   cursor: pointer;
   border-radius: 5px;
   margin: 10px;
-}
-
-.selector:hover {
-  background: #CCE5FF;
   
 }
 
+.selector:hover {
+  transition: all 0.3s ease;
+  background: #CCE5FF;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); 
+}
 
+.img {
+  padding:3em;
+  margin: 3em;
+}
 .selector img {
   background: transparent;
 }
@@ -123,3 +128,4 @@
   color: black;
   border-color: #495AFF;
 }
+

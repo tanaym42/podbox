@@ -34,11 +34,12 @@ import {
 
 function AppCard({ item }) {
 
-
+  //Load the required values from the solid dataset
   let app_card_name = getStringNoLocale(item, 'https://schema.org/name')
   let app_card_abstract = getStringNoLocale(item, 'https://schema.org/abstract')
   let app_card_genre = getStringNoLocale(item, 'https://schema.org/applicationCategory')
   let app_card_logourl = getUrl(item, 'https://schema.org/thumbnailUrl')
+
   console.log(app_card_name);
 
   return (
@@ -48,7 +49,7 @@ function AppCard({ item }) {
         <img src={app_card_logourl} alt="The Notepod Logo"></img>
       </div>
     <div className={styles.appCardBody}>
-      <div className={styles.docBanner}>
+      <div className={styles.banner}>
         {app_card_genre}
       </div>
       <div> <h3> {app_card_name} </h3> </div>

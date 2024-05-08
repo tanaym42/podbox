@@ -43,11 +43,13 @@ const loginPage = () => {
               <p>Inrupt Podspaces</p>
             </div>
             <div className={styles.selector} onClick={handleInruptClick}>
+
             <Image src={solidLogo} alt="The Solid Logo" height='80' />
+
               <p>Solid Web</p>
             </div>
             <div className={styles.selector} onClick={handleInruptClick}>
-            <Image src={solidLogo} alt="The Solid Logo" height='80' />
+            <Image src={solidLogo} alt="The Solid Logo" height='80' padding='2em'/>
               <p>Solid Community</p>
             </div>
             <div className={styles.selector} onClick={handleInruptClick}>

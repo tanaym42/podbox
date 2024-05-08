@@ -10,6 +10,7 @@ import downloadIcon from '../../../../public/download-icon.svg'
 import expandIcon from '../../../../public/icon-expand.svg'
 import questionIcon from '../../../../public/icon-questionMark.svg'
 
+
 const goMediaKraken = () => {
   window.open(
     "https://noeldemartin.github.io/media-kraken/login", "_blank");
