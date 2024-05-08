@@ -23,6 +23,7 @@ import {
   getThing,
   getThingAll,
   getStringNoLocale,
+  getUrl,
   getUrlAll, 
   getContainedResourceUrlAll
 } from "@inrupt/solid-client";
@@ -31,24 +32,30 @@ import {
 
 // Below is the card for the display of app information, that can be re-used. 
 
-function Card({ item }) {
+function AppCard({ item }) {
+
+
+  let app_card_name = getStringNoLocale(item, 'https://schema.org/name')
+  let app_card_abstract = getStringNoLocale(item, 'https://schema.org/abstract')
+  let app_card_genre = getStringNoLocale(item, 'https://schema.org/applicationCategory')
+  let app_card_logourl = getUrl(item, 'https://schema.org/thumbnailUrl')
+  console.log(app_card_name);
+
   return (
-      <div className={styles.card}>
-          <div className={styles.imagecontainer}>
-              <img className={styles.imageThumbnail} src={item.thumbnailUrl} alt="Item Image"  />
-          </div>
-          <div className={styles.content}>
-              <h2 className={styles.title}>{item.Name}</h2>
-              <div className={styles.info}>
-                  <p>Last modified: {item.lastModified}</p>
-                  <p>Visit website: {item.website}</p>
-              </div>
-              <div className={styles.buttons}>
-                  <button className={styles.button}>Access controls</button>
-                  <button className={styles.button}>View related data</button>
-              </div>
-          </div>
+    <div className={styles.appCard}>
+      <div className={styles.appThumbnail}>
+      {/* img here */}
+        <img src={app_card_logourl} alt="The Notepod Logo"></img>
       </div>
+    <div className={styles.appCardBody}>
+      <div className={styles.docBanner}>
+        {app_card_genre}
+      </div>
+      <div> <h3> {app_card_name} </h3> </div>
+      <div> <p> {app_card_abstract} </p> </div>
+    </div>
+  </div>
+
   );
 }
 
@@ -58,28 +65,31 @@ const homePage = () => {
   // A bunch of different state variable 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [webId, setWebId] = useState(null);
+  const [suggestedAppUrls, setSuggestedAppUrls] = useState(null);
+  const [prevSuggestedAppUrls, setPrevSuggestedAppUrls] = useState(null);
+  const [appContainerName, setAppContainerName] = useState('MyApps_Test_No_2');
+  const [appContainerUrl, setAppContainerUrl] = useState(null);
+
 
   const session = getDefaultSession();
 
-  async function fetchThingList(webId) {
+  // async function fetchThingList(webId) {
     
-    const podUrl = await getPodUrlAll(webId, { fetch: fetch });
-    console.log(podUrl[0])
-    const myThingList = await getSolidDataset(
-        podUrl[0],                     // Here, replace it with my podurl information. 
-        { fetch: fetch }          // fetch from authenticated session
-      );
+  //   const podUrl = await getPodUrlAll(webId, { fetch: fetch });
+  //   console.log(podUrl[0])
+  //   const myThingList = await getSolidDataset(
+  //       podUrl[0],                     // Here, replace it with my podurl information. 
+  //       { fetch: fetch }          // fetch from authenticated session
+  //     );
 
     
-    console.log(myThingList);
+  //   console.log(myThingList);
 
-    let temp = getContainedResourceUrlAll(myThingList);
-    console.log('These are the contained reosurces in the main url')
-    console.log(temp);
-  }
+  //   let temp = getContainedResourceUrlAll(myThingList);
+  //   console.log('These are the contained reosurces in the main url')
+  //   console.log(temp);
 
-
-  
+  // }
   // Inside the useEffect hook, placed the login completion and data fetching since they are required for re-rendering. 
   // useEffect is a react thing that tells the browser what to re-do in certain conditions
   useEffect(() => {
@@ -102,86 +112,115 @@ const homePage = () => {
         restorePreviousSession: true
           // basically a "try" in python, we haven't written rejection case yet
           }).then(async (info) => {
-            // console.log(`Logged in with WebID [${info.webId}]`)
+            console.log(`Logged in with WebID [${info.webId}]`)
+            if (session.info.isLoggedIn) {
+        
+              // Sets the state of webId and setIsLoggedIn for further use. 
+              setIsLoggedIn(true);
+              setWebId(session.info.webId);
+            
+      
+              // What I need to do here, basically, is create function that runs on every start. 
+              // This will basically find the MyApps container using only the webID. Then it will store the urls from that container in some state. 
+              // For every item in the state list, we will open some card and 
+            }
+
           })
         // check if the user is logged in
-        if (session.info.isLoggedIn) {
-        
-        // Sets the state of webId and setIsLoggedIn for further use. 
-        setIsLoggedIn(true);
-        setWebId(session.info.webId);
-        webId && fetchThingList(webId);
-      }
+
   };
+
+  async function fetchMyAppsUrl(webId) {
+    
+    const podUrl = await getPodUrlAll(webId, { fetch: fetch });
+    console.log(podUrl[0])
+    const myThingList = await getSolidDataset(
+        podUrl[0],                     // Here, replace it with my podurl information. 
+        { fetch: fetch }          // fetch from authenticated session
+      );
+
+    let temp = getContainedResourceUrlAll(myThingList);
+
+    temp.forEach (containerUrl => {
+      if (containerUrl.endsWith(appContainerName)) {
+        // If found, set the result to true and break out of the loop
+        setAppContainerUrl(containerUrl);
+      }
+    });
+  }
+
+  async function fetchAppInfo () {
+    console.log('This is the WebID it is trying to parse.')
+    console.log(webId)
+    if (webId !== undefined && webId !== null) {
+      await fetchMyAppsUrl(webId);
+    } else {
+      console.log('The fetchAppUrl function is not running because webID is undefined stil. ')
+    }
+  }
+
+
+  async function fetchAppThingList(url) {
+
+    // console.log("This is the AppUrl we trying to read:");
+    // console.log(url)
+
+    const myThingList = await getSolidDataset(
+        url,                     // Here, replace it with my podurl information. 
+        { fetch: fetch }          // fetch from authenticated session
+      );
+
+    console.log('This is the thing list in the App container:')
+    console.log(myThingList);
+
+    const myAllThing = await getThingAll(
+      myThingList,                     // Here, replace it with my podurl information. 
+      { fetch: fetch }          // fetch from authenticated session
+    );
+
+    console.log('This is the stuff inside it?')
+    console.log(myAllThing);
+
+
+    // let temp = myThingList.graphs.default
+    // let appUrlList = Object.keys(temp)
+
+    // let temp = getContainedResourceUrlAll(myThingList);
+    console.log('These are the contained resources in the App container: ')
+    console.log(myAllThing);
+
+    await setSuggestedAppUrls(myAllThing);
+
+  }
+
+  async function createSuggestedList () {
+    console.log('Entering createlist with the following App Url:')
+    console.log(appContainerUrl);
+    if (appContainerUrl !== undefined && appContainerUrl !== null) {
+      await fetchAppThingList(appContainerUrl);
+      
+      
+    } else {
+      console.log('The fetchAppUrl function is not running because App URL is undefined stil. ')
+    }
+
+  }
+
   
   // useEffect hook to run completeLogin on component mount
   
-  completeLogin();
+
+  completeLogin().then(fetchAppInfo).then(createSuggestedList).then(() => {
+    console.log('This should be the updated state after createSuggestedList state update.');
+    console.log(suggestedAppUrls);
+  });
+  
+
+  
   //fetchSomeData();
 
   // "when my webId changes, that's when I want you to rerun everything in useEffect"
-}, [webId]); // The empty dependency array ensures it runs once on mount
-
-const recentApps = [
-  {"app_name": "Media Kraken" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-
-  {"app_name": "Liqid Chat" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-
-  {"app_name": "Solid Weather" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-
-  {"app_name": "Solid Calendar" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-  
-  {"app_name": "Golf Companion Assistant" ,"image_link": "https://www.google.com", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"}
-];
-
-
-const recentData = [
-  {"item_name": "Cheesecake Recipe" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-
-  {"item_name": "My Recipes" ,"type":"dir", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-
-  {"item_name": "Catan Rules" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-
-  {"item_name": "Favorite Games" ,"type":"dir", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"},
-  
-  {"item_name": "Why Tanay is so Cool" ,"type":"file", "app_link": "https://www.google.com", "last_accessed" : "2024-04-20", "date_added": "2023-04-20", "controls_link": "https//www.google.com", "relatedData_Link": "https://www.google.com"}
-];
-
-const userInfo = {
-  "name": "Jade Smithjonesenson",
-  "email": "jadeluvspuppies88@aol.com",
-  "webID": "id.inrupt.com/jadesPOD"
-}
-
-const userStorage = {
-  // might need to do some sort of conversion between KB/MB/GB here? 
-  "space": "5 GB",
-  "totalApps": "23",
-  "containers": "8"
-}
-
-// make sure to remove this when Tanay adds functionality 
-const recentAppsString = JSON.stringify(recentApps); 
-
-const recentDataString = JSON.stringify(recentData); 
-
-const userInfoString = JSON.stringify(userInfo);
-
-const userStorageString = JSON.stringify(userStorage)
-
-
-// writing to local storage
-useEffect(() => {
-  localStorage.setItem('userApps', recentAppsString);
-  localStorage.setItem('userData', recentDataString);
-  localStorage.setItem('userInfo', userInfoString);
-  localStorage.setItem('userStorage', userStorageString);
-});
-
-const goMediaKraken = () => {
-  window.location.replace("/main-pages/mediakraken");
-}
-
+}, [webId, appContainerUrl]); // The empty dependency array ensures it runs once on mount
 
 
 // html content to show on the page after we've run everything above this 
@@ -207,165 +246,23 @@ const goMediaKraken = () => {
               </div>
 
               <h1>Suggested Apps</h1>
-
               
-
-              {/* <div className={styles.appContainer}>
-                <div className={styles.app}>
-                  <Image src={mediaImage} alt="" />
-                </div>
-
-                <div className={styles.app}>
-                  <Image src={docImage} alt="" />
-                </div>
-
-
-                <div className={styles.app}>
-                  <Image src={mgmtImage} alt=""  />
-                </div>
-
-                <div className={styles.app}>
-                  <Image src={socialImage} alt=""  />
-                </div>
-              </div> */}
-
               <div className={styles.appContainer}>
-                <div className={styles.appCard} onClick={goMediaKraken}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png" alt="The Media Kraken Logo"></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
-                    </div>
-                    <div> <h3> Media Kraken </h3> </div>
-                    <div> <p> Track your media and never miss a beat. </p> </div>
-                  </div>
-                </div>
 
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://avatars.githubusercontent.com/u/4251?s=48&v=4" alt="The Notepod Logo"></img>
+                  {suggestedAppUrls && suggestedAppUrls.length > 0 ? (
+                  <ul>
+                    {/* Use the map function to iterate over the list and render each item */}
+                    {suggestedAppUrls.map((item, index) => (
+                      <AppCard key={index} item={item} />
+                    ))}
+                  </ul>
+                  ) : (
+                  <p>Your suggested apps are loading!</p>
+                  )}
                   </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.docBanner}>
-                      Documents
-                    </div>
-                    <div> <h3> Notepod </h3> </div>
-                    <div> <p> A simple notetaking app that stores notes in your Solid Pod. </p> </div>
-                  </div>
-                </div>
-
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://play-lh.googleusercontent.com/knebRq3bh2CyUFnYX9MVgVyJIVsRyLuophmaLITSP8-wyT3Jl8RngiOL8gGIhYM3wvrS=w240-h480-rw" alt="The Solid Logo"></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.socialBanner}>
-                      Social
-                    </div>
-                    <div> <h3> LiqidChat </h3> </div>
-                    <div> <p> A chat client for Solid Pods. </p> </div>
-                  </div>
-                </div>
-
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzozYZXFs4im__dEqdxq_fyXTyEkA0TzLVf0FxkpwgsQ&s" alt="The Umai Logo"></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.docBanner}>
-                      Documents
-                    </div>
-                      <div> <h3> Umai </h3> </div>
-                      <div> <p> Your favorite recipes manager. </p> </div>
-                  </div>
-                </div>
-
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://avatars.githubusercontent.com/u/50267329?s=48&v=4" alt=""></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.podBanner}>
-                      Pod Management
-                    </div>
-                    <div> 
-                      <h3> OhMyPod! </h3> 
-                    </div>
-                    <div>
-                       <p> An app to manage your Pod.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://avatars.githubusercontent.com/u/1715217?s=48&v=4" alt="A person wearing glasses with a small device attached to them. Taisukef's profile picture. "></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.socialBanner}>
-                      Social
-                    </div>
-                    <div> 
-                      <h3> Taisukef </h3> 
-                    </div>
-                    <div>
-                       <p> Add friends. </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://thewebalyst.solidcommunity.net/plume/img/logo.svg" alt="The Plume logo, a feather quill."></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.mediaBanner}>
-                      Media
-                    </div>
-                    <div> 
-                      <h3> Plume </h3> 
-                    </div>
-                    <div>
-                       <p> A Blogging Platform </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.appCard}>
-                  <div className={styles.appThumbnail}>
-                    {/* img here */}
-                    <img src="https://play-lh.googleusercontent.com/knebRq3bh2CyUFnYX9MVgVyJIVsRyLuophmaLITSP8-wyT3Jl8RngiOL8gGIhYM3wvrS=w240-h480-rw" alt="The SOLID Logo"></img>
-                  </div>
-                  <div className={styles.appCardBody}>
-                    <div className={styles.podBanner}>
-                      Pod Management
-                    </div>
-                    <div> 
-                      <h3> Solid IDE </h3> 
-                    </div>
-                    <div>
-                       <p> File manager and IDE for Solid Pods. </p>
-                    </div>
-                  </div>
-                </div>
-
-
-                
               </div>
           </div>
-          
-        {/* )} */}
-      
-    </div>
+
   );
 };
 

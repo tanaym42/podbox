@@ -5,7 +5,9 @@
       "Year": 2020,
       "Short Description": "Track your media and never miss a beat",
       "Long Description": "Track your media and never miss a beat",
-      "URL": "https://noeldemartin.github.io/media-kraken/"
+      "URL": "https://noeldemartin.github.io/media-kraken/",
+      "Category": "Media",
+      "Logo": "https://drive.google.com/file/d/104-OZa-ZvUKJmLkjXA3RwjcrMjuZoCyf/view?usp=drive_link"
     },
     {
       "Name": "Notepod",
@@ -13,7 +15,9 @@
       "Year": "",
       "Short Description": "A simple notetaking app that stores notes in your Solid Pod",
       "Long Description": "",
-      "URL": "https://notepod.vincenttunru.com/"
+      "URL": "https://notepod.vincenttunru.com/",
+      "Category": "Blogging",
+      "Logo": "https://avatars.githubusercontent.com/u/4251?s=48&v=4"
     },
     {
       "Name": "Solidflix",
@@ -21,7 +25,9 @@
       "Year": "",
       "Short Description": "A movie tracking and sharing application with personalised recommendations.",
       "Long Description": "A movie tracking and sharing application with personalised recommendations.",
-      "URL": "https://oxfordhcc.github.io/solid-media/"
+      "URL": "https://oxfordhcc.github.io/solid-media/",
+      "Category": "Media",
+      "Logo": "https://drive.google.com/file/d/1IkTpOwNpimhd-Q4PJDdYK7IhW9hKhqCt/view?usp=drive_link"
     },
     {
       "Name": "Solid File",
@@ -29,7 +35,9 @@
       "Year": "",
       "Short Description": "A Solid app that help you manages files in your Pod.",
       "Long Description": "A Solid app that help you manages files in your Pod.",
-      "URL": "https://otto-aa.github.io/solid-filemanager/"
+      "URL": "https://otto-aa.github.io/solid-filemanager/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Pod Pro",
@@ -37,7 +45,9 @@
       "Year": "",
       "Short Description": "Solid File Manager",
       "Long Description": "An IDE for editing Solid Pods",
-      "URL": "https://podpro.dev/"
+      "URL": "https://podpro.dev/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "graphMetrix",
@@ -45,7 +55,9 @@
       "Year": 2018,
       "Short Description": "Lets you browse your Pod",
       "Long Description": "Allows you to browse your Solid Pod offering multiple views of information including overview, graph, doc, gallery and grid as well as easy to use Solid collaboration control and file management",
-      "URL": "https://graphmetrix.net/#/"
+      "URL": "https://graphmetrix.net/#/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Liqid Chat",
@@ -53,7 +65,9 @@
       "Year": "",
       "Short Description": "A chat client for Solid Pods",
       "Long Description": "A chat client for Solid Pods",
-      "URL": "https://liqid.chat/"
+      "URL": "https://liqid.chat/",
+      "Category": "Social",
+      "Logo": "https://drive.google.com/file/d/1f7eq5E5epjxkumw7sXe9KT6uyifbzlOW/view?usp=drive_link"
     },
     {
       "Name": "Solid Profile Viewer",
@@ -61,7 +75,9 @@
       "Year": 2018,
       "Short Description": "Browse Solid profiles",
       "Long Description": "A react app to view and browse Solid WebID profiles.",
-      "URL": "https://profiles.veltens.org/"
+      "URL": "https://profiles.veltens.org/",
+      "Category": "Social",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Taisukef",
@@ -69,7 +85,9 @@
       "Year": 2018,
       "Short Description": "Add friends",
       "Long Description": "Lets you add new friends",
-      "URL": "https://taisukef.github.io/solid-addfriend/"
+      "URL": "https://taisukef.github.io/solid-addfriend/",
+      "Category": "Social",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "WebID Profile Editor",
@@ -77,7 +95,9 @@
       "Year": "",
       "Short Description": "View and edit your Solid profile",
       "Long Description": "View and edit your Solid profile",
-      "URL": "https://linkeddata.github.io/profile-editor/"
+      "URL": "https://linkeddata.github.io/profile-editor/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "OpenLink YouID",
@@ -85,7 +105,9 @@
       "Year": "",
       "Short Description": "Identity and credentials document generator",
       "Long Description": "YouID is a simple -- but powerful -- system for generating, managing, and controlling Web- and Internet-scale verifiable identity that's totally controlled by you. It makes you the master curator of your profile data and associated content indexes, without compromising your privacy.",
-      "URL": "http://youid.openlinksw.com/"
+      "URL": "http://youid.openlinksw.com/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Solid Groups",
@@ -93,7 +115,9 @@
       "Year": "",
       "Short Description": "Lets you form social groups on a Solid Pod",
       "Long Description": "Lets you form social groups on a Solid Pod",
-      "URL": "https://gitlab.com/angelo-v/solid-groups"
+      "URL": "https://gitlab.com/angelo-v/solid-groups",
+      "Category": "Social",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Gold Companion Assistant",
@@ -101,7 +125,9 @@
       "Year": "",
       "Short Description": "Gold companion assistant",
       "Long Description": "Gold companion assistant",
-      "URL": "https://gca-solid.vercel.app/login"
+      "URL": "https://gca-solid.vercel.app/login",
+      "Category": "Gaming",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "OEdit",
@@ -109,7 +135,9 @@
       "Year": "",
       "Short Description": "An editor app for raw files using the vs interface",
       "Long Description": "An editor app for raw files using the vs interface",
-      "URL": "https://edit.o.team/login"
+      "URL": "https://edit.o.team/login",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Plume",
@@ -117,7 +145,9 @@
       "Year": "",
       "Short Description": "A Blogging Platform",
       "Long Description": "Publish your blog in Linked Data Format",
-      "URL": "https://thewebalyst.solidcommunity.net/plume/"
+      "URL": "https://thewebalyst.solidcommunity.net/plume/",
+      "Category": "Blogging",
+      "Logo": "https://thewebalyst.solidcommunity.net/plume/img/logo.svg"
     },
     {
       "Name": "Dokieli",
@@ -125,7 +155,9 @@
       "Year": "",
       "Short Description": "A client side editor for decentralised article publishing, annotations, and social interactions",
       "Long Description": "A client side editor for decentralised article publishing, annotations, and social interactions",
-      "URL": "https://dokie.li/"
+      "URL": "https://dokie.li/",
+      "Category": "Blogging",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "solidProfileEditor",
@@ -133,7 +165,9 @@
       "Year": "",
       "Short Description": "A Solid app to view and edit your profile data. - solidProfileEditor",
       "Long Description": "A Solid app to view and edit your profile data. - solidProfileEditor",
-      "URL": "http://profile.pondersource.net/"
+      "URL": "http://profile.pondersource.net/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "solidBookmarker",
@@ -141,7 +175,9 @@
       "Year": "",
       "Short Description": "A Solid app to manage your bookmarks.",
       "Long Description": "A Solid app to manage your bookmarks.",
-      "URL": "https://bookmarks.pondersource.net/"
+      "URL": "https://bookmarks.pondersource.net/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Poddit",
@@ -149,7 +185,9 @@
       "Year": "",
       "Short Description": "A Bookmarking app",
       "Long Description": "A Bookmarking app",
-      "URL": "https://vincenttunru.gitlab.io/poddit/"
+      "URL": "https://vincenttunru.gitlab.io/poddit/",
+      "Category": "Others",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Booklice",
@@ -157,7 +195,9 @@
       "Year": "",
       "Short Description": "Bookmarks app with community sharing",
       "Long Description": "Bookmarks app with community sharing",
-      "URL": "https://scenaristeur.github.io/booklice/"
+      "URL": "https://scenaristeur.github.io/booklice/",
+      "Category": "Social",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Solid Weather",
@@ -165,7 +205,9 @@
       "Year": 2019,
       "Short Description": "Uses the National Weather Service API so it is currently only able to fetch weather in the United States",
       "Long Description": "Uses the National Weather Service API so it is currently only able to fetch weather in the United States",
-      "URL": "https://bitbucket.org/dylanmartin/solidweatherapp/src/master/"
+      "URL": "https://bitbucket.org/dylanmartin/solidweatherapp/src/master/",
+      "Category": "Others",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Umai",
@@ -173,7 +215,9 @@
       "Year": 2023,
       "Short Description": "Your favorite recipes manager",
       "Long Description": "Offline-first Recipes Manager",
-      "URL": "https://umai.noeldemartin.com/"
+      "URL": "https://umai.noeldemartin.com/",
+      "Category": "Social",
+      "Logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzozYZXFs4im__dEqdxq_fyXTyEkA0TzLVf0FxkpwgsQ&s"
     },
     {
       "Name": "WebClip",
@@ -181,7 +225,9 @@
       "Year": "",
       "Short Description": "Chrome extension to extract structured data from any web page and store it to a Solid Pod",
       "Long Description": "Chrome extension to extract structured data from any web page and store it to a Solid Pod",
-      "URL": "https://chromewebstore.google.com/detail/webclip-clip-all-the-thin/mfgjcggbpdkbnnpgllaicoeplfgkfnkj"
+      "URL": "https://chromewebstore.google.com/detail/webclip-clip-all-the-thin/mfgjcggbpdkbnnpgllaicoeplfgkfnkj",
+      "Category": "Others",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "Drive",
@@ -189,7 +235,9 @@
       "Year": "",
       "Short Description": "Tool to create and share resources with contacts",
       "Long Description": "Tool to create and share resources with contacts",
-      "URL": "https://drive.owntech.de/"
+      "URL": "https://drive.owntech.de/",
+      "Category": "Social",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     },
     {
       "Name": "PoPock",
@@ -197,6 +245,28 @@
       "Year": "",
       "Short Description": "Editor for your Pod",
       "Long Description": "Your POds in the POCKet. A very modular SoLiD application that is based on webcomponents, vuejs, vue-bootstrap, using community libs like solid-file-client, ldflex-query, tripledoc switching",
-      "URL": "https://scenaristeur.github.io/solid-vue-panes/"
+      "URL": "https://scenaristeur.github.io/solid-vue-panes/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
+    },
+    {
+      "Name": "Penny",
+      "Creator": "Vincent Tunru",
+      "Year": "",
+      "Short Description": "A general Pod Browser",
+      "Long Description": "A general Pod Browser",
+      "URL": "https://penny.vincenttunru.com/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
+    },
+    {
+      "Name": "Solid IDE",
+      "Creator": "Jeff Zucker",
+      "Year": "",
+      "Short Description": "File manager and IDE for Solid Pods",
+      "Long Description": "File manager and IDE for Solid Pods",
+      "URL": "https://jeff-zucker.github.io/solid-content-manager/",
+      "Category": "Pod Management",
+      "Logo": "https://drive.google.com/file/d/1YEyS_UIqPFQOk2p0zPP9elPeXwsZ5KUX/view?usp=drive_link"
     }
   ]

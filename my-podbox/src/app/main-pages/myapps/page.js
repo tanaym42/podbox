@@ -11,8 +11,6 @@ import jsonData from './data.json';
 
 // things I need from pod input; app name, app image, last modified, date created, link to app, link to app controls, link to view related data 
 function Card({ item }) {
-  console.log('This is the item: ')
-  console.log(item.Name)
   return (
       <div className={styles.card}>
           <div className={styles.imagecontainer}>
@@ -158,7 +156,7 @@ const myApps = () => {
     console.log(rootFileList);
 
     // Check if rootFileList contains the 'MyAppList' SolidDataSet. If not, it will create the SD and start populating with things that are in the Json. 
-    if (rootFileList.includes('MyApps_Test')) {
+    if (rootFileList.includes('MyApps_Test_No_2')) {
       console.log('BOOYAH');
 
     } else {
@@ -238,7 +236,7 @@ const myApps = () => {
       console.log(podUrls);
       let resourceUrl = podUrls[0]
 
-      resourceUrl += 'MyApps_Test';
+      resourceUrl += 'MyApps_Test_No_2';
 
 
       const savedSolidDataset = await saveSolidDatasetAt(
@@ -251,7 +249,7 @@ const myApps = () => {
 
     }
 
-    console.log('Dont do anything');
+    // console.log('Dont do anything');
 
     }
 

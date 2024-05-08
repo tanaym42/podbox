@@ -33,17 +33,26 @@
   flex-direction: row;
   /* margin: 20px; */
   justify-content: flex-start;
-  width: 95vw;
+  max-width: 100%;
   flex-wrap: wrap;
 }
 
 .appCard {
   display: flex;
   flex-direction: row;
-  max-height: 100px;
+  max-height: 10em;
+  min-height: 7em;
   border-radius: 5px;
   width: calc(25% - 20px);
   padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+  margin: 2em;
+}
+
+.appContainer ul {
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .appCard:hover {
@@ -70,6 +79,7 @@
   object-fit: fill;
   width: fit-content;
   border: 1px solid #C5C7D0;
+  font-size: 0.75em;
 }
 
 .podBanner {
@@ -80,6 +90,7 @@
   object-fit: fill;
   border: 1px solid #C5C7D0;
   width: fit-content;
+  font-size: 0.75em;
 }
 
 .socialBanner {
@@ -95,12 +106,15 @@
 .appThumbnail {
   border: 1px solid #C5C7D0;
   border-radius: 5px;
-  width: 30%;
+  width: 100%;
+  flex: 1;
+  padding: 1em;
 }
 
 .appThumbnail img {
   width: 100%;
   height: 100%;
+  min-width: 100%;
   /* object-fit: initial; */
 }
 
@@ -109,7 +123,7 @@
   justify-content: center;
   padding-left: 1em;
   margin: 0;
-  flex: 3;
+  flex: 2;
   /* padding-bottom: 0; */
   /* gap: 0; */
 }
