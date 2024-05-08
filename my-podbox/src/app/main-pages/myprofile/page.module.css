@@ -1,0 +1,94 @@
+/* Poppins for body text */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.main {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+.main h1 {
+    color: #495AFF;
+}
+
+.accountInfo {
+    border: 1px solid #C5C7D0;
+    border-radius: 5px;
+    padding: 30px;
+    padding-top: 0;
+    width: 50vw;
+}
+
+.dataInfo {
+    border: 1px solid #C5C7D0;
+    border-radius: 5px;
+    padding: 30px;
+    padding-top: 0;
+    width: 50vw;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+}
+
+.rightCell {
+    text-align: left;
+    flex: 5;
+}
+
+.leftCell {
+    flex: 1;
+}
+
+.nameButton {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    background-color: white;
+    color: #323338;
+    border: 1px solid #C5C7D0;
+    margin-left: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: color .5s, background-color .5s;
+    cursor: pointer;
+}
+
+.nameButton:hover {
+    background-color: #CCE5FF;
+    /* font-weight: bold; */
+    color: #323338;
+    border-color: #495AFF;
+  }
+
+.revokeButton {
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    background-color: #D83A52;
+    color: white;
+    border: 1px solid #D83A52;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .5s, background-color .5s;
+}
+
+.revokeButton:hover {
+    background: red;
+}

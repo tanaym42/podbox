@@ -53,7 +53,7 @@ const myProfile = () => {
     const handleSaveName = () => {
         // Perform save action here, e.g., send to server
         // For demonstration, let's just log the new name
-        console.log('New name:', newName);
+        // console.log('New name:', newName);
         
         updateName(newName);
         setProfileName(newName);
@@ -66,7 +66,7 @@ const myProfile = () => {
         handleIncomingRedirect({
             restorePreviousSession: true,
         }).then((info) => {
-            console.log(`Logged in with WebID [${info.webId}]`);
+            // console.log(`Logged in with WebID [${info.webId}]`);
 
             setIsLoggedIn(true);
             setWebId(info.webId);
@@ -105,12 +105,12 @@ const myProfile = () => {
                 // console.log('It is trying to fetch the extended profile...')
                 // console.log(getSourceUrl(extendedProfileSolidDataset));
                 const thingsInExtendedProfile = getThingAll(extendedProfileSolidDataset);
-                console.log('Is this finally working?')
-                console.log(thingsInExtendedProfile[0]);
+                // console.log('Is this finally working?')
+                // console.log(thingsInExtendedProfile[0]);
                 // console.log('This is where it will print the things in the extended profile.')
                 // console.log(thingsInExtendedProfile[0].url)
                 let temp_test = getStringNoLocale(thingsInExtendedProfile[0], "https://schema.org/name")
-                console.log(temp_test);
+                // console.log(temp_test);
                 setProfileName(temp_test);
                 setProfileLink(thingsInExtendedProfile[0].url)
             });
@@ -124,7 +124,7 @@ const myProfile = () => {
     const updateName = async (nameString) => {
         // Adds a name to the extended profile
 
-        console.log('Entering the update function')
+        // console.log('Entering the update function')
 
             try {
 
@@ -154,13 +154,13 @@ const myProfile = () => {
             // e. Save the updated extended profile
 
             let myExtendedProfile = profiles.altProfileAll[0];
-            console.log('This is the id thingy?')
+            // console.log('This is the id thingy?')
             let extendedProfileLink = myExtendedProfile.internal_resourceInfo.sourceIri
 
             let userDataThing = getThing(myExtendedProfile, extendedProfileLink);
 
-            console.log('This is the original user data thing')
-            console.log(userDataThing);
+            // console.log('This is the original user data thing')
+            // console.log(userDataThing);
 
             userDataThing = setStringNoLocale(
             userDataThing,
@@ -169,16 +169,16 @@ const myProfile = () => {
             );
 
             
-            console.log('Below should be after update.')
-            console.log(userDataThing);
+            // console.log('Below should be after update.')
+            // console.log(userDataThing);
 
             myExtendedProfile = setThing(
             myExtendedProfile,
             userDataThing
             );
             
-            console.log('This is the thing that is being set.')
-            console.log(myExtendedProfile);
+            // console.log('This is the thing that is being set.')
+            // console.log(myExtendedProfile);
 
             await saveSolidDatasetAt(
             getSourceUrl(myExtendedProfile),
@@ -192,7 +192,7 @@ const myProfile = () => {
     }
 
     const createSomething = async () => {
-        console.log('Entering create something.')
+        // console.log('Entering create something.')
         let courseSolidDataset = createSolidDataset();
 
         
@@ -222,35 +222,66 @@ const myProfile = () => {
             <div className={styles.main}>
                 {/* Will need to add placeholder and pull in user's name */}
                 <h1>Your profile</h1>
-                <div>
-                    <h1>Account information</h1>
-                    <h2>
-                            Name:{' '}
-                            {isEditingName ? (
-                                <>
-                                    <input
-                                        type="text"
-                                        value={newName}
-                                        onChange={(e) => setNewName(e.target.value)}
-                                    />
-                                    <button onClick={handleSaveName}>Save</button>
-                                </>
-                            ) : (
-                                <>
-                                    {profileName}
-                                    <button onClick={handleEditName}>Edit</button>
-                                </>
-                            )}
-                        </h2>
-                        <h2>WebID: {webId}</h2>
-                        <h2>Email: {profileEmail}</h2> 
-                </div>
+                <div className={styles.wrapper}>
+                    <div className={styles.accountInfo}>
+                        <p><strong>Account Info</strong></p>
+                        <div className={styles.table}>
+                            <div className={styles.row}>
+                                <div className={styles.leftCell}>Name</div>
+                                <div className={styles.rightCell}>
+                                    {' '}
+                                    {isEditingName ? (
+                                        <>
+                                            <input
+                                                type="text"
+                                                value={newName}
+                                                onChange={(e) => setNewName(e.target.value)}
+                                            />
+                                            <button className={styles.nameButton} onClick={handleSaveName}>Save</button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {profileName}
+                                            <button className={styles.nameButton} onClick={handleEditName}>Edit</button>
+                                        </>
+                                    )}
+                                </div>
+                            </div>
 
-                <div>
-                    <h1>Data information</h1>
-                        <h2>Space used: {podSpace}</h2> 
-                        <h2>Total apps: {podAppsNum}</h2>
-                        <h2>Containers: {podContsNum}</h2> 
+                            <div className={styles.row}>
+                                <div className={styles.leftCell}> WebID </div>
+                                <div className={styles.rightCell}> {webId} </div>
+                            </div>
+
+                            <div className={styles.row}>
+                                <div className={styles.leftCell}> Email </div>
+                                {/* <div className={styles.rightCell}> {profileEmail} </div> */}
+                                <div className={styles.rightCell}> email@domain.com </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.dataInfo}>
+                        <p><strong>Data Info</strong></p>
+                        <div className={styles.table}>
+                            <div className={styles.row}>
+                                <div className={styles.leftCell}> Space used </div>
+                                <div className={styles.rightCell}> 15 GB </div>
+                            </div>
+
+                            <div className={styles.row}>
+                                <div className={styles.leftCell}> Total apps </div>
+                                <div className={styles.rightCell}> 23 </div>
+                            </div>
+
+                            <div className={styles.row}>
+                                <div className={styles.leftCell}> Containers </div>
+                                <div className={styles.rightCell}> 8 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div><button className={styles.revokeButton}>Revoke Access from all apps</button></div>
                 </div>                  
           </div>
           
