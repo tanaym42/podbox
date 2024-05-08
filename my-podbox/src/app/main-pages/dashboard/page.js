@@ -231,7 +231,7 @@ const homePage = () => {
           <br />
           <div>
               {/* Will need to add placeholder and pull in user's name */}
-              <h1>Welcome to your PodBox, Jade!</h1>
+              <h1>Welcome to your PodBox!</h1>
               <div className={styles.intro}>
                 <p>
                   Effortlessly access all your data and applications from your dashboard. Whether you’d like to find a new app to try, download your data, or manage app access controls, your dashboard is the go-to place for POD management. 

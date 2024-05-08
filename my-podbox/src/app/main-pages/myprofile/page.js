@@ -221,7 +221,7 @@ const myProfile = () => {
           
             <div className={styles.main}>
                 {/* Will need to add placeholder and pull in user's name */}
-                <h1>Hi Drake! </h1>
+                <h1>Your profile</h1>
                 <div>
                     <h1>Account information</h1>
                     <h2>
