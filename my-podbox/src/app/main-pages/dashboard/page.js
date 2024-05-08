@@ -9,6 +9,8 @@ import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll } from "@inrupt/solid-client";
 import { fetch } from '@inrupt/solid-client-authn-browser';
 import styles from "./page.module.css";
+import { useAuth } from '../../auth';
+
 import { acp_ess_2, solidDatasetAsTurtle } from "@inrupt/solid-client";
 
 import Image from 'next/image';
@@ -70,27 +72,12 @@ const homePage = () => {
   const [prevSuggestedAppUrls, setPrevSuggestedAppUrls] = useState(null);
   const [appContainerName, setAppContainerName] = useState('MyApps_Test_No_2');
   const [appContainerUrl, setAppContainerUrl] = useState(null);
+  const { loginCheck, updateLoginCheck } = useAuth();
+  
 
 
   const session = getDefaultSession();
 
-  // async function fetchThingList(webId) {
-    
-  //   const podUrl = await getPodUrlAll(webId, { fetch: fetch });
-  //   console.log(podUrl[0])
-  //   const myThingList = await getSolidDataset(
-  //       podUrl[0],                     // Here, replace it with my podurl information. 
-  //       { fetch: fetch }          // fetch from authenticated session
-  //     );
-
-    
-  //   console.log(myThingList);
-
-  //   let temp = getContainedResourceUrlAll(myThingList);
-  //   console.log('These are the contained reosurces in the main url')
-  //   console.log(temp);
-
-  // }
   // Inside the useEffect hook, placed the login completion and data fetching since they are required for re-rendering. 
   // useEffect is a react thing that tells the browser what to re-do in certain conditions
   useEffect(() => {
@@ -119,8 +106,8 @@ const homePage = () => {
               // Sets the state of webId and setIsLoggedIn for further use. 
               setIsLoggedIn(true);
               setWebId(session.info.webId);
-            
-      
+              updateLoginCheck(true, webId);
+          
               // What I need to do here, basically, is create function that runs on every start. 
               // This will basically find the MyApps container using only the webID. Then it will store the urls from that container in some state. 
               // For every item in the state list, we will open some card and 

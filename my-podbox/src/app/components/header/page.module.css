@@ -151,3 +151,31 @@
 .p {
   text-decoration: none;
 }
+
+.faqButton {
+    /* margin-right: .5em; */
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  overflow: hidden; /* Hide overflowing background */
+  border: 1px solid; /* Start with a thick border */
+  background-color: #495AFF; /* Default background color */
+  border-radius: 3px;
+  border-color: #495AFF;
+  color: #FFFFFF; /* Default text color */
+  font-size: 0.7em;
+  padding: 7px 15px;
+  /* margin-top: 10px; */
+  cursor: pointer;
+  transition: color .5s, background-color .5s; /* Transition for smooth effect */
+  font-family: Poppins, sans-serif;
+  white-space: nowrap;
+  font-weight: bold;
+  margin-right: 0.5em;
+  margin-top: 0.7em;
+}
+
+.navlinkLoggedOut {
+  text-decoration: none;
+  display: inline; /* Ensure elements stay inline */
+  font-size: 1.2em;
+  color: grey;
+}

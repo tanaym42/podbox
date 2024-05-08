@@ -36,18 +36,20 @@
 
 .leftpane {
   margin-right: .5em;
-  padding: 2em;
+  padding: 0.5em;
   padding-left: 3em;
   text-align: left;
   flex: 2;
+  margin-left: 5em;
 }
 
 .rightpane {
-  padding: 3em;
+  padding: 0.5em;
   /* align-items: center; */
   justify-content: center;
   border-radius: 20px;
   text-align: center;
+  margin-right: 5em;
   /* margin-right: 20px; */
   flex: 1;
 }

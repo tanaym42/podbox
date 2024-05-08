@@ -77,24 +77,37 @@
     width: 12em;
     max-width: 100%; 
     height: 4em;
+    transition: all 0.3s ease;
     
+  }
+
+  .gridImage {
+    width: 3em;
+    height: 50px;
+    margin-right: 10px;
   }
 
   .cardList {
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #F5F6F8;
     width: 100%;
     max-width: 100%; 
-    height: 2em;
+    background: white;
+    transition: all 0.3s ease;
+    
     
   }
 
-  .cardGrid img {
-    width: 50%;
-    height: 50px;
+  .listImage {
+    width: 2em;
+    height: 2em;
     margin-right: 10px;
+
   }
+
+  .title {
+    font-size: 0.8em;
+  }
+
+

@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { handleIncomingRedirect, EVENTS, onSessionRestore } from '@inrupt/solid-client-authn-browser';
 import {  login, getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPodUrlAll, getSolidDataset, getStringNoLocale, createSolidDataset, saveSolidDatasetAt, getThingAll, getUrl } from "@inrupt/solid-client";
-import fileIcon from '../../../../public/icons8-file-64.png'
+import fileIcon from '../../../../public/icons8-file-64.png';
+import Image from 'next/image';
 
 import styles from "./page.module.css";
 
@@ -199,7 +200,7 @@ const MyData = () => {
                             <div className={isGrid ? styles.gridContainer : styles.listContainer}>
                                 {Object.entries(fileList).map(([key, value]) => (
                                     <div onClick={() => handleItemClick(value)} className={isGrid ? styles.cardGrid : styles.cardList}>
-                                        <img src="/document-icon.png" alt="Document" />
+                                        <Image className={isGrid ? styles.gridImage : styles.listImage} src={fileIcon} alt="Document" />
                                         <div className={styles.title}>{key}</div>
                                     </div>
                                 ))}

@@ -24,9 +24,10 @@
 .card {
   border: 1px solid #ccc;
   border-radius: 8px;
+  margin: 0.5em;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
-  width: calc(33.33% - 20px); /* Adjusted width for the card */
+  width: calc(33.33% - 3em); /* Adjusted width for the card */
 }
 
 .imagecontainer {
@@ -61,7 +62,7 @@
 }
 
 .button {
-  padding: 8px 12px; /* Adjusted padding for buttons */
+  padding: 0.3em 0.3em; /* Adjusted padding for buttons */
   font-size: 14px; /* Adjusted font size for buttons */
   background-color: #007bff;
   color: #fff;
