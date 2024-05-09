@@ -56,7 +56,7 @@ const faq = () => {
         />
         <FAQItem
           question="Do I store all my data in PodBox?"
-          answer="You store your data in a Pod, like your personal server. PodBox helps you access, organize and manage your data which resides in a Pod."
+          answer="You store your data in a POD, like your personal server. PodBox helps you access, organize and manage your data which resides in a POD."
         />
         <FAQItem
           question="Can I download my data to my local computer?"
@@ -64,7 +64,7 @@ const faq = () => {
         />
         <FAQItem
           question="I’m new to Solid Ecosystem, where do I get started?"
-          answer="You can get started by creating a Pod. Once you create a Pod, check out some of the Solid applications. "
+          answer="You can get started by creating a POD. Once you create a POD, check out some of the Solid applications. "
         />
 
         <h2>Personal Data</h2>
@@ -94,35 +94,35 @@ const faq = () => {
 
         <FAQItem
           question="What is a Pod?"
-          answer="A pod is like a web server for your data. You can store all kinds of data on your Pod. It is like your personal Google Drive or DropBox."
+          answer="POD stands for <strong>P</strong>ersonal <strong>O</strong>nline <strong>D</strong>atastore. A POD is like a web server for your data. You can store all kinds of data on your POD. It is like your personal Google Drive or DropBox."
         />
         <FAQItem
           question="What is a WebID? Where do I find it?"
           answer="WebID is a unique identifier to identify a specific user. It could look like https://id.inrupt.com/your-username.  You can copy your WebID from the ‘Copy WebID’ option at the present at the top-right corner of PodBox."
         />
         <FAQItem
-          question="Do I have to pay for my Pod?"
-          answer="You don’t have to pay for a Pod at the moment"
+          question="Do I have to pay for my POD?"
+          answer="You don’t have to pay for a POD at the moment."
         />
         <FAQItem
           question="Can I use all internet services with Solid?"
           answer="You can use applications that are built on Solid protocol. Check out Solid apps here. "
         />
         <FAQItem
-          question="What is a Pod Provider?"
-          answer="Pod providers host your Pod. They provide secure and reliable storage for your Pod. They are like Amazon for AWS storage, and Google for Google Drive.  You can choose to self-host your Pod, in that case, you don’t need to have a Pod Provider."
+          question="What is a POD Provider?"
+          answer="POD providers host your POD. They provide secure and reliable storage for your POD. They are like Amazon for AWS storage, and Google for Google Drive.  You can choose to self-host your POD, in that case, you don’t need to have a POD Provider."
         />
         <FAQItem
-          question="Can I give PodBox access to only specific data in my Pod?"
-          answer="Not yet. Currently, you give access to your whole Pod."
+          question="Can I give PodBox access to only specific data in my POD?"
+          answer="Not yet. Currently, you give access to your whole POD."
         />
         <FAQItem
-          question="How do I choose a Pod Provider?"
+          question="How do I choose a POD Provider?"
           answer=" "
         />
         <FAQItem
-          question="Who has access to my Pod?"
-          answer="Only you and the applications you give permission to have access to your Pod. You can always grant or revoke access, and must allow access every time you log in."
+          question="Who has access to my POD?"
+          answer="Only you and the applications you give permission to have access to your POD. You can always grant or revoke access, and must allow access every time you log in."
         />
 
         <h2>Safety and Security</h2>

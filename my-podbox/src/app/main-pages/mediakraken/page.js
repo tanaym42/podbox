@@ -37,14 +37,14 @@ const singleapp = () => {
         <div className={styles.accessControl}>
           <h2>Access Controls</h2>
           <div className={styles.mainToggle}>
-            <p>Allow Media Kraken to access my Pod.</p>
+            <p>Allow Media Kraken to access my POD.</p>
             <label className={styles.switch}>
               <input type="checkbox"  />
               <span class={styles.slider}></span>
             </label>
             <div className={styles.tooltip}>
               <Image src={toolTipIcon} alt="" height="15" />
-              <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to access or control any data on your Pod. </span>
+              <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to access or control any data on your POD. </span>
             </div>
           </div>
 
@@ -61,7 +61,7 @@ const singleapp = () => {
               </label>
               <div className={styles.tooltip}>
                 <Image src={toolTipIcon} alt="" height="15" />
-                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to read any data on your Pod.</span>
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to read any data on your POD.</span>
               </div>
             </div>
             
@@ -73,7 +73,7 @@ const singleapp = () => {
               </label>
               <div className={styles.tooltip}>
                 <Image src={toolTipIcon} alt="" height="15" />
-                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to write any data on your Pod.</span>
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to write any data on your POD.</span>
               </div>
             </div>
 
@@ -85,7 +85,7 @@ const singleapp = () => {
               </label>
               <div className={styles.tooltip}>
                 <Image src={toolTipIcon} alt="" height="15" />
-                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to append any data to your Pod.</span>
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to append any data to your POD.</span>
               </div>
             </div>
 
@@ -97,7 +97,7 @@ const singleapp = () => {
               </label>
               <div className={styles.tooltip}>
                 <Image src={toolTipIcon} alt="" height="15" />
-                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to control any data on your Pod.</span>
+                <span className={styles.tooltiptext}>By revoking this access, Media Kraken will not be able to control any data on your POD.</span>
               </div>
             </div>
             
@@ -141,7 +141,7 @@ const singleapp = () => {
           <div className={styles.linkPane}>
             <p><a href="main-pages/faqs">What can I do with my data?</a></p>
 
-            <p><a href="main-pages/faqs">How do I revoke access to my pod?</a></p>
+            <p><a href="main-pages/faqs">How do I revoke access to my POD?</a></p>
           </div>
 
         </div>
