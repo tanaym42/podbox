@@ -1,0 +1,272 @@
+[
+  {
+    "Name": "Media Kraken",
+    "Creator": "Noel DeMartin",
+    "Year": 2020,
+    "Short Description": "Track your media and never miss a beat",
+    "Long Description": "Track your media and never miss a beat",
+    "URL": "https://noeldemartin.github.io/media-kraken/",
+    "Category": "Media",
+    "Logo": "https://noeldemartin.github.io/media-kraken/img/icons/android-chrome-512x512.png"
+  },
+  {
+    "Name": "Notepod",
+    "Creator": "Vincent Tunru",
+    "Year": "",
+    "Short Description": "A simple notetaking app that stores notes in your Solid Pod",
+    "Long Description": "",
+    "URL": "https://notepod.vincenttunru.com/",
+    "Category": "Blogging",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Solidflix",
+    "Creator": "Oxford Human Centred Computing Group",
+    "Year": "",
+    "Short Description": "A movie tracking and sharing application with personalised recommendations.",
+    "Long Description": "A movie tracking and sharing application with personalised recommendations.",
+    "URL": "https://oxfordhcc.github.io/solid-media/",
+    "Category": "Media",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Solid File",
+    "Creator": "Otto-AA",
+    "Year": "",
+    "Short Description": "A Solid app that help you manages files in your Pod.",
+    "Long Description": "A Solid app that help you manages files in your Pod.",
+    "URL": "https://otto-aa.github.io/solid-filemanager/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Pod Pro",
+    "Creator": "Jasmine Leonard",
+    "Year": "",
+    "Short Description": "Solid File Manager",
+    "Long Description": "An IDE for editing Solid Pods",
+    "URL": "https://podpro.dev/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "graphMetrix",
+    "Creator": "",
+    "Year": 2018,
+    "Short Description": "Lets you browse your Pod",
+    "Long Description": "Allows you to browse your Solid Pod offering multiple views of information including overview, graph, doc, gallery and grid as well as easy to use Solid collaboration control and file management",
+    "URL": "https://graphmetrix.net/#/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Liqid Chat",
+    "Creator": "Jackson Morgan",
+    "Year": "",
+    "Short Description": "A chat client for Solid Pods",
+    "Long Description": "A chat client for Solid Pods",
+    "URL": "https://liqid.chat/",
+    "Category": "Social",
+    "Logo": "https://play-lh.googleusercontent.com/knebRq3bh2CyUFnYX9MVgVyJIVsRyLuophmaLITSP8-wyT3Jl8RngiOL8gGIhYM3wvrS=w240-h480-rw"
+  },
+  {
+    "Name": "Solid Profile Viewer",
+    "Creator": "Angelo Veltens",
+    "Year": 2018,
+    "Short Description": "Browse Solid profiles",
+    "Long Description": "A react app to view and browse Solid WebID profiles.",
+    "URL": "https://profiles.veltens.org/",
+    "Category": "Social",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Taisukef",
+    "Creator": "Taisuke Fukuno",
+    "Year": 2018,
+    "Short Description": "Add friends",
+    "Long Description": "Lets you add new friends",
+    "URL": "https://taisukef.github.io/solid-addfriend/",
+    "Category": "Social",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "WebID Profile Editor",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "View and edit your Solid profile",
+    "Long Description": "View and edit your Solid profile",
+    "URL": "https://linkeddata.github.io/profile-editor/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "OpenLink YouID",
+    "Creator": "OpenLink Software Inc",
+    "Year": "",
+    "Short Description": "Identity and credentials document generator",
+    "Long Description": "YouID is a simple -- but powerful -- system for generating, managing, and controlling Web- and Internet-scale verifiable identity that's totally controlled by you. It makes you the master curator of your profile data and associated content indexes, without compromising your privacy.",
+    "URL": "http://youid.openlinksw.com/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Solid Groups",
+    "Creator": "Angelo Veltens",
+    "Year": "",
+    "Short Description": "Lets you form social groups on a Solid Pod",
+    "Long Description": "Lets you form social groups on a Solid Pod",
+    "URL": "https://gitlab.com/angelo-v/solid-groups",
+    "Category": "Social",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Gold Companion Assistant",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "Gold companion assistant",
+    "Long Description": "Gold companion assistant",
+    "URL": "https://gca-solid.vercel.app/login",
+    "Category": "Gaming",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "OEdit",
+    "Creator": "Jackson Morgan",
+    "Year": "",
+    "Short Description": "An editor app for raw files using the vs interface",
+    "Long Description": "An editor app for raw files using the vs interface",
+    "URL": "https://edit.o.team/login",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Plume",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "A Blogging Platform",
+    "Long Description": "Publish your blog in Linked Data Format",
+    "URL": "https://thewebalyst.solidcommunity.net/plume/",
+    "Category": "Blogging",
+    "Logo": "https://thewebalyst.solidcommunity.net/plume/img/logo.svg"
+  },
+  {
+    "Name": "Dokieli",
+    "Creator": "Sarven Capadisli",
+    "Year": "",
+    "Short Description": "A client side editor for decentralised article publishing, annotations, and social interactions",
+    "Long Description": "A client side editor for decentralised article publishing, annotations, and social interactions",
+    "URL": "https://dokie.li/",
+    "Category": "Blogging",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "solidProfileEditor",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "A Solid app to view and edit your profile data. - solidProfileEditor",
+    "Long Description": "A Solid app to view and edit your profile data. - solidProfileEditor",
+    "URL": "http://profile.pondersource.net/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "solidBookmarker",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "A Solid app to manage your bookmarks.",
+    "Long Description": "A Solid app to manage your bookmarks.",
+    "URL": "https://bookmarks.pondersource.net/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Poddit",
+    "Creator": "Vincent Tunru",
+    "Year": "",
+    "Short Description": "A Bookmarking app",
+    "Long Description": "A Bookmarking app",
+    "URL": "https://vincenttunru.gitlab.io/poddit/",
+    "Category": "Others",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Booklice",
+    "Creator": "David Faveris",
+    "Year": "",
+    "Short Description": "Bookmarks app with community sharing",
+    "Long Description": "Bookmarks app with community sharing",
+    "URL": "https://scenaristeur.github.io/booklice/",
+    "Category": "Social",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Solid Weather",
+    "Creator": "Dylan Martin",
+    "Year": 2019,
+    "Short Description": "Uses the National Weather Service API so it is currently only able to fetch weather in the United States",
+    "Long Description": "Uses the National Weather Service API so it is currently only able to fetch weather in the United States",
+    "URL": "https://bitbucket.org/dylanmartin/solidweatherapp/src/master/",
+    "Category": "Others",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Umai",
+    "Creator": "Noel De Martin",
+    "Year": 2023,
+    "Short Description": "Your favorite recipes manager",
+    "Long Description": "Offline-first Recipes Manager",
+    "URL": "https://umai.noeldemartin.com/",
+    "Category": "Social",
+    "Logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzozYZXFs4im__dEqdxq_fyXTyEkA0TzLVf0FxkpwgsQ&s"
+  },
+  {
+    "Name": "WebClip",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "Chrome extension to extract structured data from any web page and store it to a Solid Pod",
+    "Long Description": "Chrome extension to extract structured data from any web page and store it to a Solid Pod",
+    "URL": "https://chromewebstore.google.com/detail/webclip-clip-all-the-thin/mfgjcggbpdkbnnpgllaicoeplfgkfnkj",
+    "Category": "Others",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Drive",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "Tool to create and share resources with contacts",
+    "Long Description": "Tool to create and share resources with contacts",
+    "URL": "https://drive.owntech.de/",
+    "Category": "Social",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "OhMyPod!",
+    "Creator": "",
+    "Year": "",
+    "Short Description": "An app to manage your Pod.",
+    "Long Description": "An app to manage your Pod.",
+    "URL": "https://ohmypod.netlify.app/welcome",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Penny",
+    "Creator": "Vincent Tunru",
+    "Year": "",
+    "Short Description": "A general Pod Browser",
+    "Long Description": "A general Pod Browser",
+    "URL": "https://penny.vincenttunru.com/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  },
+  {
+    "Name": "Solid IDE",
+    "Creator": "Jeff Zucker",
+    "Year": "",
+    "Short Description": "File manager and IDE for Solid Pods",
+    "Long Description": "File manager and IDE for Solid Pods",
+    "URL": "https://jeff-zucker.github.io/solid-content-manager/",
+    "Category": "Pod Management",
+    "Logo": "https://i.imgur.com/RgX56pa.png"
+  }
+]
