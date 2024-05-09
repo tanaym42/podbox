@@ -5,14 +5,14 @@
     padding-top: 1em;
   }
   
-  .main h1 {
-    color: #495AFF;
-    text-align: left;
-  }
-  
-  .main h2 {
-    text-align: left;
-  }
+.main h1 {
+  color: #495AFF;
+  text-align: left;
+}
+
+.main h2 {
+  text-align: left;
+}
 
 .navigationBar {
     display: flex;
@@ -71,14 +71,19 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #C5C7D0;
     border-radius: 5px;
     background-color: #F5F6F8;
     width: 12em;
     max-width: 100%; 
     height: 4em;
     transition: all 0.3s ease;
-    
+    color: #323338;
+    cursor: pointer;
+  }
+
+  .cardGrid:hover {
+    background-color: #CCE5FF
   }
 
   .gridImage {
@@ -109,5 +114,7 @@
   .title {
     font-size: 0.8em;
   }
+
+
 
 
