@@ -64,7 +64,6 @@
   .listContainer {
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
   }
 
   .cardGrid {
@@ -83,7 +82,7 @@
   }
 
   .cardGrid:hover {
-    background-color: #CCE5FF
+    background-color: #CCE5FF;
   }
 
   .gridImage {
@@ -100,8 +99,11 @@
     max-width: 100%; 
     background: white;
     transition: all 0.3s ease;
-    
-    
+    border-radius: 5px;
+  }
+
+  .cardList:hover {
+    background-color: #CCE5FF;
   }
 
   .listImage {
