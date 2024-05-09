@@ -107,10 +107,15 @@
 .appThumbnail {
   border: 1px solid #C5C7D0;
   border-radius: 5px;
-  width: 100%;
+  max-width: 100%;
   flex: 1;
   padding: 1em;
 }
+
+.imgLink {
+  width: 30%;
+}
+
 
 .appThumbnail img {
   width: 100%;

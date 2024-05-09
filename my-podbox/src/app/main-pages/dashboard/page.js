@@ -46,12 +46,12 @@ function AppCard({ item }) {
   return (
 
     <div className={styles.appCard}>
-    <Link href='/main-pages/mediakraken'>
+    <Link href='/main-pages/mediakraken' className={styles.imgLink}>
       <div className={styles.appThumbnail}>
       {/* img here */}
-        <img src={app_card_logourl} alt="The Notepod Logo"></img>
+        <img src={app_card_logourl} alt="The Notepod Logo" className={styles.imgThumb}></img>
       </div>
-      </Link>
+    </Link>
     <div className={styles.appCardBody}>
       <div className={styles.banner}>
         {app_card_genre}
