@@ -8,7 +8,7 @@ import { getPodUrlAll, getSolidDataset, createThing, createSolidDataset, saveSol
 import { universalAccess } from "@inrupt/solid-client";
 
 import styles from "./page.module.css";
-import jsonData from './data.json';
+import jsonData from './csvjson.json';
 
 // things I need from pod input; app name, app image, last modified, date created, link to app, link to app controls, link to view related data 
 function Card({ item }) {
@@ -154,7 +154,7 @@ const myApps = () => {
     const rootFileList = Object.keys(rootFileDict);
 
     // Check if rootFileList contains the 'MyAppList' SolidDataSet. If not, it will create the SD and start populating with things that are in the Json. 
-    if (rootFileList.includes('App_Catalogue')) {
+    if (rootFileList.includes('MyApp_Catalogue')) {
 
     } else {
       // Creates the soliddataset
@@ -225,7 +225,7 @@ const myApps = () => {
       const podUrls = await getPodUrlAll(webId, { fetch: session.fetch });
       let resourceUrl = podUrls[0]
 
-      resourceUrl += 'App_Catalogue';
+      resourceUrl += 'MyApp_Catalogue';
 
       const savedSolidDataset = await saveSolidDatasetAt(
         resourceUrl,

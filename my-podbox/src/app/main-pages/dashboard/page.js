@@ -10,6 +10,7 @@ import { getPodUrlAll } from "@inrupt/solid-client";
 import { fetch } from '@inrupt/solid-client-authn-browser';
 import styles from "./page.module.css";
 import { useAuth } from '../../auth';
+import Link from 'next/link';
 
 import { acp_ess_2, solidDatasetAsTurtle } from "@inrupt/solid-client";
 
@@ -43,11 +44,14 @@ function AppCard({ item }) {
   let app_card_logourl = getUrl(item, 'https://schema.org/thumbnailUrl')
 
   return (
+
     <div className={styles.appCard}>
+    <Link href='/main-pages/mediakraken'>
       <div className={styles.appThumbnail}>
       {/* img here */}
         <img src={app_card_logourl} alt="The Notepod Logo"></img>
       </div>
+      </Link>
     <div className={styles.appCardBody}>
       <div className={styles.banner}>
         {app_card_genre}
@@ -55,7 +59,7 @@ function AppCard({ item }) {
       <div> <h3> {app_card_name} </h3> </div>
       <div> <p> {app_card_abstract} </p> </div>
     </div>
-  </div>
+    </div>
 
   );
 }
@@ -68,8 +72,8 @@ const homePage = () => {
   const [webId, setWebId] = useState(null);
   const [suggestedAppUrls, setSuggestedAppUrls] = useState(null);
   const [prevSuggestedAppUrls, setPrevSuggestedAppUrls] = useState(null);
-  const [appContainerName, setAppContainerName] = useState('MyApps_Test_No_2');
-  const [appContainerUrl, setAppContainerUrl] = useState('https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/App_Catalogue');
+  const [appContainerName, setAppContainerName] = useState('MyApps_Folder');
+  const [appContainerUrl, setAppContainerUrl] = useState('https://storage.inrupt.com/aee4b109-6b0a-41d3-90d7-1b7aeb21dfa9/MyApp_Catalogue');
   const { loginCheck, updateLoginCheck } = useAuth();
   
 
